@@ -1,0 +1,1523 @@
+
+cc1101:     file format elf32-littlearm
+
+
+Disassembly of section .init:
+
+000106a4 <_init>:
+   106a4:	e92d4008 	push	{r3, lr}
+   106a8:	eb00003e 	bl	107a8 <call_weak_fn>
+   106ac:	e8bd8008 	pop	{r3, pc}
+
+Disassembly of section .plt:
+
+000106b0 <open@plt-0x14>:
+   106b0:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+   106b4:	e59fe004 	ldr	lr, [pc, #4]	; 106c0 <_init+0x1c>
+   106b8:	e08fe00e 	add	lr, pc, lr
+   106bc:	e5bef008 	ldr	pc, [lr, #8]!
+   106c0:	00010fe4 	.word	0x00010fe4
+
+000106c4 <open@plt>:
+   106c4:	e28fc600 	add	ip, pc, #0, 12
+   106c8:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   106cc:	e5bcffe4 	ldr	pc, [ip, #4068]!	; 0xfe4
+
+000106d0 <mmap@plt>:
+   106d0:	e28fc600 	add	ip, pc, #0, 12
+   106d4:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   106d8:	e5bcffdc 	ldr	pc, [ip, #4060]!	; 0xfdc
+
+000106dc <abort@plt>:
+   106dc:	e28fc600 	add	ip, pc, #0, 12
+   106e0:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   106e4:	e5bcffd4 	ldr	pc, [ip, #4052]!	; 0xfd4
+
+000106e8 <__libc_start_main@plt>:
+   106e8:	e28fc600 	add	ip, pc, #0, 12
+   106ec:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   106f0:	e5bcffcc 	ldr	pc, [ip, #4044]!	; 0xfcc
+
+000106f4 <__gmon_start__@plt>:
+   106f4:	e28fc600 	add	ip, pc, #0, 12
+   106f8:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   106fc:	e5bcffc4 	ldr	pc, [ip, #4036]!	; 0xfc4
+
+00010700 <memset@plt>:
+   10700:	e28fc600 	add	ip, pc, #0, 12
+   10704:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   10708:	e5bcffbc 	ldr	pc, [ip, #4028]!	; 0xfbc
+
+0001070c <perror@plt>:
+   1070c:	e28fc600 	add	ip, pc, #0, 12
+   10710:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   10714:	e5bcffb4 	ldr	pc, [ip, #4020]!	; 0xfb4
+
+00010718 <ioctl@plt>:
+   10718:	e28fc600 	add	ip, pc, #0, 12
+   1071c:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   10720:	e5bcffac 	ldr	pc, [ip, #4012]!	; 0xfac
+
+00010724 <__ubsan_handle_add_overflow@plt>:
+   10724:	e28fc600 	add	ip, pc, #0, 12
+   10728:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   1072c:	e5bcffa4 	ldr	pc, [ip, #4004]!	; 0xfa4
+
+00010730 <printf@plt>:
+   10730:	e28fc600 	add	ip, pc, #0, 12
+   10734:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   10738:	e5bcff9c 	ldr	pc, [ip, #3996]!	; 0xf9c
+
+0001073c <close@plt>:
+   1073c:	e28fc600 	add	ip, pc, #0, 12
+   10740:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   10744:	e5bcff94 	ldr	pc, [ip, #3988]!	; 0xf94
+
+00010748 <__ubsan_handle_type_mismatch@plt>:
+   10748:	e28fc600 	add	ip, pc, #0, 12
+   1074c:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   10750:	e5bcff8c 	ldr	pc, [ip, #3980]!	; 0xf8c
+
+00010754 <puts@plt>:
+   10754:	e28fc600 	add	ip, pc, #0, 12
+   10758:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   1075c:	e5bcff84 	ldr	pc, [ip, #3972]!	; 0xf84
+
+00010760 <exit@plt>:
+   10760:	e28fc600 	add	ip, pc, #0, 12
+   10764:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   10768:	e5bcff7c 	ldr	pc, [ip, #3964]!	; 0xf7c
+
+0001076c <__ubsan_handle_vla_bound_not_positive@plt>:
+   1076c:	e28fc600 	add	ip, pc, #0, 12
+   10770:	e28cca10 	add	ip, ip, #16, 20	; 0x10000
+   10774:	e5bcff74 	ldr	pc, [ip, #3956]!	; 0xf74
+
+Disassembly of section .text:
+
+00010778 <_start>:
+   10778:	f04f 0b00 	mov.w	fp, #0
+   1077c:	f04f 0e00 	mov.w	lr, #0
+   10780:	bc02      	pop	{r1}
+   10782:	466a      	mov	r2, sp
+   10784:	b404      	push	{r2}
+   10786:	b401      	push	{r0}
+   10788:	f8df c010 	ldr.w	ip, [pc, #16]	; 1079c <_start+0x24>
+   1078c:	f84d cd04 	str.w	ip, [sp, #-4]!
+   10790:	4803      	ldr	r0, [pc, #12]	; (107a0 <_start+0x28>)
+   10792:	4b04      	ldr	r3, [pc, #16]	; (107a4 <_start+0x2c>)
+   10794:	f7ff efa8 	blx	106e8 <__libc_start_main@plt>
+   10798:	f7ff efa0 	blx	106dc <abort@plt>
+   1079c:	000113ed 	.word	0x000113ed
+   107a0:	00011351 	.word	0x00011351
+   107a4:	000113ad 	.word	0x000113ad
+
+000107a8 <call_weak_fn>:
+   107a8:	e59f3014 	ldr	r3, [pc, #20]	; 107c4 <call_weak_fn+0x1c>
+   107ac:	e59f2014 	ldr	r2, [pc, #20]	; 107c8 <call_weak_fn+0x20>
+   107b0:	e08f3003 	add	r3, pc, r3
+   107b4:	e7932002 	ldr	r2, [r3, r2]
+   107b8:	e3520000 	cmp	r2, #0
+   107bc:	012fff1e 	bxeq	lr
+   107c0:	eaffffcb 	b	106f4 <__gmon_start__@plt>
+   107c4:	00010eec 	.word	0x00010eec
+   107c8:	00000048 	.word	0x00000048
+
+000107cc <deregister_tm_clones>:
+   107cc:	4b07      	ldr	r3, [pc, #28]	; (107ec <deregister_tm_clones+0x20>)
+   107ce:	f641 304c 	movw	r0, #6988	; 0x1b4c
+   107d2:	f2c0 0002 	movt	r0, #2
+   107d6:	1a1b      	subs	r3, r3, r0
+   107d8:	2b06      	cmp	r3, #6
+   107da:	d905      	bls.n	107e8 <deregister_tm_clones+0x1c>
+   107dc:	f240 0300 	movw	r3, #0
+   107e0:	f2c0 0300 	movt	r3, #0
+   107e4:	b103      	cbz	r3, 107e8 <deregister_tm_clones+0x1c>
+   107e6:	4718      	bx	r3
+   107e8:	4770      	bx	lr
+   107ea:	bf00      	nop
+   107ec:	00021b4f 	.word	0x00021b4f
+
+000107f0 <register_tm_clones>:
+   107f0:	f641 334c 	movw	r3, #6988	; 0x1b4c
+   107f4:	f641 304c 	movw	r0, #6988	; 0x1b4c
+   107f8:	f2c0 0302 	movt	r3, #2
+   107fc:	f2c0 0002 	movt	r0, #2
+   10800:	1a19      	subs	r1, r3, r0
+   10802:	1089      	asrs	r1, r1, #2
+   10804:	eb01 71d1 	add.w	r1, r1, r1, lsr #31
+   10808:	1049      	asrs	r1, r1, #1
+   1080a:	d005      	beq.n	10818 <register_tm_clones+0x28>
+   1080c:	f240 0300 	movw	r3, #0
+   10810:	f2c0 0300 	movt	r3, #0
+   10814:	b103      	cbz	r3, 10818 <register_tm_clones+0x28>
+   10816:	4718      	bx	r3
+   10818:	4770      	bx	lr
+   1081a:	bf00      	nop
+
+0001081c <__do_global_dtors_aux>:
+   1081c:	b510      	push	{r4, lr}
+   1081e:	f641 344c 	movw	r4, #6988	; 0x1b4c
+   10822:	f2c0 0402 	movt	r4, #2
+   10826:	7823      	ldrb	r3, [r4, #0]
+   10828:	b91b      	cbnz	r3, 10832 <__do_global_dtors_aux+0x16>
+   1082a:	f7ff ffcf 	bl	107cc <deregister_tm_clones>
+   1082e:	2301      	movs	r3, #1
+   10830:	7023      	strb	r3, [r4, #0]
+   10832:	bd10      	pop	{r4, pc}
+
+00010834 <frame_dummy>:
+   10834:	f241 5098 	movw	r0, #5528	; 0x1598
+   10838:	b508      	push	{r3, lr}
+   1083a:	f2c0 0002 	movt	r0, #2
+   1083e:	6803      	ldr	r3, [r0, #0]
+   10840:	b913      	cbnz	r3, 10848 <frame_dummy+0x14>
+   10842:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+   10846:	e7d3      	b.n	107f0 <register_tm_clones>
+   10848:	f240 0300 	movw	r3, #0
+   1084c:	f2c0 0300 	movt	r3, #0
+   10850:	2b00      	cmp	r3, #0
+   10852:	d0f6      	beq.n	10842 <frame_dummy+0xe>
+   10854:	4798      	blx	r3
+   10856:	e7f4      	b.n	10842 <frame_dummy+0xe>
+
+00010858 <setup_io>:
+void setup_io();
+ 
+ 
+ 
+void setup_io()
+{
+   10858:	b580      	push	{r7, lr}
+   1085a:	b082      	sub	sp, #8
+   1085c:	af02      	add	r7, sp, #8
+   /* open /dev/mem */
+   if ((mem_fd = open("/dev/mem", O_RDWR|O_SYNC) ) < 0) {
+   1085e:	f241 4050 	movw	r0, #5200	; 0x1450
+   10862:	f2c0 0001 	movt	r0, #1
+   10866:	f241 0102 	movw	r1, #4098	; 0x1002
+   1086a:	f2c0 0110 	movt	r1, #16
+   1086e:	f7ff ef2a 	blx	106c4 <open@plt>
+   10872:	4602      	mov	r2, r0
+   10874:	f641 3350 	movw	r3, #6992	; 0x1b50
+   10878:	f2c0 0302 	movt	r3, #2
+   1087c:	601a      	str	r2, [r3, #0]
+   1087e:	f641 3350 	movw	r3, #6992	; 0x1b50
+   10882:	f2c0 0302 	movt	r3, #2
+   10886:	681b      	ldr	r3, [r3, #0]
+   10888:	2b00      	cmp	r3, #0
+   1088a:	da09      	bge.n	108a0 <setup_io+0x48>
+      printf("can't open /dev/mem \n");
+   1088c:	f241 405c 	movw	r0, #5212	; 0x145c
+   10890:	f2c0 0001 	movt	r0, #1
+   10894:	f7ff ef5e 	blx	10754 <puts@plt>
+      exit(-1);
+   10898:	f04f 30ff 	mov.w	r0, #4294967295
+   1089c:	f7ff ef60 	blx	10760 <exit@plt>
+   }
+ 
+   /* mmap GPIO */
+   gpio_map = mmap(
+   108a0:	f641 3350 	movw	r3, #6992	; 0x1b50
+   108a4:	f2c0 0302 	movt	r3, #2
+   108a8:	681b      	ldr	r3, [r3, #0]
+   108aa:	9300      	str	r3, [sp, #0]
+   108ac:	2300      	movs	r3, #0
+   108ae:	f6c3 7320 	movt	r3, #16160	; 0x3f20
+   108b2:	9301      	str	r3, [sp, #4]
+   108b4:	2000      	movs	r0, #0
+   108b6:	f44f 5180 	mov.w	r1, #4096	; 0x1000
+   108ba:	2203      	movs	r2, #3
+   108bc:	2301      	movs	r3, #1
+   108be:	f7ff ef08 	blx	106d0 <mmap@plt>
+   108c2:	4602      	mov	r2, r0
+   108c4:	f641 3354 	movw	r3, #6996	; 0x1b54
+   108c8:	f2c0 0302 	movt	r3, #2
+   108cc:	601a      	str	r2, [r3, #0]
+      MAP_SHARED,       //Shared with other processes
+      mem_fd,           //File to map
+      GPIO_BASE         //Offset to GPIO peripheral
+   );
+ 
+   close(mem_fd); //No need to keep mem_fd open after mmap
+   108ce:	f641 3350 	movw	r3, #6992	; 0x1b50
+   108d2:	f2c0 0302 	movt	r3, #2
+   108d6:	681b      	ldr	r3, [r3, #0]
+   108d8:	4618      	mov	r0, r3
+   108da:	f7ff ef30 	blx	1073c <close@plt>
+ 
+   if (gpio_map == MAP_FAILED) {
+   108de:	f641 3354 	movw	r3, #6996	; 0x1b54
+   108e2:	f2c0 0302 	movt	r3, #2
+   108e6:	681b      	ldr	r3, [r3, #0]
+   108e8:	f1b3 3fff 	cmp.w	r3, #4294967295
+   108ec:	d10f      	bne.n	1090e <setup_io+0xb6>
+      printf("mmap error %d\n", (int)gpio_map);//errno also set!
+   108ee:	f641 3354 	movw	r3, #6996	; 0x1b54
+   108f2:	f2c0 0302 	movt	r3, #2
+   108f6:	681b      	ldr	r3, [r3, #0]
+   108f8:	f241 4074 	movw	r0, #5236	; 0x1474
+   108fc:	f2c0 0001 	movt	r0, #1
+   10900:	4619      	mov	r1, r3
+   10902:	f7ff ef16 	blx	10730 <printf@plt>
+      exit(-1);
+   10906:	f04f 30ff 	mov.w	r0, #4294967295
+   1090a:	f7ff ef2a 	blx	10760 <exit@plt>
+   }
+ 
+   // Always use volatile pointer!
+   gpio = (volatile unsigned *)gpio_map;
+   1090e:	f641 3354 	movw	r3, #6996	; 0x1b54
+   10912:	f2c0 0302 	movt	r3, #2
+   10916:	681a      	ldr	r2, [r3, #0]
+   10918:	f641 3358 	movw	r3, #7000	; 0x1b58
+   1091c:	f2c0 0302 	movt	r3, #2
+   10920:	601a      	str	r2, [r3, #0]
+ 
+ 
+} // setup_io
+   10922:	46bd      	mov	sp, r7
+   10924:	bd80      	pop	{r7, pc}
+   10926:	bf00      	nop
+
+00010928 <open_spi>:
+
+const char *spi_dev_name = SPI_DEVNAME;
+
+int open_spi(const char *devname)
+{
+   10928:	b580      	push	{r7, lr}
+   1092a:	b084      	sub	sp, #16
+   1092c:	af00      	add	r7, sp, #0
+   1092e:	6078      	str	r0, [r7, #4]
+    int fd = open(devname, O_RDWR);
+   10930:	6878      	ldr	r0, [r7, #4]
+   10932:	2102      	movs	r1, #2
+   10934:	f7ff eec6 	blx	106c4 <open@plt>
+   10938:	60f8      	str	r0, [r7, #12]
+    if (fd < 0)
+   1093a:	68fb      	ldr	r3, [r7, #12]
+   1093c:	2b00      	cmp	r3, #0
+   1093e:	da09      	bge.n	10954 <open_spi+0x2c>
+    {
+        perror("Open Failed\n");
+   10940:	f241 4094 	movw	r0, #5268	; 0x1494
+   10944:	f2c0 0001 	movt	r0, #1
+   10948:	f7ff eee0 	blx	1070c <perror@plt>
+        exit(-1);
+   1094c:	f04f 30ff 	mov.w	r0, #4294967295
+   10950:	f7ff ef06 	blx	10760 <exit@plt>
+    }
+    return fd;
+   10954:	68fb      	ldr	r3, [r7, #12]
+}
+   10956:	4618      	mov	r0, r3
+   10958:	3710      	adds	r7, #16
+   1095a:	46bd      	mov	sp, r7
+   1095c:	bd80      	pop	{r7, pc}
+   1095e:	bf00      	nop
+
+00010960 <close_spi>:
+
+int close_spi(int fd)
+{
+   10960:	b580      	push	{r7, lr}
+   10962:	b082      	sub	sp, #8
+   10964:	af00      	add	r7, sp, #0
+   10966:	6078      	str	r0, [r7, #4]
+    if (close(fd))
+   10968:	6878      	ldr	r0, [r7, #4]
+   1096a:	f7ff eee8 	blx	1073c <close@plt>
+   1096e:	4603      	mov	r3, r0
+   10970:	2b00      	cmp	r3, #0
+   10972:	d009      	beq.n	10988 <close_spi+0x28>
+    {
+        perror("Close Failed\n");
+   10974:	f241 40a4 	movw	r0, #5284	; 0x14a4
+   10978:	f2c0 0001 	movt	r0, #1
+   1097c:	f7ff eec6 	blx	1070c <perror@plt>
+        exit(-1);
+   10980:	f04f 30ff 	mov.w	r0, #4294967295
+   10984:	f7ff eeec 	blx	10760 <exit@plt>
+    }
+    return 0;
+   10988:	2300      	movs	r3, #0
+}
+   1098a:	4618      	mov	r0, r3
+   1098c:	3708      	adds	r7, #8
+   1098e:	46bd      	mov	sp, r7
+   10990:	bd80      	pop	{r7, pc}
+   10992:	bf00      	nop
+
+00010994 <default_spi_config>:
+
+int default_spi_config(int fd)
+{
+   10994:	b580      	push	{r7, lr}
+   10996:	b084      	sub	sp, #16
+   10998:	af00      	add	r7, sp, #0
+   1099a:	6078      	str	r0, [r7, #4]
+    int x; 
+    x = SPI_MODE_0;
+   1099c:	2300      	movs	r3, #0
+   1099e:	60fb      	str	r3, [r7, #12]
+    if(ioctl(fd, SPI_IOC_WR_MODE, &x))
+   109a0:	f107 030c 	add.w	r3, r7, #12
+   109a4:	6878      	ldr	r0, [r7, #4]
+   109a6:	f646 3101 	movw	r1, #27393	; 0x6b01
+   109aa:	f2c4 0101 	movt	r1, #16385	; 0x4001
+   109ae:	461a      	mov	r2, r3
+   109b0:	f7ff eeb2 	blx	10718 <ioctl@plt>
+   109b4:	4603      	mov	r3, r0
+   109b6:	2b00      	cmp	r3, #0
+   109b8:	d005      	beq.n	109c6 <default_spi_config+0x32>
+    {
+        perror("Failed to set mode to SPI_MODE_0");
+   109ba:	f241 40b4 	movw	r0, #5300	; 0x14b4
+   109be:	f2c0 0001 	movt	r0, #1
+   109c2:	f7ff eea4 	blx	1070c <perror@plt>
+    }
+    x = SPI_SPEED;
+   109c6:	f24a 1320 	movw	r3, #41248	; 0xa120
+   109ca:	f2c0 0307 	movt	r3, #7
+   109ce:	60fb      	str	r3, [r7, #12]
+    if(ioctl(fd, SPI_IOC_WR_MAX_SPEED_HZ, &x))
+   109d0:	f107 030c 	add.w	r3, r7, #12
+   109d4:	6878      	ldr	r0, [r7, #4]
+   109d6:	f646 3104 	movw	r1, #27396	; 0x6b04
+   109da:	f2c4 0104 	movt	r1, #16388	; 0x4004
+   109de:	461a      	mov	r2, r3
+   109e0:	f7ff ee9a 	blx	10718 <ioctl@plt>
+   109e4:	4603      	mov	r3, r0
+   109e6:	2b00      	cmp	r3, #0
+   109e8:	d005      	beq.n	109f6 <default_spi_config+0x62>
+    {
+        perror("Failed to set speed");
+   109ea:	f241 40d8 	movw	r0, #5336	; 0x14d8
+   109ee:	f2c0 0001 	movt	r0, #1
+   109f2:	f7ff ee8c 	blx	1070c <perror@plt>
+    }
+    x = 8;  
+   109f6:	2308      	movs	r3, #8
+   109f8:	60fb      	str	r3, [r7, #12]
+    if(ioctl(fd, SPI_IOC_WR_BITS_PER_WORD, &x))
+   109fa:	f107 030c 	add.w	r3, r7, #12
+   109fe:	6878      	ldr	r0, [r7, #4]
+   10a00:	f646 3103 	movw	r1, #27395	; 0x6b03
+   10a04:	f2c4 0101 	movt	r1, #16385	; 0x4001
+   10a08:	461a      	mov	r2, r3
+   10a0a:	f7ff ee86 	blx	10718 <ioctl@plt>
+   10a0e:	4603      	mov	r3, r0
+   10a10:	2b00      	cmp	r3, #0
+   10a12:	d006      	beq.n	10a22 <default_spi_config+0x8e>
+    {
+        perror("Failed to set bpw");
+   10a14:	f241 40ec 	movw	r0, #5356	; 0x14ec
+   10a18:	f2c0 0001 	movt	r0, #1
+   10a1c:	f7ff ee76 	blx	1070c <perror@plt>
+   10a20:	e01b      	b.n	10a5a <default_spi_config+0xc6>
+    }
+    else if(ioctl(fd, SPI_IOC_RD_BITS_PER_WORD, &x))
+   10a22:	f107 030c 	add.w	r3, r7, #12
+   10a26:	6878      	ldr	r0, [r7, #4]
+   10a28:	f646 3103 	movw	r1, #27395	; 0x6b03
+   10a2c:	f2c8 0101 	movt	r1, #32769	; 0x8001
+   10a30:	461a      	mov	r2, r3
+   10a32:	f7ff ee72 	blx	10718 <ioctl@plt>
+   10a36:	4603      	mov	r3, r0
+   10a38:	2b00      	cmp	r3, #0
+   10a3a:	d006      	beq.n	10a4a <default_spi_config+0xb6>
+    {
+        perror("Failed to get bwp");
+   10a3c:	f241 5000 	movw	r0, #5376	; 0x1500
+   10a40:	f2c0 0001 	movt	r0, #1
+   10a44:	f7ff ee62 	blx	1070c <perror@plt>
+   10a48:	e007      	b.n	10a5a <default_spi_config+0xc6>
+    }
+    else
+    {
+        printf("BPW: %d\n", x);
+   10a4a:	68fb      	ldr	r3, [r7, #12]
+   10a4c:	f241 5014 	movw	r0, #5396	; 0x1514
+   10a50:	f2c0 0001 	movt	r0, #1
+   10a54:	4619      	mov	r1, r3
+   10a56:	f7ff ee6c 	blx	10730 <printf@plt>
+    }
+    return 0;
+   10a5a:	2300      	movs	r3, #0
+}
+   10a5c:	4618      	mov	r0, r3
+   10a5e:	3710      	adds	r7, #16
+   10a60:	46bd      	mov	sp, r7
+   10a62:	bd80      	pop	{r7, pc}
+
+00010a64 <transfer>:
+
+static void transfer(int fd, char strobe)
+{
+   10a64:	b5b0      	push	{r4, r5, r7, lr}
+   10a66:	b08e      	sub	sp, #56	; 0x38
+   10a68:	af00      	add	r7, sp, #0
+   10a6a:	6078      	str	r0, [r7, #4]
+   10a6c:	460b      	mov	r3, r1
+   10a6e:	70fb      	strb	r3, [r7, #3]
+    int ret;
+    struct spi_ioc_transfer tr;
+    uint8_t tx[2] = {0,0};
+   10a70:	2300      	movs	r3, #0
+   10a72:	733b      	strb	r3, [r7, #12]
+   10a74:	2300      	movs	r3, #0
+   10a76:	737b      	strb	r3, [r7, #13]
+    uint8_t rx[2] = {0,0};
+   10a78:	2300      	movs	r3, #0
+   10a7a:	723b      	strb	r3, [r7, #8]
+   10a7c:	2300      	movs	r3, #0
+   10a7e:	727b      	strb	r3, [r7, #9]
+    tx[0] = strobe;
+   10a80:	78fb      	ldrb	r3, [r7, #3]
+   10a82:	733b      	strb	r3, [r7, #12]
+    memset(&tr, 0, sizeof(tr));
+   10a84:	f107 0310 	add.w	r3, r7, #16
+   10a88:	4618      	mov	r0, r3
+   10a8a:	2100      	movs	r1, #0
+   10a8c:	2220      	movs	r2, #32
+   10a8e:	f7ff ee38 	blx	10700 <memset@plt>
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+   10a92:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10a96:	f2c0 0302 	movt	r3, #2
+   10a9a:	681b      	ldr	r3, [r3, #0]
+   10a9c:	f103 0428 	add.w	r4, r3, #40	; 0x28
+   10aa0:	2c00      	cmp	r4, #0
+   10aa2:	d106      	bne.n	10ab2 <transfer+0x4e>
+   10aa4:	f241 7018 	movw	r0, #5912	; 0x1718
+   10aa8:	f2c0 0002 	movt	r0, #2
+   10aac:	2100      	movs	r1, #0
+   10aae:	f7ff ee4c 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10ab2:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
+   10ab6:	6023      	str	r3, [r4, #0]
+    while(GET_GPIO(GPIO_RDY))
+   10ab8:	e01b      	b.n	10af2 <transfer+0x8e>
+    {
+        int i = 0;
+   10aba:	2300      	movs	r3, #0
+   10abc:	633b      	str	r3, [r7, #48]	; 0x30
+        printf("Waiting for Chiprdy ....%d\n", i++);
+   10abe:	6b3c      	ldr	r4, [r7, #48]	; 0x30
+   10ac0:	1c65      	adds	r5, r4, #1
+   10ac2:	2301      	movs	r3, #1
+   10ac4:	2b00      	cmp	r3, #0
+   10ac6:	db02      	blt.n	10ace <transfer+0x6a>
+   10ac8:	42a5      	cmp	r5, r4
+   10aca:	da0a      	bge.n	10ae2 <transfer+0x7e>
+   10acc:	e001      	b.n	10ad2 <transfer+0x6e>
+   10ace:	42a5      	cmp	r5, r4
+   10ad0:	dd07      	ble.n	10ae2 <transfer+0x7e>
+   10ad2:	f241 7060 	movw	r0, #5984	; 0x1760
+   10ad6:	f2c0 0002 	movt	r0, #2
+   10ada:	4621      	mov	r1, r4
+   10adc:	2201      	movs	r2, #1
+   10ade:	f7ff ee22 	blx	10724 <__ubsan_handle_add_overflow@plt>
+   10ae2:	633d      	str	r5, [r7, #48]	; 0x30
+   10ae4:	f241 502c 	movw	r0, #5420	; 0x152c
+   10ae8:	f2c0 0001 	movt	r0, #1
+   10aec:	4621      	mov	r1, r4
+   10aee:	f7ff ee20 	blx	10730 <printf@plt>
+    uint8_t tx[2] = {0,0};
+    uint8_t rx[2] = {0,0};
+    tx[0] = strobe;
+    memset(&tr, 0, sizeof(tr));
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+    while(GET_GPIO(GPIO_RDY))
+   10af2:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10af6:	f2c0 0302 	movt	r3, #2
+   10afa:	681b      	ldr	r3, [r3, #0]
+   10afc:	f103 0434 	add.w	r4, r3, #52	; 0x34
+   10b00:	2c00      	cmp	r4, #0
+   10b02:	d106      	bne.n	10b12 <transfer+0xae>
+   10b04:	f241 7030 	movw	r0, #5936	; 0x1730
+   10b08:	f2c0 0002 	movt	r0, #2
+   10b0c:	2100      	movs	r1, #0
+   10b0e:	f7ff ee1c 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10b12:	6823      	ldr	r3, [r4, #0]
+   10b14:	f003 7300 	and.w	r3, r3, #33554432	; 0x2000000
+   10b18:	2b00      	cmp	r3, #0
+   10b1a:	d1ce      	bne.n	10aba <transfer+0x56>
+    {
+        int i = 0;
+        printf("Waiting for Chiprdy ....%d\n", i++);
+    }
+
+    tr.tx_buf = &tx;
+   10b1c:	f107 030c 	add.w	r3, r7, #12
+   10b20:	461a      	mov	r2, r3
+   10b22:	ea4f 73e2 	mov.w	r3, r2, asr #31
+   10b26:	e9c7 2304 	strd	r2, r3, [r7, #16]
+    tr.rx_buf = &rx;
+   10b2a:	f107 0308 	add.w	r3, r7, #8
+   10b2e:	461a      	mov	r2, r3
+   10b30:	ea4f 73e2 	mov.w	r3, r2, asr #31
+   10b34:	e9c7 2306 	strd	r2, r3, [r7, #24]
+    tr.len = sizeof(tx);
+   10b38:	2302      	movs	r3, #2
+   10b3a:	623b      	str	r3, [r7, #32]
+    tr.delay_usecs = 30;
+   10b3c:	231e      	movs	r3, #30
+   10b3e:	853b      	strh	r3, [r7, #40]	; 0x28
+    tr.speed_hz = SPI_SPEED;
+   10b40:	f24a 1320 	movw	r3, #41248	; 0xa120
+   10b44:	f2c0 0307 	movt	r3, #7
+   10b48:	627b      	str	r3, [r7, #36]	; 0x24
+    tr.bits_per_word = 8;
+   10b4a:	2308      	movs	r3, #8
+   10b4c:	f887 302a 	strb.w	r3, [r7, #42]	; 0x2a
+    tr.cs_change = 0;
+   10b50:	2300      	movs	r3, #0
+   10b52:	f887 302b 	strb.w	r3, [r7, #43]	; 0x2b
+
+    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+   10b56:	f107 0310 	add.w	r3, r7, #16
+   10b5a:	6878      	ldr	r0, [r7, #4]
+   10b5c:	f44f 41d6 	mov.w	r1, #27392	; 0x6b00
+   10b60:	f2c4 0120 	movt	r1, #16416	; 0x4020
+   10b64:	461a      	mov	r2, r3
+   10b66:	f7ff edd8 	blx	10718 <ioctl@plt>
+   10b6a:	6378      	str	r0, [r7, #52]	; 0x34
+    if (ret < 1)
+   10b6c:	6b7b      	ldr	r3, [r7, #52]	; 0x34
+   10b6e:	2b00      	cmp	r3, #0
+   10b70:	dc05      	bgt.n	10b7e <transfer+0x11a>
+        perror("can't send spi message");
+   10b72:	f241 5048 	movw	r0, #5448	; 0x1548
+   10b76:	f2c0 0001 	movt	r0, #1
+   10b7a:	f7ff edc8 	blx	1070c <perror@plt>
+
+    for (ret = 0; ret < tr.len; ret++) {
+   10b7e:	2300      	movs	r3, #0
+   10b80:	637b      	str	r3, [r7, #52]	; 0x34
+   10b82:	e020      	b.n	10bc6 <transfer+0x162>
+        printf("%02X ", rx[ret]);
+   10b84:	f107 0208 	add.w	r2, r7, #8
+   10b88:	6b7b      	ldr	r3, [r7, #52]	; 0x34
+   10b8a:	4413      	add	r3, r2
+   10b8c:	781b      	ldrb	r3, [r3, #0]
+   10b8e:	f241 5060 	movw	r0, #5472	; 0x1560
+   10b92:	f2c0 0001 	movt	r0, #1
+   10b96:	4619      	mov	r1, r3
+   10b98:	f7ff edca 	blx	10730 <printf@plt>
+
+    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+    if (ret < 1)
+        perror("can't send spi message");
+
+    for (ret = 0; ret < tr.len; ret++) {
+   10b9c:	6b7b      	ldr	r3, [r7, #52]	; 0x34
+   10b9e:	1c5c      	adds	r4, r3, #1
+   10ba0:	2301      	movs	r3, #1
+   10ba2:	2b00      	cmp	r3, #0
+   10ba4:	db03      	blt.n	10bae <transfer+0x14a>
+   10ba6:	6b7b      	ldr	r3, [r7, #52]	; 0x34
+   10ba8:	429c      	cmp	r4, r3
+   10baa:	da0b      	bge.n	10bc4 <transfer+0x160>
+   10bac:	e002      	b.n	10bb4 <transfer+0x150>
+   10bae:	6b7b      	ldr	r3, [r7, #52]	; 0x34
+   10bb0:	429c      	cmp	r4, r3
+   10bb2:	dd07      	ble.n	10bc4 <transfer+0x160>
+   10bb4:	f241 7070 	movw	r0, #6000	; 0x1770
+   10bb8:	f2c0 0002 	movt	r0, #2
+   10bbc:	6b79      	ldr	r1, [r7, #52]	; 0x34
+   10bbe:	2201      	movs	r2, #1
+   10bc0:	f7ff edb0 	blx	10724 <__ubsan_handle_add_overflow@plt>
+   10bc4:	637c      	str	r4, [r7, #52]	; 0x34
+   10bc6:	6b7a      	ldr	r2, [r7, #52]	; 0x34
+   10bc8:	6a3b      	ldr	r3, [r7, #32]
+   10bca:	429a      	cmp	r2, r3
+   10bcc:	d3da      	bcc.n	10b84 <transfer+0x120>
+        printf("%02X ", rx[ret]);
+    }
+    GPIO_SET = 1 << (GPIO_CHIP_SEL);
+   10bce:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10bd2:	f2c0 0302 	movt	r3, #2
+   10bd6:	681b      	ldr	r3, [r3, #0]
+   10bd8:	f103 041c 	add.w	r4, r3, #28
+   10bdc:	2c00      	cmp	r4, #0
+   10bde:	d106      	bne.n	10bee <transfer+0x18a>
+   10be0:	f241 7048 	movw	r0, #5960	; 0x1748
+   10be4:	f2c0 0002 	movt	r0, #2
+   10be8:	2100      	movs	r1, #0
+   10bea:	f7ff edae 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10bee:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
+   10bf2:	6023      	str	r3, [r4, #0]
+
+    puts("");
+   10bf4:	f241 5068 	movw	r0, #5480	; 0x1568
+   10bf8:	f2c0 0001 	movt	r0, #1
+   10bfc:	f7ff edaa 	blx	10754 <puts@plt>
+}
+   10c00:	3738      	adds	r7, #56	; 0x38
+   10c02:	46bd      	mov	sp, r7
+   10c04:	bdb0      	pop	{r4, r5, r7, pc}
+   10c06:	bf00      	nop
+
+00010c08 <transfer_burst_read_all>:
+
+#define READ_CMD_BIT (1<<7)
+#define BURST_CMD_BIT (1<<6)
+
+static void transfer_burst_read_all(int fd)
+{
+   10c08:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+   10c0c:	b097      	sub	sp, #92	; 0x5c
+   10c0e:	af00      	add	r7, sp, #0
+   10c10:	6178      	str	r0, [r7, #20]
+   10c12:	466b      	mov	r3, sp
+   10c14:	607b      	str	r3, [r7, #4]
+    int ret;
+    int count = 48;
+   10c16:	2330      	movs	r3, #48	; 0x30
+   10c18:	653b      	str	r3, [r7, #80]	; 0x50
+    struct spi_ioc_transfer tr;
+    uint8_t tx[count];
+   10c1a:	6d3e      	ldr	r6, [r7, #80]	; 0x50
+   10c1c:	2e00      	cmp	r6, #0
+   10c1e:	dc07      	bgt.n	10c30 <transfer_burst_read_all+0x28>
+   10c20:	4633      	mov	r3, r6
+   10c22:	f241 708c 	movw	r0, #6028	; 0x178c
+   10c26:	f2c0 0002 	movt	r0, #2
+   10c2a:	4619      	mov	r1, r3
+   10c2c:	f7ff ed9e 	blx	1076c <__ubsan_handle_vla_bound_not_positive@plt>
+   10c30:	1e73      	subs	r3, r6, #1
+   10c32:	613b      	str	r3, [r7, #16]
+   10c34:	f04f 33ff 	mov.w	r3, #4294967295
+   10c38:	2b00      	cmp	r3, #0
+   10c3a:	db03      	blt.n	10c44 <transfer_burst_read_all+0x3c>
+   10c3c:	693b      	ldr	r3, [r7, #16]
+   10c3e:	42b3      	cmp	r3, r6
+   10c40:	da0c      	bge.n	10c5c <transfer_burst_read_all+0x54>
+   10c42:	e002      	b.n	10c4a <transfer_burst_read_all+0x42>
+   10c44:	693b      	ldr	r3, [r7, #16]
+   10c46:	42b3      	cmp	r3, r6
+   10c48:	dd08      	ble.n	10c5c <transfer_burst_read_all+0x54>
+   10c4a:	f641 0044 	movw	r0, #6212	; 0x1844
+   10c4e:	f2c0 0002 	movt	r0, #2
+   10c52:	4631      	mov	r1, r6
+   10c54:	f04f 32ff 	mov.w	r2, #4294967295
+   10c58:	f7ff ed64 	blx	10724 <__ubsan_handle_add_overflow@plt>
+   10c5c:	693b      	ldr	r3, [r7, #16]
+   10c5e:	64fb      	str	r3, [r7, #76]	; 0x4c
+   10c60:	4633      	mov	r3, r6
+   10c62:	461a      	mov	r2, r3
+   10c64:	f04f 0300 	mov.w	r3, #0
+   10c68:	00d9      	lsls	r1, r3, #3
+   10c6a:	60f9      	str	r1, [r7, #12]
+   10c6c:	68f9      	ldr	r1, [r7, #12]
+   10c6e:	ea41 7152 	orr.w	r1, r1, r2, lsr #29
+   10c72:	60f9      	str	r1, [r7, #12]
+   10c74:	00d3      	lsls	r3, r2, #3
+   10c76:	60bb      	str	r3, [r7, #8]
+   10c78:	4633      	mov	r3, r6
+   10c7a:	461a      	mov	r2, r3
+   10c7c:	f04f 0300 	mov.w	r3, #0
+   10c80:	00dd      	lsls	r5, r3, #3
+   10c82:	ea45 7552 	orr.w	r5, r5, r2, lsr #29
+   10c86:	00d4      	lsls	r4, r2, #3
+   10c88:	4633      	mov	r3, r6
+   10c8a:	3307      	adds	r3, #7
+   10c8c:	08db      	lsrs	r3, r3, #3
+   10c8e:	00db      	lsls	r3, r3, #3
+   10c90:	ebad 0d03 	sub.w	sp, sp, r3
+   10c94:	466b      	mov	r3, sp
+   10c96:	3300      	adds	r3, #0
+   10c98:	64bb      	str	r3, [r7, #72]	; 0x48
+    uint8_t rx[count];
+   10c9a:	6d3c      	ldr	r4, [r7, #80]	; 0x50
+   10c9c:	2c00      	cmp	r4, #0
+   10c9e:	dc07      	bgt.n	10cb0 <transfer_burst_read_all+0xa8>
+   10ca0:	4623      	mov	r3, r4
+   10ca2:	f241 709c 	movw	r0, #6044	; 0x179c
+   10ca6:	f2c0 0002 	movt	r0, #2
+   10caa:	4619      	mov	r1, r3
+   10cac:	f7ff ed5e 	blx	1076c <__ubsan_handle_vla_bound_not_positive@plt>
+   10cb0:	1e65      	subs	r5, r4, #1
+   10cb2:	f04f 33ff 	mov.w	r3, #4294967295
+   10cb6:	2b00      	cmp	r3, #0
+   10cb8:	db02      	blt.n	10cc0 <transfer_burst_read_all+0xb8>
+   10cba:	42a5      	cmp	r5, r4
+   10cbc:	da0b      	bge.n	10cd6 <transfer_burst_read_all+0xce>
+   10cbe:	e001      	b.n	10cc4 <transfer_burst_read_all+0xbc>
+   10cc0:	42a5      	cmp	r5, r4
+   10cc2:	dd08      	ble.n	10cd6 <transfer_burst_read_all+0xce>
+   10cc4:	f641 0054 	movw	r0, #6228	; 0x1854
+   10cc8:	f2c0 0002 	movt	r0, #2
+   10ccc:	4621      	mov	r1, r4
+   10cce:	f04f 32ff 	mov.w	r2, #4294967295
+   10cd2:	f7ff ed28 	blx	10724 <__ubsan_handle_add_overflow@plt>
+   10cd6:	462b      	mov	r3, r5
+   10cd8:	647b      	str	r3, [r7, #68]	; 0x44
+   10cda:	4623      	mov	r3, r4
+   10cdc:	461a      	mov	r2, r3
+   10cde:	f04f 0300 	mov.w	r3, #0
+   10ce2:	ea4f 0bc3 	mov.w	fp, r3, lsl #3
+   10ce6:	ea4b 7b52 	orr.w	fp, fp, r2, lsr #29
+   10cea:	ea4f 0ac2 	mov.w	sl, r2, lsl #3
+   10cee:	4623      	mov	r3, r4
+   10cf0:	461a      	mov	r2, r3
+   10cf2:	f04f 0300 	mov.w	r3, #0
+   10cf6:	ea4f 09c3 	mov.w	r9, r3, lsl #3
+   10cfa:	ea49 7952 	orr.w	r9, r9, r2, lsr #29
+   10cfe:	ea4f 08c2 	mov.w	r8, r2, lsl #3
+   10d02:	4623      	mov	r3, r4
+   10d04:	3307      	adds	r3, #7
+   10d06:	08db      	lsrs	r3, r3, #3
+   10d08:	00db      	lsls	r3, r3, #3
+   10d0a:	ebad 0d03 	sub.w	sp, sp, r3
+   10d0e:	466b      	mov	r3, sp
+   10d10:	3300      	adds	r3, #0
+   10d12:	643b      	str	r3, [r7, #64]	; 0x40
+    memset(tx, 0, sizeof(tx));
+   10d14:	6cbb      	ldr	r3, [r7, #72]	; 0x48
+   10d16:	4632      	mov	r2, r6
+   10d18:	4618      	mov	r0, r3
+   10d1a:	2100      	movs	r1, #0
+   10d1c:	f7ff ecf0 	blx	10700 <memset@plt>
+    memset(rx, 0, sizeof(rx));
+   10d20:	6c3b      	ldr	r3, [r7, #64]	; 0x40
+   10d22:	4622      	mov	r2, r4
+   10d24:	4618      	mov	r0, r3
+   10d26:	2100      	movs	r1, #0
+   10d28:	f7ff ecea 	blx	10700 <memset@plt>
+    tx[0] = 0 | READ_CMD_BIT | BURST_CMD_BIT;
+   10d2c:	6cbb      	ldr	r3, [r7, #72]	; 0x48
+   10d2e:	2b00      	cmp	r3, #0
+   10d30:	d106      	bne.n	10d40 <transfer_burst_read_all+0x138>
+   10d32:	f241 70bc 	movw	r0, #6076	; 0x17bc
+   10d36:	f2c0 0002 	movt	r0, #2
+   10d3a:	2100      	movs	r1, #0
+   10d3c:	f7ff ed04 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10d40:	6cbb      	ldr	r3, [r7, #72]	; 0x48
+   10d42:	22c0      	movs	r2, #192	; 0xc0
+   10d44:	701a      	strb	r2, [r3, #0]
+    memset(&tr, 0, sizeof(tr));
+   10d46:	f107 0318 	add.w	r3, r7, #24
+   10d4a:	4618      	mov	r0, r3
+   10d4c:	2100      	movs	r1, #0
+   10d4e:	2220      	movs	r2, #32
+   10d50:	f7ff ecd6 	blx	10700 <memset@plt>
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+   10d54:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10d58:	f2c0 0302 	movt	r3, #2
+   10d5c:	681b      	ldr	r3, [r3, #0]
+   10d5e:	f103 0428 	add.w	r4, r3, #40	; 0x28
+   10d62:	2c00      	cmp	r4, #0
+   10d64:	d106      	bne.n	10d74 <transfer_burst_read_all+0x16c>
+   10d66:	f241 70d4 	movw	r0, #6100	; 0x17d4
+   10d6a:	f2c0 0002 	movt	r0, #2
+   10d6e:	2100      	movs	r1, #0
+   10d70:	f7ff ecea 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10d74:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
+   10d78:	6023      	str	r3, [r4, #0]
+    while(GET_GPIO(GPIO_RDY))
+   10d7a:	e01b      	b.n	10db4 <transfer_burst_read_all+0x1ac>
+    {
+        int i = 0;
+   10d7c:	2300      	movs	r3, #0
+   10d7e:	63fb      	str	r3, [r7, #60]	; 0x3c
+        printf("Waiting for Chiprdy ....%d\n", i++);
+   10d80:	6bfc      	ldr	r4, [r7, #60]	; 0x3c
+   10d82:	1c65      	adds	r5, r4, #1
+   10d84:	2301      	movs	r3, #1
+   10d86:	2b00      	cmp	r3, #0
+   10d88:	db02      	blt.n	10d90 <transfer_burst_read_all+0x188>
+   10d8a:	42a5      	cmp	r5, r4
+   10d8c:	da0a      	bge.n	10da4 <transfer_burst_read_all+0x19c>
+   10d8e:	e001      	b.n	10d94 <transfer_burst_read_all+0x18c>
+   10d90:	42a5      	cmp	r5, r4
+   10d92:	dd07      	ble.n	10da4 <transfer_burst_read_all+0x19c>
+   10d94:	f641 0064 	movw	r0, #6244	; 0x1864
+   10d98:	f2c0 0002 	movt	r0, #2
+   10d9c:	4621      	mov	r1, r4
+   10d9e:	2201      	movs	r2, #1
+   10da0:	f7ff ecc0 	blx	10724 <__ubsan_handle_add_overflow@plt>
+   10da4:	63fd      	str	r5, [r7, #60]	; 0x3c
+   10da6:	f241 502c 	movw	r0, #5420	; 0x152c
+   10daa:	f2c0 0001 	movt	r0, #1
+   10dae:	4621      	mov	r1, r4
+   10db0:	f7ff ecbe 	blx	10730 <printf@plt>
+    memset(tx, 0, sizeof(tx));
+    memset(rx, 0, sizeof(rx));
+    tx[0] = 0 | READ_CMD_BIT | BURST_CMD_BIT;
+    memset(&tr, 0, sizeof(tr));
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+    while(GET_GPIO(GPIO_RDY))
+   10db4:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10db8:	f2c0 0302 	movt	r3, #2
+   10dbc:	681b      	ldr	r3, [r3, #0]
+   10dbe:	f103 0434 	add.w	r4, r3, #52	; 0x34
+   10dc2:	2c00      	cmp	r4, #0
+   10dc4:	d106      	bne.n	10dd4 <transfer_burst_read_all+0x1cc>
+   10dc6:	f241 70ec 	movw	r0, #6124	; 0x17ec
+   10dca:	f2c0 0002 	movt	r0, #2
+   10dce:	2100      	movs	r1, #0
+   10dd0:	f7ff ecba 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10dd4:	6823      	ldr	r3, [r4, #0]
+   10dd6:	f003 7300 	and.w	r3, r3, #33554432	; 0x2000000
+   10dda:	2b00      	cmp	r3, #0
+   10ddc:	d1ce      	bne.n	10d7c <transfer_burst_read_all+0x174>
+    {
+        int i = 0;
+        printf("Waiting for Chiprdy ....%d\n", i++);
+    }
+
+    tr.tx_buf = &tx;
+   10dde:	6cbb      	ldr	r3, [r7, #72]	; 0x48
+   10de0:	461a      	mov	r2, r3
+   10de2:	ea4f 73e2 	mov.w	r3, r2, asr #31
+   10de6:	e9c7 2306 	strd	r2, r3, [r7, #24]
+    tr.rx_buf = &rx;
+   10dea:	6c3b      	ldr	r3, [r7, #64]	; 0x40
+   10dec:	461a      	mov	r2, r3
+   10dee:	ea4f 73e2 	mov.w	r3, r2, asr #31
+   10df2:	e9c7 2308 	strd	r2, r3, [r7, #32]
+    tr.len = sizeof(tx);
+   10df6:	4633      	mov	r3, r6
+   10df8:	62bb      	str	r3, [r7, #40]	; 0x28
+    tr.delay_usecs = 90;
+   10dfa:	235a      	movs	r3, #90	; 0x5a
+   10dfc:	863b      	strh	r3, [r7, #48]	; 0x30
+    tr.speed_hz = SPI_SPEED;
+   10dfe:	f24a 1320 	movw	r3, #41248	; 0xa120
+   10e02:	f2c0 0307 	movt	r3, #7
+   10e06:	62fb      	str	r3, [r7, #44]	; 0x2c
+    tr.bits_per_word = 8;
+   10e08:	2308      	movs	r3, #8
+   10e0a:	f887 3032 	strb.w	r3, [r7, #50]	; 0x32
+    tr.cs_change = 0;
+   10e0e:	2300      	movs	r3, #0
+   10e10:	f887 3033 	strb.w	r3, [r7, #51]	; 0x33
+
+    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+   10e14:	f107 0318 	add.w	r3, r7, #24
+   10e18:	6978      	ldr	r0, [r7, #20]
+   10e1a:	f44f 41d6 	mov.w	r1, #27392	; 0x6b00
+   10e1e:	f2c4 0120 	movt	r1, #16416	; 0x4020
+   10e22:	461a      	mov	r2, r3
+   10e24:	f7ff ec78 	blx	10718 <ioctl@plt>
+   10e28:	6578      	str	r0, [r7, #84]	; 0x54
+    if (ret < 1)
+   10e2a:	6d7b      	ldr	r3, [r7, #84]	; 0x54
+   10e2c:	2b00      	cmp	r3, #0
+   10e2e:	dc05      	bgt.n	10e3c <transfer_burst_read_all+0x234>
+        perror("can't send spi message");
+   10e30:	f241 5048 	movw	r0, #5448	; 0x1548
+   10e34:	f2c0 0001 	movt	r0, #1
+   10e38:	f7ff ec68 	blx	1070c <perror@plt>
+
+    for (ret = 0; ret < tr.len; ret++) {
+   10e3c:	2300      	movs	r3, #0
+   10e3e:	657b      	str	r3, [r7, #84]	; 0x54
+   10e40:	e029      	b.n	10e96 <transfer_burst_read_all+0x28e>
+        printf("%02X ", rx[ret]);
+   10e42:	6c3b      	ldr	r3, [r7, #64]	; 0x40
+   10e44:	2b00      	cmp	r3, #0
+   10e46:	d106      	bne.n	10e56 <transfer_burst_read_all+0x24e>
+   10e48:	f641 0014 	movw	r0, #6164	; 0x1814
+   10e4c:	f2c0 0002 	movt	r0, #2
+   10e50:	2100      	movs	r1, #0
+   10e52:	f7ff ec7a 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10e56:	6c3a      	ldr	r2, [r7, #64]	; 0x40
+   10e58:	6d7b      	ldr	r3, [r7, #84]	; 0x54
+   10e5a:	4413      	add	r3, r2
+   10e5c:	781b      	ldrb	r3, [r3, #0]
+   10e5e:	f241 5060 	movw	r0, #5472	; 0x1560
+   10e62:	f2c0 0001 	movt	r0, #1
+   10e66:	4619      	mov	r1, r3
+   10e68:	f7ff ec62 	blx	10730 <printf@plt>
+
+    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+    if (ret < 1)
+        perror("can't send spi message");
+
+    for (ret = 0; ret < tr.len; ret++) {
+   10e6c:	6d7b      	ldr	r3, [r7, #84]	; 0x54
+   10e6e:	1c5c      	adds	r4, r3, #1
+   10e70:	2301      	movs	r3, #1
+   10e72:	2b00      	cmp	r3, #0
+   10e74:	db03      	blt.n	10e7e <transfer_burst_read_all+0x276>
+   10e76:	6d7b      	ldr	r3, [r7, #84]	; 0x54
+   10e78:	429c      	cmp	r4, r3
+   10e7a:	da0b      	bge.n	10e94 <transfer_burst_read_all+0x28c>
+   10e7c:	e002      	b.n	10e84 <transfer_burst_read_all+0x27c>
+   10e7e:	6d7b      	ldr	r3, [r7, #84]	; 0x54
+   10e80:	429c      	cmp	r4, r3
+   10e82:	dd07      	ble.n	10e94 <transfer_burst_read_all+0x28c>
+   10e84:	f641 0074 	movw	r0, #6260	; 0x1874
+   10e88:	f2c0 0002 	movt	r0, #2
+   10e8c:	6d79      	ldr	r1, [r7, #84]	; 0x54
+   10e8e:	2201      	movs	r2, #1
+   10e90:	f7ff ec48 	blx	10724 <__ubsan_handle_add_overflow@plt>
+   10e94:	657c      	str	r4, [r7, #84]	; 0x54
+   10e96:	6d7a      	ldr	r2, [r7, #84]	; 0x54
+   10e98:	6abb      	ldr	r3, [r7, #40]	; 0x28
+   10e9a:	429a      	cmp	r2, r3
+   10e9c:	d3d1      	bcc.n	10e42 <transfer_burst_read_all+0x23a>
+        printf("%02X ", rx[ret]);
+    }
+    GPIO_SET = 1 << (GPIO_CHIP_SEL);
+   10e9e:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10ea2:	f2c0 0302 	movt	r3, #2
+   10ea6:	681b      	ldr	r3, [r3, #0]
+   10ea8:	f103 041c 	add.w	r4, r3, #28
+   10eac:	2c00      	cmp	r4, #0
+   10eae:	d106      	bne.n	10ebe <transfer_burst_read_all+0x2b6>
+   10eb0:	f641 002c 	movw	r0, #6188	; 0x182c
+   10eb4:	f2c0 0002 	movt	r0, #2
+   10eb8:	2100      	movs	r1, #0
+   10eba:	f7ff ec46 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10ebe:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
+   10ec2:	6023      	str	r3, [r4, #0]
+
+    puts("");
+   10ec4:	f241 5068 	movw	r0, #5480	; 0x1568
+   10ec8:	f2c0 0001 	movt	r0, #1
+   10ecc:	f7ff ec42 	blx	10754 <puts@plt>
+   10ed0:	f8d7 d004 	ldr.w	sp, [r7, #4]
+}
+   10ed4:	375c      	adds	r7, #92	; 0x5c
+   10ed6:	46bd      	mov	sp, r7
+   10ed8:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+
+00010edc <cfg_gpio>:
+
+
+
+void cfg_gpio()
+{
+   10edc:	b5b0      	push	{r4, r5, r7, lr}
+   10ede:	af00      	add	r7, sp, #0
+    INP_GPIO(GPIO_CHIP_SEL); // must use INP_GPIO before we can use OUT_GPIO
+   10ee0:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10ee4:	f2c0 0302 	movt	r3, #2
+   10ee8:	681b      	ldr	r3, [r3, #0]
+   10eea:	f103 0408 	add.w	r4, r3, #8
+   10eee:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10ef2:	f2c0 0302 	movt	r3, #2
+   10ef6:	681b      	ldr	r3, [r3, #0]
+   10ef8:	f103 0508 	add.w	r5, r3, #8
+   10efc:	2d00      	cmp	r5, #0
+   10efe:	d106      	bne.n	10f0e <cfg_gpio+0x32>
+   10f00:	f641 0084 	movw	r0, #6276	; 0x1884
+   10f04:	f2c0 0002 	movt	r0, #2
+   10f08:	2100      	movs	r1, #0
+   10f0a:	f7ff ec1e 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10f0e:	682b      	ldr	r3, [r5, #0]
+   10f10:	f423 75e0 	bic.w	r5, r3, #448	; 0x1c0
+   10f14:	2c00      	cmp	r4, #0
+   10f16:	d106      	bne.n	10f26 <cfg_gpio+0x4a>
+   10f18:	f641 009c 	movw	r0, #6300	; 0x189c
+   10f1c:	f2c0 0002 	movt	r0, #2
+   10f20:	2100      	movs	r1, #0
+   10f22:	f7ff ec12 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10f26:	6025      	str	r5, [r4, #0]
+    OUT_GPIO(GPIO_CHIP_SEL);
+   10f28:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10f2c:	f2c0 0302 	movt	r3, #2
+   10f30:	681b      	ldr	r3, [r3, #0]
+   10f32:	f103 0408 	add.w	r4, r3, #8
+   10f36:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10f3a:	f2c0 0302 	movt	r3, #2
+   10f3e:	681b      	ldr	r3, [r3, #0]
+   10f40:	f103 0508 	add.w	r5, r3, #8
+   10f44:	2d00      	cmp	r5, #0
+   10f46:	d106      	bne.n	10f56 <cfg_gpio+0x7a>
+   10f48:	f641 00b4 	movw	r0, #6324	; 0x18b4
+   10f4c:	f2c0 0002 	movt	r0, #2
+   10f50:	2100      	movs	r1, #0
+   10f52:	f7ff ebfa 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10f56:	682b      	ldr	r3, [r5, #0]
+   10f58:	f043 0540 	orr.w	r5, r3, #64	; 0x40
+   10f5c:	2c00      	cmp	r4, #0
+   10f5e:	d106      	bne.n	10f6e <cfg_gpio+0x92>
+   10f60:	f641 00cc 	movw	r0, #6348	; 0x18cc
+   10f64:	f2c0 0002 	movt	r0, #2
+   10f68:	2100      	movs	r1, #0
+   10f6a:	f7ff ebee 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10f6e:	6025      	str	r5, [r4, #0]
+    GPIO_SET = 1<<GPIO_CHIP_SEL;
+   10f70:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10f74:	f2c0 0302 	movt	r3, #2
+   10f78:	681b      	ldr	r3, [r3, #0]
+   10f7a:	f103 041c 	add.w	r4, r3, #28
+   10f7e:	2c00      	cmp	r4, #0
+   10f80:	d106      	bne.n	10f90 <cfg_gpio+0xb4>
+   10f82:	f641 00e4 	movw	r0, #6372	; 0x18e4
+   10f86:	f2c0 0002 	movt	r0, #2
+   10f8a:	2100      	movs	r1, #0
+   10f8c:	f7ff ebdc 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10f90:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
+   10f94:	6023      	str	r3, [r4, #0]
+
+    INP_GPIO(GPIO_RDY); // must use INP_GPIO before we can use OUT_GPIO
+   10f96:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10f9a:	f2c0 0302 	movt	r3, #2
+   10f9e:	681b      	ldr	r3, [r3, #0]
+   10fa0:	f103 0408 	add.w	r4, r3, #8
+   10fa4:	f641 3358 	movw	r3, #7000	; 0x1b58
+   10fa8:	f2c0 0302 	movt	r3, #2
+   10fac:	681b      	ldr	r3, [r3, #0]
+   10fae:	f103 0508 	add.w	r5, r3, #8
+   10fb2:	2d00      	cmp	r5, #0
+   10fb4:	d106      	bne.n	10fc4 <cfg_gpio+0xe8>
+   10fb6:	f641 00fc 	movw	r0, #6396	; 0x18fc
+   10fba:	f2c0 0002 	movt	r0, #2
+   10fbe:	2100      	movs	r1, #0
+   10fc0:	f7ff ebc2 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10fc4:	682b      	ldr	r3, [r5, #0]
+   10fc6:	f423 3560 	bic.w	r5, r3, #229376	; 0x38000
+   10fca:	2c00      	cmp	r4, #0
+   10fcc:	d106      	bne.n	10fdc <cfg_gpio+0x100>
+   10fce:	f641 1014 	movw	r0, #6420	; 0x1914
+   10fd2:	f2c0 0002 	movt	r0, #2
+   10fd6:	2100      	movs	r1, #0
+   10fd8:	f7ff ebb6 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   10fdc:	6025      	str	r5, [r4, #0]
+}
+   10fde:	bdb0      	pop	{r4, r5, r7, pc}
+
+00010fe0 <delay_loop>:
+
+void delay_loop(int count)
+{
+   10fe0:	b5b0      	push	{r4, r5, r7, lr}
+   10fe2:	b084      	sub	sp, #16
+   10fe4:	af00      	add	r7, sp, #0
+   10fe6:	6078      	str	r0, [r7, #4]
+    volatile int x = count;
+   10fe8:	687b      	ldr	r3, [r7, #4]
+   10fea:	60fb      	str	r3, [r7, #12]
+    while(x--)
+   10fec:	bf00      	nop
+   10fee:	68fc      	ldr	r4, [r7, #12]
+   10ff0:	1e65      	subs	r5, r4, #1
+   10ff2:	f04f 33ff 	mov.w	r3, #4294967295
+   10ff6:	2b00      	cmp	r3, #0
+   10ff8:	db02      	blt.n	11000 <delay_loop+0x20>
+   10ffa:	42a5      	cmp	r5, r4
+   10ffc:	da0b      	bge.n	11016 <delay_loop+0x36>
+   10ffe:	e001      	b.n	11004 <delay_loop+0x24>
+   11000:	42a5      	cmp	r5, r4
+   11002:	dd08      	ble.n	11016 <delay_loop+0x36>
+   11004:	f641 102c 	movw	r0, #6444	; 0x192c
+   11008:	f2c0 0002 	movt	r0, #2
+   1100c:	4621      	mov	r1, r4
+   1100e:	f04f 32ff 	mov.w	r2, #4294967295
+   11012:	f7ff eb88 	blx	10724 <__ubsan_handle_add_overflow@plt>
+   11016:	462b      	mov	r3, r5
+   11018:	60fb      	str	r3, [r7, #12]
+   1101a:	2c00      	cmp	r4, #0
+   1101c:	d1e7      	bne.n	10fee <delay_loop+0xe>
+    ;
+
+}
+   1101e:	3710      	adds	r7, #16
+   11020:	46bd      	mov	sp, r7
+   11022:	bdb0      	pop	{r4, r5, r7, pc}
+
+00011024 <cc1101_reset>:
+
+void cc1101_reset()
+{
+   11024:	b5b0      	push	{r4, r5, r7, lr}
+   11026:	af00      	add	r7, sp, #0
+    /*SCK HIGH*/
+    INP_GPIO(GPIO_SCK); // must use INP_GPIO before we can use OUT_GPIO
+   11028:	f641 3358 	movw	r3, #7000	; 0x1b58
+   1102c:	f2c0 0302 	movt	r3, #2
+   11030:	681b      	ldr	r3, [r3, #0]
+   11032:	1d1c      	adds	r4, r3, #4
+   11034:	f641 3358 	movw	r3, #7000	; 0x1b58
+   11038:	f2c0 0302 	movt	r3, #2
+   1103c:	681b      	ldr	r3, [r3, #0]
+   1103e:	1d1d      	adds	r5, r3, #4
+   11040:	2d00      	cmp	r5, #0
+   11042:	d106      	bne.n	11052 <cc1101_reset+0x2e>
+   11044:	f641 103c 	movw	r0, #6460	; 0x193c
+   11048:	f2c0 0002 	movt	r0, #2
+   1104c:	2100      	movs	r1, #0
+   1104e:	f7ff eb7c 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   11052:	682b      	ldr	r3, [r5, #0]
+   11054:	f023 0538 	bic.w	r5, r3, #56	; 0x38
+   11058:	2c00      	cmp	r4, #0
+   1105a:	d106      	bne.n	1106a <cc1101_reset+0x46>
+   1105c:	f641 1054 	movw	r0, #6484	; 0x1954
+   11060:	f2c0 0002 	movt	r0, #2
+   11064:	2100      	movs	r1, #0
+   11066:	f7ff eb70 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   1106a:	6025      	str	r5, [r4, #0]
+    OUT_GPIO(GPIO_SCK);
+   1106c:	f641 3358 	movw	r3, #7000	; 0x1b58
+   11070:	f2c0 0302 	movt	r3, #2
+   11074:	681b      	ldr	r3, [r3, #0]
+   11076:	1d1c      	adds	r4, r3, #4
+   11078:	f641 3358 	movw	r3, #7000	; 0x1b58
+   1107c:	f2c0 0302 	movt	r3, #2
+   11080:	681b      	ldr	r3, [r3, #0]
+   11082:	1d1d      	adds	r5, r3, #4
+   11084:	2d00      	cmp	r5, #0
+   11086:	d106      	bne.n	11096 <cc1101_reset+0x72>
+   11088:	f641 106c 	movw	r0, #6508	; 0x196c
+   1108c:	f2c0 0002 	movt	r0, #2
+   11090:	2100      	movs	r1, #0
+   11092:	f7ff eb5a 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   11096:	682b      	ldr	r3, [r5, #0]
+   11098:	f043 0508 	orr.w	r5, r3, #8
+   1109c:	2c00      	cmp	r4, #0
+   1109e:	d106      	bne.n	110ae <cc1101_reset+0x8a>
+   110a0:	f641 1084 	movw	r0, #6532	; 0x1984
+   110a4:	f2c0 0002 	movt	r0, #2
+   110a8:	2100      	movs	r1, #0
+   110aa:	f7ff eb4e 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   110ae:	6025      	str	r5, [r4, #0]
+    GPIO_SET = 1<<GPIO_SCK;
+   110b0:	f641 3358 	movw	r3, #7000	; 0x1b58
+   110b4:	f2c0 0302 	movt	r3, #2
+   110b8:	681b      	ldr	r3, [r3, #0]
+   110ba:	f103 041c 	add.w	r4, r3, #28
+   110be:	2c00      	cmp	r4, #0
+   110c0:	d106      	bne.n	110d0 <cc1101_reset+0xac>
+   110c2:	f641 109c 	movw	r0, #6556	; 0x199c
+   110c6:	f2c0 0002 	movt	r0, #2
+   110ca:	2100      	movs	r1, #0
+   110cc:	f7ff eb3c 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   110d0:	f44f 6300 	mov.w	r3, #2048	; 0x800
+   110d4:	6023      	str	r3, [r4, #0]
+
+    /*MOSI LOW */
+    INP_GPIO(GPIO_MOSI); // must use INP_GPIO before we can use OUT_GPIO
+   110d6:	f641 3358 	movw	r3, #7000	; 0x1b58
+   110da:	f2c0 0302 	movt	r3, #2
+   110de:	681b      	ldr	r3, [r3, #0]
+   110e0:	1d1c      	adds	r4, r3, #4
+   110e2:	f641 3358 	movw	r3, #7000	; 0x1b58
+   110e6:	f2c0 0302 	movt	r3, #2
+   110ea:	681b      	ldr	r3, [r3, #0]
+   110ec:	1d1d      	adds	r5, r3, #4
+   110ee:	2d00      	cmp	r5, #0
+   110f0:	d106      	bne.n	11100 <cc1101_reset+0xdc>
+   110f2:	f641 10b4 	movw	r0, #6580	; 0x19b4
+   110f6:	f2c0 0002 	movt	r0, #2
+   110fa:	2100      	movs	r1, #0
+   110fc:	f7ff eb24 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   11100:	682b      	ldr	r3, [r5, #0]
+   11102:	f023 0507 	bic.w	r5, r3, #7
+   11106:	2c00      	cmp	r4, #0
+   11108:	d106      	bne.n	11118 <cc1101_reset+0xf4>
+   1110a:	f641 10cc 	movw	r0, #6604	; 0x19cc
+   1110e:	f2c0 0002 	movt	r0, #2
+   11112:	2100      	movs	r1, #0
+   11114:	f7ff eb18 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   11118:	6025      	str	r5, [r4, #0]
+    OUT_GPIO(GPIO_MOSI);
+   1111a:	f641 3358 	movw	r3, #7000	; 0x1b58
+   1111e:	f2c0 0302 	movt	r3, #2
+   11122:	681b      	ldr	r3, [r3, #0]
+   11124:	1d1c      	adds	r4, r3, #4
+   11126:	f641 3358 	movw	r3, #7000	; 0x1b58
+   1112a:	f2c0 0302 	movt	r3, #2
+   1112e:	681b      	ldr	r3, [r3, #0]
+   11130:	1d1d      	adds	r5, r3, #4
+   11132:	2d00      	cmp	r5, #0
+   11134:	d106      	bne.n	11144 <cc1101_reset+0x120>
+   11136:	f641 10e4 	movw	r0, #6628	; 0x19e4
+   1113a:	f2c0 0002 	movt	r0, #2
+   1113e:	2100      	movs	r1, #0
+   11140:	f7ff eb02 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   11144:	682b      	ldr	r3, [r5, #0]
+   11146:	f043 0501 	orr.w	r5, r3, #1
+   1114a:	2c00      	cmp	r4, #0
+   1114c:	d106      	bne.n	1115c <cc1101_reset+0x138>
+   1114e:	f641 10fc 	movw	r0, #6652	; 0x19fc
+   11152:	f2c0 0002 	movt	r0, #2
+   11156:	2100      	movs	r1, #0
+   11158:	f7ff eaf6 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   1115c:	6025      	str	r5, [r4, #0]
+    GPIO_CLR = 1<<GPIO_MOSI;
+   1115e:	f641 3358 	movw	r3, #7000	; 0x1b58
+   11162:	f2c0 0302 	movt	r3, #2
+   11166:	681b      	ldr	r3, [r3, #0]
+   11168:	f103 0428 	add.w	r4, r3, #40	; 0x28
+   1116c:	2c00      	cmp	r4, #0
+   1116e:	d106      	bne.n	1117e <cc1101_reset+0x15a>
+   11170:	f641 2014 	movw	r0, #6676	; 0x1a14
+   11174:	f2c0 0002 	movt	r0, #2
+   11178:	2100      	movs	r1, #0
+   1117a:	f7ff eae6 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   1117e:	f44f 6380 	mov.w	r3, #1024	; 0x400
+   11182:	6023      	str	r3, [r4, #0]
+
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+   11184:	f641 3358 	movw	r3, #7000	; 0x1b58
+   11188:	f2c0 0302 	movt	r3, #2
+   1118c:	681b      	ldr	r3, [r3, #0]
+   1118e:	f103 0428 	add.w	r4, r3, #40	; 0x28
+   11192:	2c00      	cmp	r4, #0
+   11194:	d106      	bne.n	111a4 <cc1101_reset+0x180>
+   11196:	f641 202c 	movw	r0, #6700	; 0x1a2c
+   1119a:	f2c0 0002 	movt	r0, #2
+   1119e:	2100      	movs	r1, #0
+   111a0:	f7ff ead2 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   111a4:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
+   111a8:	6023      	str	r3, [r4, #0]
+    delay_loop(100);
+   111aa:	2064      	movs	r0, #100	; 0x64
+   111ac:	f7ff ff18 	bl	10fe0 <delay_loop>
+    GPIO_SET = 1<<(GPIO_CHIP_SEL);
+   111b0:	f641 3358 	movw	r3, #7000	; 0x1b58
+   111b4:	f2c0 0302 	movt	r3, #2
+   111b8:	681b      	ldr	r3, [r3, #0]
+   111ba:	f103 041c 	add.w	r4, r3, #28
+   111be:	2c00      	cmp	r4, #0
+   111c0:	d106      	bne.n	111d0 <cc1101_reset+0x1ac>
+   111c2:	f641 2044 	movw	r0, #6724	; 0x1a44
+   111c6:	f2c0 0002 	movt	r0, #2
+   111ca:	2100      	movs	r1, #0
+   111cc:	f7ff eabc 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   111d0:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
+   111d4:	6023      	str	r3, [r4, #0]
+    delay_loop(8000);
+   111d6:	f44f 50fa 	mov.w	r0, #8000	; 0x1f40
+   111da:	f7ff ff01 	bl	10fe0 <delay_loop>
+
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+   111de:	f641 3358 	movw	r3, #7000	; 0x1b58
+   111e2:	f2c0 0302 	movt	r3, #2
+   111e6:	681b      	ldr	r3, [r3, #0]
+   111e8:	f103 0428 	add.w	r4, r3, #40	; 0x28
+   111ec:	2c00      	cmp	r4, #0
+   111ee:	d106      	bne.n	111fe <cc1101_reset+0x1da>
+   111f0:	f641 205c 	movw	r0, #6748	; 0x1a5c
+   111f4:	f2c0 0002 	movt	r0, #2
+   111f8:	2100      	movs	r1, #0
+   111fa:	f7ff eaa6 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   111fe:	f44f 0380 	mov.w	r3, #4194304	; 0x400000
+   11202:	6023      	str	r3, [r4, #0]
+
+    while(GET_GPIO(GPIO_RDY))
+   11204:	e005      	b.n	11212 <cc1101_reset+0x1ee>
+        printf("Waiting for GPIO_RDY");
+   11206:	f241 506c 	movw	r0, #5484	; 0x156c
+   1120a:	f2c0 0001 	movt	r0, #1
+   1120e:	f7ff ea90 	blx	10730 <printf@plt>
+    GPIO_SET = 1<<(GPIO_CHIP_SEL);
+    delay_loop(8000);
+
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+
+    while(GET_GPIO(GPIO_RDY))
+   11212:	f641 3358 	movw	r3, #7000	; 0x1b58
+   11216:	f2c0 0302 	movt	r3, #2
+   1121a:	681b      	ldr	r3, [r3, #0]
+   1121c:	f103 0434 	add.w	r4, r3, #52	; 0x34
+   11220:	2c00      	cmp	r4, #0
+   11222:	d106      	bne.n	11232 <cc1101_reset+0x20e>
+   11224:	f641 2074 	movw	r0, #6772	; 0x1a74
+   11228:	f2c0 0002 	movt	r0, #2
+   1122c:	2100      	movs	r1, #0
+   1122e:	f7ff ea8c 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   11232:	6823      	ldr	r3, [r4, #0]
+   11234:	f003 7300 	and.w	r3, r3, #33554432	; 0x2000000
+   11238:	2b00      	cmp	r3, #0
+   1123a:	d1e4      	bne.n	11206 <cc1101_reset+0x1e2>
+        printf("Waiting for GPIO_RDY");
+
+    INP_GPIO(GPIO_SCK); // must use INP_GPIO before we can use OUT_GPIO
+   1123c:	f641 3358 	movw	r3, #7000	; 0x1b58
+   11240:	f2c0 0302 	movt	r3, #2
+   11244:	681b      	ldr	r3, [r3, #0]
+   11246:	1d1c      	adds	r4, r3, #4
+   11248:	f641 3358 	movw	r3, #7000	; 0x1b58
+   1124c:	f2c0 0302 	movt	r3, #2
+   11250:	681b      	ldr	r3, [r3, #0]
+   11252:	1d1d      	adds	r5, r3, #4
+   11254:	2d00      	cmp	r5, #0
+   11256:	d106      	bne.n	11266 <cc1101_reset+0x242>
+   11258:	f641 208c 	movw	r0, #6796	; 0x1a8c
+   1125c:	f2c0 0002 	movt	r0, #2
+   11260:	2100      	movs	r1, #0
+   11262:	f7ff ea72 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   11266:	682b      	ldr	r3, [r5, #0]
+   11268:	f023 0538 	bic.w	r5, r3, #56	; 0x38
+   1126c:	2c00      	cmp	r4, #0
+   1126e:	d106      	bne.n	1127e <cc1101_reset+0x25a>
+   11270:	f641 20a4 	movw	r0, #6820	; 0x1aa4
+   11274:	f2c0 0002 	movt	r0, #2
+   11278:	2100      	movs	r1, #0
+   1127a:	f7ff ea66 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   1127e:	6025      	str	r5, [r4, #0]
+    SET_GPIO_ALT(GPIO_SCK,0);
+   11280:	f641 3358 	movw	r3, #7000	; 0x1b58
+   11284:	f2c0 0302 	movt	r3, #2
+   11288:	681b      	ldr	r3, [r3, #0]
+   1128a:	1d1c      	adds	r4, r3, #4
+   1128c:	f641 3358 	movw	r3, #7000	; 0x1b58
+   11290:	f2c0 0302 	movt	r3, #2
+   11294:	681b      	ldr	r3, [r3, #0]
+   11296:	1d1d      	adds	r5, r3, #4
+   11298:	2d00      	cmp	r5, #0
+   1129a:	d106      	bne.n	112aa <cc1101_reset+0x286>
+   1129c:	f641 20bc 	movw	r0, #6844	; 0x1abc
+   112a0:	f2c0 0002 	movt	r0, #2
+   112a4:	2100      	movs	r1, #0
+   112a6:	f7ff ea50 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   112aa:	682b      	ldr	r3, [r5, #0]
+   112ac:	f043 0520 	orr.w	r5, r3, #32
+   112b0:	2c00      	cmp	r4, #0
+   112b2:	d106      	bne.n	112c2 <cc1101_reset+0x29e>
+   112b4:	f641 20d4 	movw	r0, #6868	; 0x1ad4
+   112b8:	f2c0 0002 	movt	r0, #2
+   112bc:	2100      	movs	r1, #0
+   112be:	f7ff ea44 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   112c2:	6025      	str	r5, [r4, #0]
+
+    INP_GPIO(GPIO_MOSI); // must use INP_GPIO before we can use OUT_GPIO
+   112c4:	f641 3358 	movw	r3, #7000	; 0x1b58
+   112c8:	f2c0 0302 	movt	r3, #2
+   112cc:	681b      	ldr	r3, [r3, #0]
+   112ce:	1d1c      	adds	r4, r3, #4
+   112d0:	f641 3358 	movw	r3, #7000	; 0x1b58
+   112d4:	f2c0 0302 	movt	r3, #2
+   112d8:	681b      	ldr	r3, [r3, #0]
+   112da:	1d1d      	adds	r5, r3, #4
+   112dc:	2d00      	cmp	r5, #0
+   112de:	d106      	bne.n	112ee <cc1101_reset+0x2ca>
+   112e0:	f641 20ec 	movw	r0, #6892	; 0x1aec
+   112e4:	f2c0 0002 	movt	r0, #2
+   112e8:	2100      	movs	r1, #0
+   112ea:	f7ff ea2e 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   112ee:	682b      	ldr	r3, [r5, #0]
+   112f0:	f023 0507 	bic.w	r5, r3, #7
+   112f4:	2c00      	cmp	r4, #0
+   112f6:	d106      	bne.n	11306 <cc1101_reset+0x2e2>
+   112f8:	f641 3004 	movw	r0, #6916	; 0x1b04
+   112fc:	f2c0 0002 	movt	r0, #2
+   11300:	2100      	movs	r1, #0
+   11302:	f7ff ea22 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   11306:	6025      	str	r5, [r4, #0]
+    SET_GPIO_ALT(GPIO_MOSI, 0);
+   11308:	f641 3358 	movw	r3, #7000	; 0x1b58
+   1130c:	f2c0 0302 	movt	r3, #2
+   11310:	681b      	ldr	r3, [r3, #0]
+   11312:	1d1c      	adds	r4, r3, #4
+   11314:	f641 3358 	movw	r3, #7000	; 0x1b58
+   11318:	f2c0 0302 	movt	r3, #2
+   1131c:	681b      	ldr	r3, [r3, #0]
+   1131e:	1d1d      	adds	r5, r3, #4
+   11320:	2d00      	cmp	r5, #0
+   11322:	d106      	bne.n	11332 <cc1101_reset+0x30e>
+   11324:	f641 301c 	movw	r0, #6940	; 0x1b1c
+   11328:	f2c0 0002 	movt	r0, #2
+   1132c:	2100      	movs	r1, #0
+   1132e:	f7ff ea0c 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   11332:	682b      	ldr	r3, [r5, #0]
+   11334:	f043 0504 	orr.w	r5, r3, #4
+   11338:	2c00      	cmp	r4, #0
+   1133a:	d106      	bne.n	1134a <cc1101_reset+0x326>
+   1133c:	f641 3034 	movw	r0, #6964	; 0x1b34
+   11340:	f2c0 0002 	movt	r0, #2
+   11344:	2100      	movs	r1, #0
+   11346:	f7ff ea00 	blx	10748 <__ubsan_handle_type_mismatch@plt>
+   1134a:	6025      	str	r5, [r4, #0]
+}
+   1134c:	bdb0      	pop	{r4, r5, r7, pc}
+   1134e:	bf00      	nop
+
+00011350 <main>:
+
+int main()
+{
+   11350:	b580      	push	{r7, lr}
+   11352:	b082      	sub	sp, #8
+   11354:	af00      	add	r7, sp, #0
+    int fd;
+    char x;
+    setup_io();
+   11356:	f7ff fa7f 	bl	10858 <setup_io>
+    cfg_gpio();
+   1135a:	f7ff fdbf 	bl	10edc <cfg_gpio>
+    fd = open_spi(SPI_DEVNAME);
+   1135e:	f241 4084 	movw	r0, #5252	; 0x1484
+   11362:	f2c0 0001 	movt	r0, #1
+   11366:	f7ff fadf 	bl	10928 <open_spi>
+   1136a:	6078      	str	r0, [r7, #4]
+    cc1101_reset();
+   1136c:	f7ff fe5a 	bl	11024 <cc1101_reset>
+    default_spi_config(fd);
+   11370:	6878      	ldr	r0, [r7, #4]
+   11372:	f7ff fb0f 	bl	10994 <default_spi_config>
+    transfer(fd,0x30);
+   11376:	6878      	ldr	r0, [r7, #4]
+   11378:	2130      	movs	r1, #48	; 0x30
+   1137a:	f7ff fb73 	bl	10a64 <transfer>
+    transfer_burst_read_all(fd);
+   1137e:	6878      	ldr	r0, [r7, #4]
+   11380:	f7ff fc42 	bl	10c08 <transfer_burst_read_all>
+
+    transfer(fd,0x70);
+   11384:	6878      	ldr	r0, [r7, #4]
+   11386:	2170      	movs	r1, #112	; 0x70
+   11388:	f7ff fb6c 	bl	10a64 <transfer>
+    transfer(fd,0xf0);
+   1138c:	6878      	ldr	r0, [r7, #4]
+   1138e:	21f0      	movs	r1, #240	; 0xf0
+   11390:	f7ff fb68 	bl	10a64 <transfer>
+    transfer(fd,0xf1);
+   11394:	6878      	ldr	r0, [r7, #4]
+   11396:	21f1      	movs	r1, #241	; 0xf1
+   11398:	f7ff fb64 	bl	10a64 <transfer>
+    close_spi(fd);
+   1139c:	6878      	ldr	r0, [r7, #4]
+   1139e:	f7ff fadf 	bl	10960 <close_spi>
+
+    return 0;
+   113a2:	2300      	movs	r3, #0
+}
+   113a4:	4618      	mov	r0, r3
+   113a6:	3708      	adds	r7, #8
+   113a8:	46bd      	mov	sp, r7
+   113aa:	bd80      	pop	{r7, pc}
+
+000113ac <__libc_csu_init>:
+   113ac:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   113b0:	4607      	mov	r7, r0
+   113b2:	4e0c      	ldr	r6, [pc, #48]	; (113e4 <__libc_csu_init+0x38>)
+   113b4:	4688      	mov	r8, r1
+   113b6:	4d0c      	ldr	r5, [pc, #48]	; (113e8 <__libc_csu_init+0x3c>)
+   113b8:	4691      	mov	r9, r2
+   113ba:	447e      	add	r6, pc
+   113bc:	f7ff e972 	blx	106a4 <_init>
+   113c0:	447d      	add	r5, pc
+   113c2:	1b76      	subs	r6, r6, r5
+   113c4:	10b6      	asrs	r6, r6, #2
+   113c6:	d00a      	beq.n	113de <__libc_csu_init+0x32>
+   113c8:	3d04      	subs	r5, #4
+   113ca:	2400      	movs	r4, #0
+   113cc:	3401      	adds	r4, #1
+   113ce:	f855 3f04 	ldr.w	r3, [r5, #4]!
+   113d2:	4638      	mov	r0, r7
+   113d4:	4641      	mov	r1, r8
+   113d6:	464a      	mov	r2, r9
+   113d8:	4798      	blx	r3
+   113da:	42b4      	cmp	r4, r6
+   113dc:	d1f6      	bne.n	113cc <__libc_csu_init+0x20>
+   113de:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   113e2:	bf00      	nop
+   113e4:	000101d6 	.word	0x000101d6
+   113e8:	000101cc 	.word	0x000101cc
+
+000113ec <__libc_csu_fini>:
+   113ec:	4770      	bx	lr
+   113ee:	bf00      	nop
+
+Disassembly of section .fini:
+
+000113f0 <_fini>:
+   113f0:	e92d4008 	push	{r3, lr}
+   113f4:	e8bd8008 	pop	{r3, pc}
