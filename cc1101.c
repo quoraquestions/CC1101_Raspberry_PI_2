@@ -9,6 +9,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 
 #define SPI_DEVNAME "/dev/spidev0.0"
 #define SPI_SPEED (500000) /*500Kbit*/
@@ -29,6 +30,9 @@
 #define GPIO_RDY (25)
 #define GPIO_SCK (11)
 #define GPIO_MOSI (10)
+#define GPIO_GD0 (24)
+#define GPIO_GD2 (23)
+
 
 
 //{
@@ -245,6 +249,8 @@
 //}
 /************************END Radio Register addresses ******************/
 
+#define WBSL_GDO_SYNC     6
+#define WBSL_GDO_PA_PD    27  /* low when transmit is active, low during sleep */
 
 /***************************Wbsl radio config**************************/
 static const uint8_t wbslRadioCfg[][2] =
@@ -375,7 +381,7 @@ int close_spi(int fd)
     return 0;
 }
 
-int default_spi_config(int fd)
+void default_spi_config(int fd)
 {
     int x; 
     x = SPI_MODE_0;
@@ -401,9 +407,9 @@ int default_spi_config(int fd)
     {
         printf("BPW: %d\n", x);
     }
-    return 0;
 }
 
+#if 0
 static void transfer(int fd, char strobe)
 {
     int ret;
@@ -438,9 +444,6 @@ static void transfer(int fd, char strobe)
 
     puts("");
 }
-
-#define READ_CMD_BIT (1<<7)
-#define BURST_CMD_BIT (1<<6)
 
 static void transfer_burst_read_all(int fd)
 {
@@ -479,7 +482,109 @@ static void transfer_burst_read_all(int fd)
 
     puts("");
 }
+#endif
+#define READ_CMD_BIT (1<<7)
+#define BURST_CMD_BIT (1<<6)
 
+
+void strobe_cmd(int fd, uint8_t cmd, uint8_t *response)
+{
+    assert(cmd <= 0x3d && cmd >= 0x30);        
+    write_reg(fd, cmd, 0, response); 
+     
+}
+
+void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
+{
+    int ret;
+    struct spi_ioc_transfer tr;
+    #define N_RESP_BYTES (2) 
+    uint8_t *wr, *rd;
+    wr = malloc(N_RESP_BYTES);
+    rd = malloc(N_RESP_BYTES);
+    memset(&tr, 0, sizeof(tr));
+    memset(wr, 0, 10);
+    memset(rd, 0, 10);
+
+    wr[0] = (addr);
+    wr[1] = value;
+
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+    while(GET_GPIO(GPIO_RDY))
+    {
+        int i = 0;
+        printf("Waiting for Chiprdy ....%d\n", i++);
+    }
+    printf("Writing %02x val %02x\n", addr, value);
+    tr.tx_buf = wr;
+    tr.rx_buf = rd;
+    tr.len = N_RESP_BYTES;
+    tr.delay_usecs = 90;
+    tr.speed_hz = SPI_SPEED;
+    tr.bits_per_word = 8;
+    tr.cs_change = 0;
+
+    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+    if (ret < 1)
+        perror("can't send spi message");
+
+#if 0
+    for (ret = 0; ret < tr.len; ret++) {
+        printf("..%02X.. ", rd[ret]);
+    }
+#endif
+    if (response)
+        response[0] = rd[1];
+    GPIO_SET = 1 << (GPIO_CHIP_SEL);
+    free(wr);
+    free(rd);
+}
+
+uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
+{
+    int ret;
+    struct spi_ioc_transfer tr;
+    #define N_RESP_BYTES (2) 
+    uint8_t *wr, *rd;
+    wr = calloc(N_RESP_BYTES , sizeof(uint8_t));
+    rd = calloc(N_RESP_BYTES , sizeof(uint8_t));
+    memset(&tr, 0, sizeof(tr));
+
+    wr[0] = (addr & 0x3f) | READ_CMD_BIT;
+    wr[1] = 0x3e;
+    if (addr >= 0x30)
+    {
+        wr[0] |= BURST_CMD_BIT;
+    }
+
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+    while(GET_GPIO(GPIO_RDY))
+    {
+        int i = 0;
+        printf("Waiting for Chiprdy ....%d\n", i++);
+    }
+
+    tr.tx_buf = wr;
+    tr.rx_buf = rd;
+    tr.len = N_RESP_BYTES;
+    tr.delay_usecs = 90;
+    tr.speed_hz = SPI_SPEED;
+    tr.bits_per_word = 8;
+    tr.cs_change = 0;
+
+    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+    if (ret < 1)
+        perror("can't send spi message");
+#if 0
+    for (ret = 0; ret < tr.len; ret++) {
+        printf("%02X ", rd[ret]);
+    }
+#endif
+    GPIO_SET = 1 << (GPIO_CHIP_SEL);
+    if (status)
+        status[0] = rd[0];
+    return rd[1];
+}
 
 
 void cfg_gpio()
@@ -489,6 +594,9 @@ void cfg_gpio()
     GPIO_SET = 1<<GPIO_CHIP_SEL;
 
     INP_GPIO(GPIO_RDY); // must use INP_GPIO before we can use OUT_GPIO
+
+    INP_GPIO(GPIO_GD0);
+    INP_GPIO(GPIO_GD2);
 }
 
 void delay_loop(int count)
@@ -528,23 +636,60 @@ void cc1101_reset()
     SET_GPIO_ALT(GPIO_MOSI, 0);
 }
 
+void cc1101_cfg_regs(int fd)
+{
+    int i;
+    for (i = 0; i < sizeof(wbslRadioCfg)/sizeof(wbslRadioCfg[0]); i++)
+    {
+        uint8_t reg = wbslRadioCfg[i][0];
+        uint8_t val = wbslRadioCfg[i][1];
+        write_reg(fd, reg, val, NULL); 
+    }
+    write_reg(fd, IOCFG0, WBSL_GDO_SYNC, NULL);
+    write_reg(fd, IOCFG2, 7, NULL);
+    write_reg(fd, PA_TABLE0, WBSL_SETTING_PA_TABLE0, NULL);
+}
+
+
+void cc1101_initialize(int fd)
+{
+
+    cc1101_reset();
+    uint8_t response;
+    strobe_cmd(fd, 0x30, &response);
+    while (response & 0x70)
+    {
+        printf("Waiting for Radio to idle....%02X\n", response);
+        strobe_cmd(fd, 0x36, &response);
+    }
+
+    cc1101_cfg_regs(fd);
+}
+
 int main()
 {
     int fd;
-    char x;
+    uint8_t status;
     setup_io();
     cfg_gpio();
     fd = open_spi(SPI_DEVNAME);
-    cc1101_reset();
     default_spi_config(fd);
+    cc1101_initialize(fd);
+    for( int i = 0; i < 0x3e; i++)
+    printf("Reg %02x, Val %02x\n", i, read_reg(fd, i, NULL));
+    strobe_cmd(fd, 0x34, NULL); 
+    while(1)
+    sleep(200);
+    close_spi(fd);
+
+    return 0;
+}
+
+#if 0
     transfer(fd,0x30);
     transfer_burst_read_all(fd);
 
     transfer(fd,0x70);
     transfer(fd,0xf0);
     transfer(fd,0xf1);
-    close_spi(fd);
-
-    return 0;
-}
-
+#endif
