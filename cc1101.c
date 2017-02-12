@@ -123,36 +123,6 @@
 #define WBSL_SETTING_TEST1       0x31   /* Various test settings. */
 #define WBSL_SETTING_TEST0       0x09   /* Various test settings. */
 
-/* To leave the CC1101 in a workable state after the Wireless Update has completed,
- * Some RF registers configured for WBSL need to be reset to their default values.
- */
-
-#define RESET_VALUE_MCSM2        0x07
-#define RESET_VALUE_PKTCTRL1     0x04
-#define RESET_VALUE_ADDR         0x00
-#define RESET_VALUE_CHANNR       0x00
-
-#define RESET_VALUE_FSCTRL1      0x0F
-#define RESET_VALUE_FSCTRL0      0x00
-#define RESET_VALUE_MDMCFG4      0x8C
-#define RESET_VALUE_MDMCFG3      0x22
-#define RESET_VALUE_MDMCFG2      0x02
-#define RESET_VALUE_MDMCFG1      0x22
-#define RESET_VALUE_MDMCFG0      0xF8
-#define RESET_VALUE_DEVIATN      0x47
-#define RESET_VALUE_MCSM1        0x30
-#define RESET_VALUE_MCSM0        0x04
-#define RESET_VALUE_FOCCFG       0x36
-#define RESET_VALUE_BSCFG        0x6C
-#define RESET_VALUE_AGCCTRL2     0x03
-#define RESET_VALUE_AGCCTRL1     0x40
-#define RESET_VALUE_AGCCTRL0     0x91
-#define RESET_VALUE_FREND1       0x56
-#define RESET_VALUE_FSCAL3       0xA9
-#define RESET_VALUE_FSCAL2       0x0A
-#define RESET_VALUE_FSCAL1       0x20
-#define RESET_VALUE_FSCAL0       0x0D
-#define RESET_VALUE_TEST0        0x0B
 /***************************End Radio Regs_Values*****************************/
 //}
 /* ------------------------------------------------------------------------------------------------
@@ -409,90 +379,9 @@ void default_spi_config(int fd)
     }
 }
 
-#if 0
-static void transfer(int fd, char strobe)
-{
-    int ret;
-    struct spi_ioc_transfer tr;
-    uint8_t tx[2] = {0,0};
-    uint8_t rx[2] = {0,0};
-    tx[0] = strobe;
-    memset(&tr, 0, sizeof(tr));
-    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
-    while(GET_GPIO(GPIO_RDY))
-    {
-        int i = 0;
-        printf("Waiting for Chiprdy ....%d\n", i++);
-    }
-
-    tr.tx_buf = &tx;
-    tr.rx_buf = &rx;
-    tr.len = sizeof(tx);
-    tr.delay_usecs = 30;
-    tr.speed_hz = SPI_SPEED;
-    tr.bits_per_word = 8;
-    tr.cs_change = 0;
-
-    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
-    if (ret < 1)
-        perror("can't send spi message");
-
-    for (ret = 0; ret < tr.len; ret++) {
-        printf("%02X ", rx[ret]);
-    }
-    GPIO_SET = 1 << (GPIO_CHIP_SEL);
-
-    puts("");
-}
-
-static void transfer_burst_read_all(int fd)
-{
-    int ret;
-    int count = 48;
-    struct spi_ioc_transfer tr;
-    uint8_t tx[count];
-    uint8_t rx[count];
-    memset(tx, 0, sizeof(tx));
-    memset(rx, 0, sizeof(rx));
-    tx[0] = 0 | READ_CMD_BIT | BURST_CMD_BIT;
-    memset(&tr, 0, sizeof(tr));
-    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
-    while(GET_GPIO(GPIO_RDY))
-    {
-        int i = 0;
-        printf("Waiting for Chiprdy ....%d\n", i++);
-    }
-
-    tr.tx_buf = &tx;
-    tr.rx_buf = &rx;
-    tr.len = sizeof(tx);
-    tr.delay_usecs = 90;
-    tr.speed_hz = SPI_SPEED;
-    tr.bits_per_word = 8;
-    tr.cs_change = 0;
-
-    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
-    if (ret < 1)
-        perror("can't send spi message");
-
-    for (ret = 0; ret < tr.len; ret++) {
-        printf("%02X ", rx[ret]);
-    }
-    GPIO_SET = 1 << (GPIO_CHIP_SEL);
-
-    puts("");
-}
-#endif
 #define READ_CMD_BIT (1<<7)
 #define BURST_CMD_BIT (1<<6)
 
-
-void strobe_cmd(int fd, uint8_t cmd, uint8_t *response)
-{
-    assert(cmd <= 0x3d && cmd >= 0x30);        
-    write_reg(fd, cmd, 0, response); 
-     
-}
 
 void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
 {
@@ -584,6 +473,13 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
     if (status)
         status[0] = rd[0];
     return rd[1];
+}
+
+void strobe_cmd(int fd, uint8_t cmd, uint8_t *response)
+{
+    assert(cmd <= 0x3d && cmd >= 0x30);        
+    write_reg(fd, cmd, 0, response); 
+     
 }
 
 
