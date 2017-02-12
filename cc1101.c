@@ -405,8 +405,8 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
         printf("Waiting for Chiprdy ....%d\n", i++);
     }
     printf("Writing %02x val %02x\n", addr, value);
-    tr.tx_buf = wr;
-    tr.rx_buf = rd;
+    tr.tx_buf = (unsigned long) wr;
+    tr.rx_buf = (unsigned long) rd;
     tr.len = N_RESP_BYTES;
     tr.delay_usecs = 90;
     tr.speed_hz = SPI_SPEED;
@@ -453,8 +453,8 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
         printf("Waiting for Chiprdy ....%d\n", i++);
     }
 
-    tr.tx_buf = wr;
-    tr.rx_buf = rd;
+    tr.tx_buf = (unsigned long)wr;
+    tr.rx_buf = (unsigned long)rd;
     tr.len = N_RESP_BYTES;
     tr.delay_usecs = 90;
     tr.speed_hz = SPI_SPEED;
@@ -534,7 +534,7 @@ void cc1101_reset()
 
 void cc1101_cfg_regs(int fd)
 {
-    int i;
+    uint32_t i;
     for (i = 0; i < sizeof(wbslRadioCfg)/sizeof(wbslRadioCfg[0]); i++)
     {
         uint8_t reg = wbslRadioCfg[i][0];
@@ -572,10 +572,30 @@ int main()
     default_spi_config(fd);
     cc1101_initialize(fd);
     for( int i = 0; i < 0x3e; i++)
-    printf("Reg %02x, Val %02x\n", i, read_reg(fd, i, NULL));
+    printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
     strobe_cmd(fd, 0x34, NULL); 
     while(1)
-    sleep(200);
+    {
+        uint8_t val = read_reg(fd,RXBYTES, &status);
+        printf("Reg %02x, Val %02x Status %02x\n", RXBYTES, val, status);
+        if (val)
+        {
+            uint8_t tmpval = 0;
+            while(val != (tmpval = read_reg(fd, RXBYTES, &status)))
+            {
+                val = tmpval;
+                printf("re-read Reg %02x, Val %02x Status %02x\n", RXBYTES, val, status);
+                sleep(1);
+            }
+            val = val & 0x3f;
+            while(val--)
+            {
+                tmpval = read_reg(fd,RXFIFO, &status);
+                printf(" %02x ", tmpval);
+            }
+        }  
+        sleep(1);
+    }
     close_spi(fd);
 
     return 0;
