@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -10,7 +11,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
+#include <time.h>
+struct timespec sleepval = { .tv_nsec = 1000000 };
 #define SPI_DEVNAME "/dev/spidev0.0"
 #define SPI_SPEED (500000) /*500Kbit*/
  
@@ -51,7 +53,7 @@
 #define WBSL_SETTING_SYNC1       0xD3   /* Modem configuration. */
 #define WBSL_SETTING_SYNC0       0x91   /* Modem configuration. */
 #define WBSL_SETTING_PKTLEN      0xFE   /* Packet length. */
-#define WBSL_SETTING_PKTCTRL1    0x06   /* Packet automation control. */
+#define WBSL_SETTING_PKTCTRL1    0x04   /* Packet automation control. */
 #define WBSL_SETTING_PKTCTRL0    0x45   /* Packet automation control. */
 #define WBSL_SETTING_ADDR        WBSL_AP_ADDRESS  /* Device address. */
 
@@ -566,6 +568,7 @@ int main()
 {
     int fd;
     uint8_t status;
+    uint8_t pktbuf[256];
     setup_io();
     cfg_gpio();
     fd = open_spi(SPI_DEVNAME);
@@ -574,27 +577,45 @@ int main()
     for( int i = 0; i < 0x3e; i++)
     printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
     strobe_cmd(fd, 0x34, NULL); 
+    int i = 0;
     while(1)
     {
-        uint8_t val = read_reg(fd,RXBYTES, &status);
-        printf("Reg %02x, Val %02x Status %02x\n", RXBYTES, val, status);
+        int8_t val = read_reg(fd,RXBYTES, &status);
+//      printf("Reg %02x, Val %02x Status %02x\n", RXBYTES, val, status);
+//        if (GET_GPIO(GPIO_GD2))
         if (val)
         {
-            uint8_t tmpval = 0;
+            int8_t tmpval = 0;
+            static fifo_rd;
+            i = 0;
             while(val != (tmpval = read_reg(fd, RXBYTES, &status)))
             {
                 val = tmpval;
-                printf("re-read Reg %02x, Val %02x Status %02x\n", RXBYTES, val, status);
-                sleep(1);
             }
-            val = val & 0x3f;
-            while(val--)
+
+            val = val & 0x7f;
+            
+            while(val-- > 0)
             {
-                tmpval = read_reg(fd,RXFIFO, &status);
-                printf(" %02x ", tmpval);
+                fifo_rd = 1;
+                pktbuf[i++] = tmpval = read_reg(fd,RXFIFO, &status);
+                printf(".%02x.", (uint8_t)tmpval);
             }
-        }  
-        sleep(1);
+            if (fifo_rd)
+            {
+                printf("\n");
+                fifo_rd = 0;
+            }
+            if (i)
+            {
+                uint8_t disc_payload[] = {0xBA,0x5E,0xBA,0x11};
+                if (!memcmp(disc_payload, &pktbuf[4], sizeof(disc_payload)))
+                {
+                    printf("Discovery");
+                }
+            }
+        }
+//        nanosleep(&sleepval, NULL);
     }
     close_spi(fd);
 
