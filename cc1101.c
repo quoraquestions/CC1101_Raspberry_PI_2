@@ -46,17 +46,6 @@ struct timespec sleepval = { .tv_nsec = 1000000 };
 
 #define ISM_US
 /*Setup radio (SmartRF Studio) */
-#define WBSL_AP_ADDRESS                             (0xCA)
-
-#define WBSL_SETTING_FIFOTHR     0x07    /* FIFOTHR  - RX FIFO and TX FIFO thresholds */
-/* Set the SYNC words to be used */
-#define WBSL_SETTING_SYNC1       0xD3   /* Modem configuration. */
-#define WBSL_SETTING_SYNC0       0x91   /* Modem configuration. */
-#define WBSL_SETTING_PKTLEN      0xFE   /* Packet length. */
-#define WBSL_SETTING_PKTCTRL1    0x04   /* Packet automation control. */
-#define WBSL_SETTING_PKTCTRL0    0x45   /* Packet automation control. */
-#define WBSL_SETTING_ADDR        WBSL_AP_ADDRESS  /* Device address. */
-
 #ifdef ISM_EU
 /* 869.525MHz */
     #define WBSL_SETTING_FREQ2    0x21      /*  Frequency control word, high byte */
@@ -85,6 +74,16 @@ struct timespec sleepval = { .tv_nsec = 1000000 };
         #endif /* ISM_LF */
    #endif     /* ISM_US */
 #endif         /* ISM_EU */
+
+#define WBSL_AP_ADDRESS                             (0xCA)
+#define WBSL_SETTING_FIFOTHR     0x07    /* FIFOTHR  - RX FIFO and TX FIFO thresholds */
+/* Set the SYNC words to be used */
+#define WBSL_SETTING_SYNC1       0xD3   /* Modem configuration. */
+#define WBSL_SETTING_SYNC0       0x91   /* Modem configuration. */
+#define WBSL_SETTING_PKTLEN      0xFE   /* Packet length. */
+#define WBSL_SETTING_PKTCTRL1    0x04   /* Packet automation control. */
+#define WBSL_SETTING_PKTCTRL0    0x45   /* Packet automation control. */
+#define WBSL_SETTING_ADDR        WBSL_AP_ADDRESS  /* Device address. */
 
 
 #define WBSL_SETTING_FSCTRL1    0x0C   /* (IF) Frequency synthesizer control. */
