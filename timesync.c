@@ -35,7 +35,6 @@ struct timespec sleepval = { .tv_nsec = 50000000 };
 #define GPIO_GD0 (24)
 #define GPIO_GD2 (23)
 
-//#define SHORT_PACKET
 
 //{
 /****************** Radio Regs **********************/
@@ -82,11 +81,7 @@ struct timespec sleepval = { .tv_nsec = 50000000 };
 #define WBSL_SETTING_SYNC0       0x91   /* Modem configuration. */
 
 
-#if defined(SHORT_PACKET)
-#define WBSL_SETTING_PKTLEN      0x30   /* Packet length. */
-#else
 #define WBSL_SETTING_PKTLEN      0xFE   /* Packet length. */
-#endif
 
 #define WBSL_SETTING_PKTCTRL1    0x04   /* Packet automation control. */
 #define WBSL_SETTING_PKTCTRL0    0x45   /* Packet automation control. */
@@ -280,7 +275,19 @@ static const uint8_t wbslRadioCfg[][2] =
     {  TEST0,     WBSL_SETTING_TEST0     },
 };
 /************************End of WBSL Radio Config */
-
+#define SRES    0x30
+#define SFSTXON 0x31
+#define SXOFF   0x32
+#define SCAL    0x33
+#define SRX     0x34
+#define STX     0x35
+#define SIDLE   0x36
+#define SWOR    0x38
+#define SPWD    0x39
+#define SFRX    0x3A
+#define SFTX    0x3B
+#define SWORRST 0x3C
+#define SNOP    0x3D
 int  mem_fd;
 void *gpio_map;
  
@@ -435,6 +442,50 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
     GPIO_SET = 1 << (GPIO_CHIP_SEL);
     free(wr);
     free(rd);
+}
+
+void read_reg_burst(int fd, uint8_t addr, uint8_t len)
+{
+    int ret;
+    struct spi_ioc_transfer tr;
+    #define N_RESP_BYTES (2) 
+    uint8_t *wr, *rd;
+    wr = malloc(len + 1);
+    rd = malloc(len + 1);
+    memset(&tr, 0, sizeof(tr));
+    memset(wr, 0, 10);
+    memset(rd, 0, 10);
+    memset(wr, 0xde, sizeof(wr[0])*len);
+    wr[0] = (addr) | BURST_CMD_BIT | READ_CMD_BIT;
+
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+
+    while(GET_GPIO(GPIO_RDY))
+    {
+        int i = 0;
+        printf("Waiting for Chiprdy ....%d\n", i++);
+    }
+    printf("Burst Reading %02x\n", addr);
+    tr.tx_buf = (unsigned long) wr;
+    tr.rx_buf = (unsigned long) rd;
+    tr.len = len + 1;
+    tr.delay_usecs = 90;
+    tr.speed_hz = SPI_SPEED;
+    tr.bits_per_word = 8;
+    tr.cs_change = 0;
+
+    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+    if (ret < 1)
+        perror("can't send spi message");
+
+    for (ret = 0; ret < tr.len; ret++) {
+        printf("..%02X.. ", rd[ret]);
+    }
+    
+    GPIO_SET = 1 << (GPIO_CHIP_SEL);
+    free(wr);
+    free(rd);
+    return;
 }
 
 uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
@@ -607,50 +658,91 @@ void cc1101_initialize(int fd)
 
     cc1101_reset();
     uint8_t response;
-    strobe_cmd(fd, 0x30, &response);
+    strobe_cmd(fd, SRES, &response);
     while (response & 0x70)
     {
         printf("Waiting for Radio to idle....%02X\n", response);
-        strobe_cmd(fd, 0x36, &response);
+        strobe_cmd(fd, SIDLE, &response);
     }
 
     cc1101_cfg_regs(fd);
 }
 
+void rxon(int fd)
+{
+    strobe_cmd(fd, SRX, NULL); 
+}
+
+
 void rxoff(int fd)
 {
     uint8_t response;
-    strobe_cmd(fd, 0x3a, &response);
-    strobe_cmd(fd, 0x36, &response);
+    strobe_cmd(fd, SFRX, &response);
+    strobe_cmd(fd, SIDLE, &response);
     while (response & 0x70)
     {
         printf("Waiting for Radio to idle....%02X\n", response);
-        strobe_cmd(fd, 0x36, &response);
+        strobe_cmd(fd, SIDLE, &response);
     }
 
 }
 
-void rx_on(int fd)
+void txstart(int fd)
 {
-    strobe_cmd(fd, 0x34, NULL); 
+    strobe_cmd(fd, STX, NULL); 
 }
 
 void txoff(int fd)
 {
     uint8_t response;
-    strobe_cmd(fd, 0x3b, &response);
-    strobe_cmd(fd, 0x36, &response);
+    strobe_cmd(fd, SFTX, &response);
+    strobe_cmd(fd, SIDLE, &response);
     while (response & 0x70)
     {
         printf("Waiting for Radio to idle....%02X\n", response);
-        strobe_cmd(fd, 0x36, &response);
+        strobe_cmd(fd, SIDLE, &response);
     }
 
 }
 
-void tx_start(int fd)
+uint8_t CheckRx()
 {
-    strobe_cmd(fd, 0x35, NULL); 
+    if (!GET_GPIO(GPIO_GD2))
+    {
+        return 0;
+    }
+    else 
+    {
+        int8_t val = read_reg(fd,RXBYTES, &status);
+        if (val)
+        {
+            int8_t tmpval = 0;
+            static int fifo_rd;
+            i = 0;
+            while (val != (tmpval = read_reg(fd, RXBYTES, &status)))
+                val = tmpval;
+            val = val & 0x7f;
+            return val;
+        }
+        else
+        {
+            /* False Packet Detected ? */
+            rxoff(); 
+            rxon();
+            val = 0;
+        }
+
+      }
+
+    return val;
+}
+
+void ReceivePkt(uint8_t *pktbuf, bool on_off_radio, uint8_t bytes)
+{
+    unsigned int i;
+    if (on_off_radio)
+        rxon();
+
 }
 
 int main()
@@ -658,6 +750,7 @@ int main()
     int fd;
     uint8_t status;
     uint8_t pktbuf[256];
+    uint8_t vals[] = {0x12,0x13,0x14};
     setup_io();
     cfg_gpio();
     fd = open_spi(SPI_DEVNAME);
@@ -666,23 +759,12 @@ int main()
     for( int i = 0; i < 0x3e; i++)
     printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
     int i = 0;
-    rx_on(fd);
+    read_reg_burst(fd, 0x12, sizeof(vals));
+    write_reg_burst(fd, 0x12, vals, sizeof(vals));
+    read_reg_burst(fd, 0x12, sizeof(vals));
+    rxon(fd);
     while(1)
     {
-        int8_t val = read_reg(fd,RXBYTES, &status);
-//      printf("Reg %02x, Val %02x Status %02x\n", RXBYTES, val, status);
-//        if (GET_GPIO(GPIO_GD2))
-        if (val)
-        {
-            int8_t tmpval = 0;
-            static fifo_rd;
-            i = 0;
-            while(val != (tmpval = read_reg(fd, RXBYTES, &status)))
-            {
-                val = tmpval;
-            }
-
-            val = val & 0x7f;
             
             while(val-- > 0)
             {
@@ -704,10 +786,10 @@ int main()
                 }
                 rxoff(fd); 
                 write_reg_burst(fd, TXFIFO, disc_payload, sizeof(disc_payload));
-                tx_start(fd);
+                txstart(fd);
                 nanosleep(&sleepval, NULL);
                 txoff(fd);
-                rx_on(fd);
+                rxon(fd);
             }
         }
 //        nanosleep(&sleepval, NULL);
