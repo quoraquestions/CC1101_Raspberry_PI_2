@@ -12,7 +12,7 @@
 #include <string.h>
 #include <assert.h>
 #include <time.h>
-struct timespec sleepval = { .tv_nsec = 1000000 };
+struct timespec sleepval = { .tv_nsec = 50000000 };
 #define SPI_DEVNAME "/dev/spidev0.0"
 #define SPI_SPEED (500000) /*500Kbit*/
  
@@ -35,6 +35,7 @@ struct timespec sleepval = { .tv_nsec = 1000000 };
 #define GPIO_GD0 (24)
 #define GPIO_GD2 (23)
 
+//#define SHORT_PACKET
 
 //{
 /****************** Radio Regs **********************/
@@ -436,6 +437,53 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
     free(rd);
 }
 
+uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
+{
+    int ret;
+    uint8_t *ptr;
+    struct spi_ioc_transfer tr;
+    #define N_RESP_BYTES (2) 
+    uint8_t *wr, *rd;
+    wr = malloc(len + 1);
+    rd = malloc(len + 1);
+    memset(&tr, 0, sizeof(tr));
+    memset(wr, 0, 10);
+    memset(rd, 0, 10);
+
+    wr[0] = (addr) | BURST_CMD_BIT;
+    ptr = &wr[1];
+    for (int i = 0; i < len; i++)
+        *ptr++ = *value++;
+    GPIO_CLR = 1<<(GPIO_CHIP_SEL);
+    while(GET_GPIO(GPIO_RDY))
+    {
+        int i = 0;
+        printf("Waiting for Chiprdy ....%d\n", i++);
+    }
+    printf("Writing %02x val %02x\n", addr, value);
+    tr.tx_buf = (unsigned long) wr;
+    tr.rx_buf = (unsigned long) rd;
+    tr.len = len + 1;
+    tr.delay_usecs = 90;
+    tr.speed_hz = SPI_SPEED;
+    tr.bits_per_word = 8;
+    tr.cs_change = 0;
+
+    ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+    if (ret < 1)
+        perror("can't send spi message");
+
+#if 0
+    for (ret = 0; ret < tr.len; ret++) {
+        printf("..%02X.. ", rd[ret]);
+    }
+#endif
+    GPIO_SET = 1 << (GPIO_CHIP_SEL);
+    free(wr);
+    free(rd);
+    return rd[1];
+}
+
 uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
 {
     int ret;
@@ -569,6 +617,42 @@ void cc1101_initialize(int fd)
     cc1101_cfg_regs(fd);
 }
 
+void rxoff(int fd)
+{
+    uint8_t response;
+    strobe_cmd(fd, 0x3a, &response);
+    strobe_cmd(fd, 0x36, &response);
+    while (response & 0x70)
+    {
+        printf("Waiting for Radio to idle....%02X\n", response);
+        strobe_cmd(fd, 0x36, &response);
+    }
+
+}
+
+void rx_on(int fd)
+{
+    strobe_cmd(fd, 0x34, NULL); 
+}
+
+void txoff(int fd)
+{
+    uint8_t response;
+    strobe_cmd(fd, 0x3b, &response);
+    strobe_cmd(fd, 0x36, &response);
+    while (response & 0x70)
+    {
+        printf("Waiting for Radio to idle....%02X\n", response);
+        strobe_cmd(fd, 0x36, &response);
+    }
+
+}
+
+void tx_start(int fd)
+{
+    strobe_cmd(fd, 0x35, NULL); 
+}
+
 int main()
 {
     int fd;
@@ -581,8 +665,8 @@ int main()
     cc1101_initialize(fd);
     for( int i = 0; i < 0x3e; i++)
     printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
-    strobe_cmd(fd, 0x34, NULL); 
     int i = 0;
+    rx_on(fd);
     while(1)
     {
         int8_t val = read_reg(fd,RXBYTES, &status);
@@ -618,6 +702,12 @@ int main()
                 {
                     printf("Discovery");
                 }
+                rxoff(fd); 
+                write_reg_burst(fd, TXFIFO, disc_payload, sizeof(disc_payload));
+                tx_start(fd);
+                nanosleep(&sleepval, NULL);
+                txoff(fd);
+                rx_on(fd);
             }
         }
 //        nanosleep(&sleepval, NULL);
