@@ -275,19 +275,6 @@ static const uint8_t wbslRadioCfg[][2] =
     {  TEST0,     WBSL_SETTING_TEST0     },
 };
 /************************End of WBSL Radio Config */
-#define SRES    0x30
-#define SFSTXON 0x31
-#define SXOFF   0x32
-#define SCAL    0x33
-#define SRX     0x34
-#define STX     0x35
-#define SIDLE   0x36
-#define SWOR    0x38
-#define SPWD    0x39
-#define SFRX    0x3A
-#define SFTX    0x3B
-#define SWORRST 0x3C
-#define SNOP    0x3D
 int  mem_fd;
 void *gpio_map;
  
@@ -444,7 +431,7 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
     free(rd);
 }
 
-void read_reg_burst(int fd, uint8_t addr, uint8_t len)
+void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
 {
     int ret;
     struct spi_ioc_transfer tr;
@@ -481,7 +468,12 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len)
     for (ret = 0; ret < tr.len; ret++) {
         printf("..%02X.. ", rd[ret]);
     }
-    
+    if (dest)
+    {
+        int i;
+        for (i = 0; i < len; i++)
+            dest[i] = rd[i + 1];
+    }
     GPIO_SET = 1 << (GPIO_CHIP_SEL);
     free(wr);
     free(rd);
@@ -739,10 +731,18 @@ uint8_t CheckRx()
 
 void ReceivePkt(uint8_t *pktbuf, bool on_off_radio, uint8_t bytes)
 {
-    unsigned int i;
-    if (on_off_radio)
-        rxon();
+    int i;
+    uint8_t status;
+    for ( i = 0; i < bytes; i++)
+    {
+        read_reg_burst(fd, RXFIFO, bytes, pktbuf);
+    }
+}
 
+void TransmitPkt(uint8_t *payload, uint8_t len)
+{
+    write_reg_burst(fd, TXFIFO, payload, len);
+    txstart(fd);
 }
 
 int main()
@@ -759,24 +759,10 @@ int main()
     for( int i = 0; i < 0x3e; i++)
     printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
     int i = 0;
-    read_reg_burst(fd, 0x12, sizeof(vals));
-    write_reg_burst(fd, 0x12, vals, sizeof(vals));
-    read_reg_burst(fd, 0x12, sizeof(vals));
     rxon(fd);
     while(1)
     {
             
-            while(val-- > 0)
-            {
-                fifo_rd = 1;
-                pktbuf[i++] = tmpval = read_reg(fd,RXFIFO, &status);
-                printf(".%02x.", (uint8_t)tmpval);
-            }
-            if (fifo_rd)
-            {
-                printf("\n");
-                fifo_rd = 0;
-            }
             if (i)
             {
                 uint8_t disc_payload[] = {0xBA,0x5E,0xBA,0x11};
@@ -784,7 +770,6 @@ int main()
                 {
                     printf("Discovery");
                 }
-                rxoff(fd); 
                 write_reg_burst(fd, TXFIFO, disc_payload, sizeof(disc_payload));
                 txstart(fd);
                 nanosleep(&sleepval, NULL);
