@@ -28,6 +28,7 @@ struct timespec sleepval = { .tv_nsec = 1000000 };
  
 #define PAGE_SIZE (4*1024)
 #define BLOCK_SIZE (4*1024)
+
 #define GPIO_CHIP_SEL (22)
 #define GPIO_RDY (25)
 #define GPIO_SCK (11)

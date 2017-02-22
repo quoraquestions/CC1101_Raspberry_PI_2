@@ -14,7 +14,7 @@
 #include <time.h>
 struct timespec sleepval = { .tv_nsec = 50000000 };
 #define SPI_DEVNAME "/dev/spidev0.0"
-#define SPI_SPEED (500000) /*500Kbit*/
+#define SPI_SPEED (5000000) /*500Kbit*/
  
 #define BCM2708_PERI_BASE        (0x3F000000)
 #define GPIO_BASE                (BCM2708_PERI_BASE + 0x200000) /* GPIO controller */
@@ -43,6 +43,7 @@ struct timespec sleepval = { .tv_nsec = 50000000 };
 *   -----------------------------------------------------------
 */
 
+#if 0
 #define ISM_US
 /*Setup radio (SmartRF Studio) */
 #ifdef ISM_EU
@@ -51,7 +52,8 @@ struct timespec sleepval = { .tv_nsec = 50000000 };
     #define WBSL_SETTING_FREQ1    0x71      /*  Frequency control word, middle byte */
     #define WBSL_SETTING_FREQ0    0x7A      /*  Frequency control word, low byte */
     #define WBSL_SETTING_CHANNR     0       /* Channel number. */
-    #define WBSL_SETTING_PA_TABLE0  0x67    /* PA output power setting. Due to RF regulations (+1.1dBm) */
+    #define WBSL_SETTING_PA_TABLE0  0xc0    /* PA output power setting. Due to RF regulations (+1.1dBm) */
+    //#define WBSL_SETTING_PA_TABLE0  0x67    /* PA output power setting. Due to RF regulations (+1.1dBm) */
 #else
     #ifdef ISM_US
 /* 902MHz (CHANNR=20 --> 906MHz) */
@@ -59,7 +61,8 @@ struct timespec sleepval = { .tv_nsec = 50000000 };
        #define WBSL_SETTING_FREQ1    0xB1     /*  Frequency control word, middle byte */
        #define WBSL_SETTING_FREQ0    0x3B    /*  Frequency control word, low byte */
        #define WBSL_SETTING_CHANNR     20      /* Channel number. */
-       #define WBSL_SETTING_PA_TABLE0  0x51  /* PA output power setting. Due to RF regulations (+1.3dBm) */
+       //#define WBSL_SETTING_PA_TABLE0  0x51  /* PA output power setting. Due to RF regulations (+1.3dBm) */
+       #define WBSL_SETTING_PA_TABLE0  0xc0  /* PA output power setting. Due to RF regulations (+1.3dBm) */
     #else
         #ifdef ISM_LF
 /* 433.30MHz */
@@ -73,6 +76,7 @@ struct timespec sleepval = { .tv_nsec = 50000000 };
         #endif /* ISM_LF */
    #endif     /* ISM_US */
 #endif         /* ISM_EU */
+#endif
 
 #define WBSL_AP_ADDRESS                             (0xCA)
 #define WBSL_SETTING_FIFOTHR     0x07    /* FIFOTHR  - RX FIFO and TX FIFO thresholds */
@@ -243,12 +247,8 @@ static const uint8_t wbslRadioCfg[][2] =
     {  WOREVT0,   WBSL_SETTING_WOREVT0   },
     {  WORCTRL,   WBSL_SETTING_WORCTRL   },
     /* imported SmartRF radio configuration */
-    {  CHANNR,    WBSL_SETTING_CHANNR    },
     {  FSCTRL1,   WBSL_SETTING_FSCTRL1   },
     {  FSCTRL0,   WBSL_SETTING_FSCTRL0   },
-    {  FREQ2,     WBSL_SETTING_FREQ2     },
-    {  FREQ1,     WBSL_SETTING_FREQ1     },
-    {  FREQ0,     WBSL_SETTING_FREQ0     },
     {  MDMCFG4,   WBSL_SETTING_MDMCFG4   },
     {  MDMCFG3,   WBSL_SETTING_MDMCFG3   },
     {  MDMCFG2,   WBSL_SETTING_MDMCFG2   },
@@ -274,6 +274,50 @@ static const uint8_t wbslRadioCfg[][2] =
     {  TEST1,     WBSL_SETTING_TEST1     },
     {  TEST0,     WBSL_SETTING_TEST0     },
 };
+
+typedef enum freq_settings { ISM_EU =0, ISM_US, ISM_LF, ISM_MAX} fset_t;
+
+uint8_t band_regs[] = {
+    FREQ2,    
+    FREQ1,    
+    FREQ0,    
+    CHANNR,   
+    PA_TABLE0
+};
+
+uint8_t freq_config [ISM_MAX][5] =
+{
+    //EU
+    {
+        0x21,      /*  Frequency control word, high byte */
+        0x71,      /*  Frequency control word, middle byte */
+        0x7A,      /*  Frequency control word, low byte */
+        0,      /* Channel number. */
+        0xc0    /* PA output power setting. Due to RF regulations (+1.1dBm) */
+    },
+    //US
+    {
+        0x22,      /*  Frequency control word, high byte */
+        0xB1,      /*  Frequency control word, middle byte */
+        0x3B,      /*  Frequency control word, low byte */
+        20,      /* Channel number. */
+        0xc0    /* PA output power setting. Due to RF regulations (+1.1dBm) */
+    },
+    //LF
+    {
+        0x10,      /*  Frequency control word, high byte */
+        0xB0,      /*  Frequency control word, middle byte */
+        0x71,      /*  Frequency control word, low byte */
+        0,      /* Channel number. */
+        0x61    /* PA output power setting. Due to RF regulations (+1.1dBm) */
+    }
+};
+
+fset_t default_freq = ISM_US;
+
+
+
+
 /************************End of WBSL Radio Config */
 int  mem_fd;
 void *gpio_map;
@@ -406,7 +450,9 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
         int i = 0;
         printf("Waiting for Chiprdy ....%d\n", i++);
     }
+#if 0
     printf("Writing %02x val %02x\n", addr, value);
+#endif
     tr.tx_buf = (unsigned long) wr;
     tr.rx_buf = (unsigned long) rd;
     tr.len = N_RESP_BYTES;
@@ -434,6 +480,7 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
 void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
 {
     int ret;
+    uint32_t i;
     struct spi_ioc_transfer tr;
     #define N_RESP_BYTES (2) 
     uint8_t *wr, *rd;
@@ -449,10 +496,11 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
 
     while(GET_GPIO(GPIO_RDY))
     {
-        int i = 0;
         printf("Waiting for Chiprdy ....%d\n", i++);
     }
+#if 0
     printf("Burst Reading %02x\n", addr);
+#endif
     tr.tx_buf = (unsigned long) wr;
     tr.rx_buf = (unsigned long) rd;
     tr.len = len + 1;
@@ -464,10 +512,11 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
     ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
     if (ret < 1)
         perror("can't send spi message");
-
-    for (ret = 0; ret < tr.len; ret++) {
+#if 0
+    for (i = 0; i < tr.len; i++) {
         printf("..%02X.. ", rd[ret]);
     }
+#endif
     if (dest)
     {
         int i;
@@ -503,7 +552,7 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
         int i = 0;
         printf("Waiting for Chiprdy ....%d\n", i++);
     }
-    printf("Writing %02x val %02x\n", addr, value);
+    printf("Writing %02x \n", addr);
     tr.tx_buf = (unsigned long) wr;
     tr.rx_buf = (unsigned long) rd;
     tr.len = len + 1;
@@ -630,6 +679,17 @@ void cc1101_reset()
     SET_GPIO_ALT(GPIO_MOSI, 0);
 }
 
+void cc1101_cfg_band(int fd, fset_t fset)
+{
+    uint8_t i;
+    assert(fset >= ISM_US && fset < ISM_MAX);
+    for ( i = 0; i < sizeof(band_regs)/sizeof(band_regs[0]); i++)
+    {
+        write_reg(fd, band_regs[i], freq_config[fset][i], NULL);
+    }
+    
+}
+
 void cc1101_cfg_regs(int fd)
 {
     uint32_t i;
@@ -641,11 +701,13 @@ void cc1101_cfg_regs(int fd)
     }
     write_reg(fd, IOCFG0, WBSL_GDO_SYNC, NULL);
     write_reg(fd, IOCFG2, 7, NULL);
+#if 0
     write_reg(fd, PA_TABLE0, WBSL_SETTING_PA_TABLE0, NULL);
+#endif
 }
 
 
-void cc1101_initialize(int fd)
+void cc1101_initialize(int fd, fset_t fset)
 {
 
     cc1101_reset();
@@ -658,6 +720,7 @@ void cc1101_initialize(int fd)
     }
 
     cc1101_cfg_regs(fd);
+    cc1101_cfg_band(fd, fset);
 }
 
 void rxon(int fd)
@@ -697,49 +760,55 @@ void txoff(int fd)
 
 }
 
-uint8_t CheckRx()
+uint8_t CheckRx(int fd)
 {
+    uint8_t bytes = 0;
     if (!GET_GPIO(GPIO_GD2))
     {
         return 0;
     }
     else 
     {
-        int8_t val = read_reg(fd,RXBYTES, &status);
+        int8_t val = bytes = read_reg(fd,RXBYTES, NULL);
         if (val)
         {
             int8_t tmpval = 0;
-            static int fifo_rd;
-            i = 0;
-            while (val != (tmpval = read_reg(fd, RXBYTES, &status)))
+            while (val != (tmpval = read_reg(fd, RXBYTES, NULL)))
                 val = tmpval;
             val = val & 0x7f;
-            return val;
+            return bytes = val;
         }
         else
         {
             /* False Packet Detected ? */
-            rxoff(); 
-            rxon();
+            rxoff(fd); 
+            rxon(fd);
             val = 0;
+            bytes = 0;
         }
 
       }
 
-    return val;
+    return bytes;
 }
 
-void ReceivePkt(uint8_t *pktbuf, bool on_off_radio, uint8_t bytes)
+void ReceivePkt(int fd, uint8_t *pktbuf, uint8_t bytes)
 {
-    int i;
+#if 0
+    uint16_t i;
     uint8_t status;
-    for ( i = 0; i < bytes; i++)
+    for(i = 0; i < bytes; i++)
     {
-        read_reg_burst(fd, RXFIFO, bytes, pktbuf);
+        pktbuf[i] = read_reg(fd, RXFIFO, &status);
+        printf("Status %x\n", status);
     }
+#else
+    read_reg_burst(fd, RXFIFO, bytes, pktbuf); 
+#endif
+
 }
 
-void TransmitPkt(uint8_t *payload, uint8_t len)
+void TransmitPkt(int fd, uint8_t *payload, uint8_t len)
 {
     write_reg_burst(fd, TXFIFO, payload, len);
     txstart(fd);
@@ -750,45 +819,45 @@ int main()
     int fd;
     uint8_t status;
     uint8_t pktbuf[256];
-    uint8_t vals[] = {0x12,0x13,0x14};
     setup_io();
     cfg_gpio();
     fd = open_spi(SPI_DEVNAME);
     default_spi_config(fd);
-    cc1101_initialize(fd);
+    cc1101_initialize(fd, ISM_US);
     for( int i = 0; i < 0x3e; i++)
     printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
-    int i = 0;
     rxon(fd);
     while(1)
     {
-            
-            if (i)
+        uint32_t len = 0;
+        if((len = CheckRx(fd)))
+        {
+            uint32_t j = 0;
+            uint8_t clqi = 0, rssi = 0;
+            printf("Len:%x ", len); 
+            ReceivePkt(fd, pktbuf, len);
+            clqi = pktbuf[pktbuf[0] + 2];
+            rssi =  pktbuf[pktbuf[0] + 1];
+            printf("RSSI:%02X LQI : %02X ", rssi, (clqi & 0x7f));
+            if (clqi & 0x80)
+                printf("CRC:OK\n");
+            else
             {
-                uint8_t disc_payload[] = {0xBA,0x5E,0xBA,0x11};
-                if (!memcmp(disc_payload, &pktbuf[4], sizeof(disc_payload)))
-                {
-                    printf("Discovery");
-                }
-                write_reg_burst(fd, TXFIFO, disc_payload, sizeof(disc_payload));
-                txstart(fd);
-                nanosleep(&sleepval, NULL);
-                txoff(fd);
-                rxon(fd);
+                printf("CRC:Fail\n");
+                continue;
             }
+            for (j = 0; j < len; j++)
+            {
+                if ( (4*j + 1) % 80 == false)
+                    printf("\n");
+                printf(" %02X ", pktbuf[j]);
+            }
+            printf("\n");
+            fflush(stdout);
+            //nanosleep(&sleepval, NULL);
         }
-//        nanosleep(&sleepval, NULL);
     }
     close_spi(fd);
 
     return 0;
 }
-
-#if 0
-    transfer(fd,0x30);
-    transfer_burst_read_all(fd);
-
-    transfer(fd,0x70);
-    transfer(fd,0xf0);
-    transfer(fd,0xf1);
-#endif
