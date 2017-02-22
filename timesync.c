@@ -682,7 +682,7 @@ void cc1101_reset()
 void cc1101_cfg_band(int fd, fset_t fset)
 {
     uint8_t i;
-    assert(fset >= ISM_US && fset < ISM_MAX);
+    assert(fset >= ISM_EU && fset < ISM_MAX);
     for ( i = 0; i < sizeof(band_regs)/sizeof(band_regs[0]); i++)
     {
         write_reg(fd, band_regs[i], freq_config[fset][i], NULL);
