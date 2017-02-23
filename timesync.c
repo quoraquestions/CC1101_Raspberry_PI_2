@@ -870,6 +870,9 @@ int main(int argc, char **argv)
         {
             uint32_t j = 0;
             uint8_t clqi = 0, rssi = 0;
+            struct timespec now;
+            clock_gettime(CLOCK_REALTIME, &now);
+            printf("Time %ld.%09ld ", now.tv_sec, now.tv_nsec);
             printf("Len:%x ", len); 
             ReceivePkt(fd, pktbuf, len);
             clqi = pktbuf[pktbuf[0] + 2];
