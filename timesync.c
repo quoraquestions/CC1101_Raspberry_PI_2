@@ -20,6 +20,8 @@ struct timespec sleepval = { .tv_nsec = 50000000 };
 #define GPIO_BASE                (BCM2708_PERI_BASE + 0x200000) /* GPIO controller */
  
  
+//#define GD0_RX_OVERFLOW_DETECT
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -699,7 +701,11 @@ void cc1101_cfg_regs(int fd)
         uint8_t val = wbslRadioCfg[i][1];
         write_reg(fd, reg, val, NULL); 
     }
+#if defined(GD0_RX_OVERFLOW_DETECT)
+    write_reg(fd, IOCFG0, 4, NULL);
+#else
     write_reg(fd, IOCFG0, WBSL_GDO_SYNC, NULL);
+#endif
     write_reg(fd, IOCFG2, 7, NULL);
 #if 0
     write_reg(fd, PA_TABLE0, WBSL_SETTING_PA_TABLE0, NULL);
@@ -760,9 +766,21 @@ void txoff(int fd)
 
 }
 
+
 uint8_t CheckRx(int fd)
 {
     uint8_t bytes = 0;
+#if !defined(GD0_RX_OVERFLOW_DETECT)
+    uint8_t marc_state = read_reg(fd, MARCSTATE, NULL) & 0x1f;
+    if (marc_state == 0x11)
+#else
+    if (GET_GPIO(GPIO_GD0))
+#endif
+    {
+        printf("RX overflow\n");
+        rxoff(fd);
+        rxon(fd);
+    }
     if (!GET_GPIO(GPIO_GD2))
     {
         return 0;
@@ -785,6 +803,7 @@ uint8_t CheckRx(int fd)
             rxon(fd);
             val = 0;
             bytes = 0;
+            printf("Radio Reset due to false detection !!!\n");
         }
 
       }
@@ -814,16 +833,33 @@ void TransmitPkt(int fd, uint8_t *payload, uint8_t len)
     txstart(fd);
 }
 
-int main()
+int main(int argc, char **argv)
 {
     int fd;
+    fset_t fset = ISM_US;
     uint8_t status;
     uint8_t pktbuf[256];
+
+    if (argc == 2)
+    {
+        if (!strcmp(argv[1], "US"))
+            fset = ISM_US;
+        else if (!strcmp(argv[1], "EU"))
+            fset = ISM_EU;
+        else if (!strcmp(argv[1], "LF"))
+            fset = ISM_LF;
+        else 
+        {
+            printf("Unspecified Band, defaulting to 902MHz/US band\n");
+            fset = ISM_US;
+        }
+    }
+
     setup_io();
     cfg_gpio();
     fd = open_spi(SPI_DEVNAME);
     default_spi_config(fd);
-    cc1101_initialize(fd, ISM_US);
+    cc1101_initialize(fd, fset);
     for( int i = 0; i < 0x3e; i++)
     printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
     rxon(fd);
