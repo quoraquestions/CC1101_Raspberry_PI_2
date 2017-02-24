@@ -45,82 +45,36 @@ struct timespec sleepval = { .tv_nsec = 50000000 };
 *   -----------------------------------------------------------
 */
 
-#if 0
-#define ISM_US
-/*Setup radio (SmartRF Studio) */
-#ifdef ISM_EU
-/* 869.525MHz */
-    #define WBSL_SETTING_FREQ2    0x21      /*  Frequency control word, high byte */
-    #define WBSL_SETTING_FREQ1    0x71      /*  Frequency control word, middle byte */
-    #define WBSL_SETTING_FREQ0    0x7A      /*  Frequency control word, low byte */
-    #define WBSL_SETTING_CHANNR     0       /* Channel number. */
-    #define WBSL_SETTING_PA_TABLE0  0xc0    /* PA output power setting. Due to RF regulations (+1.1dBm) */
-    //#define WBSL_SETTING_PA_TABLE0  0x67    /* PA output power setting. Due to RF regulations (+1.1dBm) */
-#else
-    #ifdef ISM_US
-/* 902MHz (CHANNR=20 --> 906MHz) */
-       #define WBSL_SETTING_FREQ2    0x22     /*  Frequency control word, high byte */
-       #define WBSL_SETTING_FREQ1    0xB1     /*  Frequency control word, middle byte */
-       #define WBSL_SETTING_FREQ0    0x3B    /*  Frequency control word, low byte */
-       #define WBSL_SETTING_CHANNR     20      /* Channel number. */
-       //#define WBSL_SETTING_PA_TABLE0  0x51  /* PA output power setting. Due to RF regulations (+1.3dBm) */
-       #define WBSL_SETTING_PA_TABLE0  0xc0  /* PA output power setting. Due to RF regulations (+1.3dBm) */
-    #else
-        #ifdef ISM_LF
-/* 433.30MHz */
-           #define WBSL_SETTING_FREQ2    0x10      /*  Frequency control word, high byte */
-           #define WBSL_SETTING_FREQ1    0xB0      /*  Frequency control word, middle byte */
-           #define WBSL_SETTING_FREQ0    0x71      /*  Frequency control word, low byte */
-           #define WBSL_SETTING_CHANNR     0       /* Channel number. */
-           #define WBSL_SETTING_PA_TABLE0  0x61    /* PA output power setting. Due to RF regulations (+1.4dBm) */
-        #else
-            #error "Wrong ISM band specified (valid are ISM_LF, ISM_EU and ISM_US)"
-        #endif /* ISM_LF */
-   #endif     /* ISM_US */
-#endif         /* ISM_EU */
-#endif
-
 #define WBSL_AP_ADDRESS                             (0xCA)
 #define WBSL_SETTING_FIFOTHR     0x07    /* FIFOTHR  - RX FIFO and TX FIFO thresholds */
 /* Set the SYNC words to be used */
 #define WBSL_SETTING_SYNC1       0xD3   /* Modem configuration. */
 #define WBSL_SETTING_SYNC0       0x91   /* Modem configuration. */
-
-
 #define WBSL_SETTING_PKTLEN      0xFE   /* Packet length. */
-
 #define WBSL_SETTING_PKTCTRL1    0x04   /* Packet automation control. */
 #define WBSL_SETTING_PKTCTRL0    0x45   /* Packet automation control. */
 #define WBSL_SETTING_ADDR        WBSL_AP_ADDRESS  /* Device address. */
-
-
 #define WBSL_SETTING_FSCTRL1    0x0C   /* (IF) Frequency synthesizer control. */
 #define WBSL_SETTING_FSCTRL0    0x00   /* Frequency synthesizer control. */
-
 #define WBSL_SETTING_MDMCFG4    0x2D    /* Modem configuration. */
 #define WBSL_SETTING_MDMCFG3    0x3B    /* Modem configuration. */
 #define WBSL_SETTING_MDMCFG2    0x13    /* Modem configuration. */
 #define WBSL_SETTING_MDMCFG1    0x22    /* Modem configuration. */
 #define WBSL_SETTING_MDMCFG0    0xF8    /* Modem configuration. */
-
 #define WBSL_SETTING_DEVIATN     0x62    /* Modem deviation setting (when GSK modulation is enabled). */
 #define WBSL_SETTING_MCSM2       0x07
 #define WBSL_SETTING_MCSM1       0x3C
 #define WBSL_SETTING_MCSM0       0x18   /* Main Radio Control State Machine configuration. */
-
 #define WBSL_SETTING_FOCCFG      0x1D   /* Frequency Offset Compensation Configuration. */
 #define WBSL_SETTING_BSCFG       0x1C   /*  Bit synchronization Configuration. */
 #define WBSL_SETTING_AGCCTRL2    0xC7   /* AGC control. */
 #define WBSL_SETTING_AGCCTRL1    0x00   /*  AGC control. */
 #define WBSL_SETTING_AGCCTRL0    0xB0   /* AGC control. */
-
 #define WBSL_SETTING_WOREVT1     0x87
 #define WBSL_SETTING_WOREVT0     0x6B
 #define WBSL_SETTING_WORCTRL     0xF8
-
 #define WBSL_SETTING_FREND1      0xB6   /* Front end RX configuration. */
 #define WBSL_SETTING_FREND0      0x10   /* Front end TX configuration. */
-
 #define WBSL_SETTING_FSCAL3      0xEA   /* Frequency synthesizer calibration. */
 #define WBSL_SETTING_FSCAL2      0x2A   /* Frequency synthesizer calibration. */
 #define WBSL_SETTING_FSCAL1      0x00   /* Frequency synthesizer calibration. */
@@ -257,7 +211,6 @@ static const uint8_t wbslRadioCfg[][2] =
     {  MDMCFG1,   WBSL_SETTING_MDMCFG1   },
     {  MDMCFG0,   WBSL_SETTING_MDMCFG0   },
     {  DEVIATN,   WBSL_SETTING_DEVIATN   },
-
     {  FOCCFG,    WBSL_SETTING_FOCCFG    },
     {  BSCFG,     WBSL_SETTING_BSCFG     },
     {  AGCCTRL2,  WBSL_SETTING_AGCCTRL2  },
@@ -833,12 +786,31 @@ void TransmitPkt(int fd, uint8_t *payload, uint8_t len)
     txstart(fd);
 }
 
+uint8_t pktbuf[256];
+
+void wait_for_discovery(int fd)
+{
+
+}
+
+typedef enum update_state {WAIT_FOR_DISCOVERY, SEND_DISCOVERY_ACK, SEND_ADDR_PKT, SEND_PAYLOAD, END_OF_UPDATE};
+
+int start_update(int fd)
+{
+    while(1)
+    {
+
+
+
+        wait_for_discovery(fd);
+    }
+}
+
 int main(int argc, char **argv)
 {
     int fd;
     fset_t fset = ISM_US;
     uint8_t status;
-    uint8_t pktbuf[256];
 
     if (argc == 2)
     {
@@ -862,6 +834,8 @@ int main(int argc, char **argv)
     cc1101_initialize(fd, fset);
     for( int i = 0; i < 0x3e; i++)
     printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
+    start_update(fd);
+#if 0
     rxon(fd);
     while(1)
     {
@@ -896,7 +870,10 @@ int main(int argc, char **argv)
             //nanosleep(&sleepval, NULL);
         }
     }
+#endif
     close_spi(fd);
 
     return 0;
 }
+
+

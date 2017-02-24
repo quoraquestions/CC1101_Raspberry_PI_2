@@ -1613,7 +1613,7 @@ void strobe_cmd(int fd, uint8_t cmd, uint8_t *response)
    114fa:	f2c0 0001 	movt	r0, #1
    114fe:	f242 11f8 	movw	r1, #8696	; 0x21f8
    11502:	f2c0 0101 	movt	r1, #1
-   11506:	f240 2275 	movw	r2, #629	; 0x275
+   11506:	f240 2246 	movw	r2, #582	; 0x246
    1150a:	f242 33a0 	movw	r3, #9120	; 0x23a0
    1150e:	f2c0 0301 	movt	r3, #1
    11512:	f7ff e9b4 	blx	1087c <__assert_fail@plt>
@@ -2141,7 +2141,7 @@ void cc1101_cfg_band(int fd, fset_t fset)
    11a44:	f2c0 0001 	movt	r0, #1
    11a48:	f242 11f8 	movw	r1, #8696	; 0x21f8
    11a4c:	f2c0 0101 	movt	r1, #1
-   11a50:	f240 22af 	movw	r2, #687	; 0x2af
+   11a50:	f44f 7220 	mov.w	r2, #640	; 0x280
    11a54:	f242 33ac 	movw	r3, #9132	; 0x23ac
    11a58:	f2c0 0301 	movt	r3, #1
    11a5c:	f7fe ef0e 	blx	1087c <__assert_fail@plt>
