@@ -1,0 +1,311 @@
+BPW: 8
+Waiting for Radio to idle....FF
+Reg 00, Val 07 Status 00
+Reg 01, Val 2e Status 00
+Reg 02, Val 06 Status 00
+Reg 03, Val 07 Status 00
+Reg 04, Val d3 Status 00
+Reg 05, Val 91 Status 00
+Reg 06, Val fe Status 00
+Reg 07, Val 04 Status 00
+Reg 08, Val 45 Status 00
+Reg 09, Val ca Status 00
+Reg 0a, Val 14 Status 00
+Reg 0b, Val 0c Status 00
+Reg 0c, Val 00 Status 00
+Reg 0d, Val 22 Status 00
+Reg 0e, Val b1 Status 00
+Reg 0f, Val 3b Status 00
+Reg 10, Val 2d Status 00
+Reg 11, Val 3b Status 00
+Reg 12, Val 13 Status 00
+Reg 13, Val 22 Status 00
+Reg 14, Val f8 Status 00
+Reg 15, Val 62 Status 00
+Reg 16, Val 07 Status 00
+Reg 17, Val 3c Status 00
+Reg 18, Val 18 Status 00
+Reg 19, Val 1d Status 00
+Reg 1a, Val 1c Status 00
+Reg 1b, Val c7 Status 00
+Reg 1c, Val 00 Status 00
+Reg 1d, Val b0 Status 00
+Reg 1e, Val 87 Status 00
+Reg 1f, Val 6b Status 00
+Reg 20, Val f8 Status 00
+Reg 21, Val b6 Status 00
+Reg 22, Val 10 Status 00
+Reg 23, Val ea Status 00
+Reg 24, Val 2a Status 00
+Reg 25, Val 00 Status 00
+Reg 26, Val 1f Status 00
+Reg 27, Val 41 Status 00
+Reg 28, Val 00 Status 00
+Reg 29, Val 59 Status 00
+Reg 2a, Val 7f Status 00
+Reg 2b, Val 3f Status 00
+Reg 2c, Val 88 Status 00
+Reg 2d, Val 31 Status 00
+Reg 2e, Val 09 Status 00
+Reg 2f, Val 00 Status 00
+Reg 30, Val 00 Status 00
+Reg 31, Val 14 Status 00
+Reg 32, Val 00 Status 00
+Reg 33, Val 00 Status 00
+Reg 34, Val 80 Status 00
+Reg 35, Val 01 Status 00
+Reg 36, Val 00 Status 00
+Reg 37, Val 00 Status 00
+Reg 38, Val 00 Status 00
+Reg 39, Val a4 Status 00
+Reg 3a, Val 00 Status 00
+Reg 3b, Val 00 Status 00
+Reg 3c, Val 00 Status 00
+Reg 3d, Val 00 Status 00
+Time 1488197519.740612255 Len:a RSSI:FA LQI : 31 CRC:OK
+ 07  00  AD  00  BA  5E  BA  11  FA  B1 
+Discovered AD
+Writing 3f 
+Writing 3f 
+Time 1488197519.746824838 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  7F  FF  FA  B1 
+Success Init Packet
+Writing 3f 
+Time 1488197519.753243932 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  00  00  FA  B1 
+Packet 0*Succeeded
+Writing 3f 
+Time 1488197519.759759694 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  00  01  FA  B1 
+Packet 1*Succeeded
+Writing 3f 
+Time 1488197519.765876339 Len:8 RSSI:FB LQI : 32 CRC:OK
+ 05  CA  AD  01  00  02  FB  B2 
+Packet 2*Succeeded
+Writing 3f 
+Time 1488197519.772000484 Len:8 RSSI:FA LQI : 2F CRC:OK
+ 05  CA  AD  01  00  03  FA  AF 
+Packet 3*Succeeded
+Writing 3f 
+Time 1488197519.778101035 Len:8 RSSI:F9 LQI : 32 CRC:OK
+ 05  CA  AD  01  00  04  F9  B2 
+Packet 4*Succeeded
+Writing 3f 
+Time 1488197519.784182784 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  05  FA  B2 
+Packet 5*Succeeded
+Writing 3f 
+Time 1488197519.790323387 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  00  06  FA  B1 
+Packet 6*Succeeded
+Writing 3f 
+Time 1488197519.796451803 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  07  FA  B2 
+Packet 7*Succeeded
+Writing 3f 
+Time 1488197519.802593448 Len:8 RSSI:FA LQI : 2E CRC:OK
+ 05  CA  AD  01  00  08  FA  AE 
+Packet 8*Succeeded
+Writing 3f 
+Time 1488197519.808724312 Len:8 RSSI:FB LQI : 32 CRC:OK
+ 05  CA  AD  01  00  09  FB  B2 
+Packet 9*Succeeded
+Writing 3f 
+Time 1488197519.814969447 Len:8 RSSI:FA LQI : 2F CRC:OK
+ 05  CA  AD  01  00  0A  FA  AF 
+Packet a*Succeeded
+Writing 3f 
+Time 1488197519.821118904 Len:8 RSSI:FA LQI : 30 CRC:OK
+ 05  CA  AD  01  00  0B  FA  B0 
+Packet b*Succeeded
+Writing 3f 
+Time 1488197519.827260289 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  00  0C  FA  B1 
+Packet c*Succeeded
+Writing 3f 
+Time 1488197519.833368392 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  0D  FA  B2 
+Packet d*Succeeded
+Writing 3f 
+Time 1488197519.839625767 Len:8 RSSI:F9 LQI : 32 CRC:OK
+ 05  CA  AD  01  00  0E  F9  B2 
+Packet e*Succeeded
+Writing 3f 
+Time 1488197519.845775225 Len:8 RSSI:F9 LQI : 32 CRC:OK
+ 05  CA  AD  01  00  0F  F9  B2 
+Packet f*Succeeded
+Writing 3f 
+Time 1488197519.852008797 Len:8 RSSI:F9 LQI : 32 CRC:OK
+ 05  CA  AD  01  00  10  F9  B2 
+Packet 10*Succeeded
+Writing 3f 
+Time 1488197519.858153046 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  11  FA  B2 
+Packet 11*Succeeded
+Writing 3f 
+Time 1488197519.864227868 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  00  12  FA  B1 
+Packet 12*Succeeded
+Writing 3f 
+Time 1488197519.870277117 Len:8 RSSI:FB LQI : 31 CRC:OK
+ 05  CA  AD  01  00  13  FB  B1 
+Packet 13*Succeeded
+Writing 3f 
+Time 1488197519.876389543 Len:8 RSSI:F9 LQI : 30 CRC:OK
+ 05  CA  AD  01  00  14  F9  B0 
+Packet 14*Succeeded
+Writing 3f 
+Time 1488197519.882486500 Len:8 RSSI:FA LQI : 33 CRC:OK
+ 05  CA  AD  01  00  15  FA  B3 
+Packet 15*Succeeded
+Writing 3f 
+Time 1488197519.888624500 Len:8 RSSI:FA LQI : 30 CRC:OK
+ 05  CA  AD  01  00  16  FA  B0 
+Packet 16*Succeeded
+Writing 3f 
+Time 1488197519.894768488 Len:8 RSSI:F9 LQI : 31 CRC:OK
+ 05  CA  AD  01  00  17  F9  B1 
+Packet 17*Succeeded
+Writing 3f 
+Time 1488197519.900832268 Len:8 RSSI:FA LQI : 30 CRC:OK
+ 05  CA  AD  01  00  18  FA  B0 
+Packet 18*Succeeded
+Writing 3f 
+Time 1488197519.907183237 Len:8 RSSI:F9 LQI : 31 CRC:OK
+ 05  CA  AD  01  00  19  F9  B1 
+Packet 19*Succeeded
+Writing 3f 
+Time 1488197519.913527019 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  1A  FA  B2 
+Packet 1a*Succeeded
+Writing 3f 
+Time 1488197519.919767050 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  00  1B  FA  B1 
+Packet 1b*Succeeded
+Writing 3f 
+Time 1488197519.925896247 Len:8 RSSI:F9 LQI : 32 CRC:OK
+ 05  CA  AD  01  00  1C  F9  B2 
+Packet 1c*Succeeded
+Writing 3f 
+Time 1488197519.932019454 Len:8 RSSI:FB LQI : 31 CRC:OK
+ 05  CA  AD  01  00  1D  FB  B1 
+Packet 1d*Succeeded
+Writing 3f 
+Time 1488197519.938225891 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  1E  FA  B2 
+Packet 1e*Succeeded
+Writing 3f 
+Time 1488197519.944314567 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  00  1F  FA  B1 
+Packet 1f*Succeeded
+Writing 3f 
+Time 1488197519.950491838 Len:8 RSSI:FB LQI : 32 CRC:OK
+ 05  CA  AD  01  00  20  FB  B2 
+Packet 20*Succeeded
+Writing 3f 
+Time 1488197519.956584628 Len:8 RSSI:F9 LQI : 32 CRC:OK
+ 05  CA  AD  01  00  21  F9  B2 
+Packet 21*Succeeded
+Writing 3f 
+Time 1488197519.962758565 Len:8 RSSI:FA LQI : 33 CRC:OK
+ 05  CA  AD  01  00  22  FA  B3 
+Packet 22*Succeeded
+Writing 3f 
+Time 1488197519.969492453 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  23  FA  B2 
+Packet 23*Succeeded
+Writing 3f 
+Time 1488197519.975678056 Len:8 RSSI:FB LQI : 31 CRC:OK
+ 05  CA  AD  01  00  24  FB  B1 
+Packet 24*Succeeded
+Writing 3f 
+Time 1488197519.981804806 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  25  FA  B2 
+Packet 25*Succeeded
+Writing 3f 
+Time 1488197519.987947492 Len:8 RSSI:FB LQI : 31 CRC:OK
+ 05  CA  AD  01  00  26  FB  B1 
+Packet 26*Succeeded
+Writing 3f 
+Time 1488197519.994101950 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  00  27  FA  B1 
+Packet 27*Succeeded
+Writing 3f 
+Time 1488197520.000363335 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  28  FA  B2 
+Packet 28*Succeeded
+Writing 3f 
+Time 1488197520.006679564 Len:8 RSSI:FA LQI : 30 CRC:OK
+ 05  CA  AD  01  00  29  FA  B0 
+Packet 29*Succeeded
+Writing 3f 
+Time 1488197520.012842043 Len:8 RSSI:F9 LQI : 30 CRC:OK
+ 05  CA  AD  01  00  2A  F9  B0 
+Packet 2a*Succeeded
+Writing 3f 
+Time 1488197520.018995667 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  2B  FA  B2 
+Packet 2b*Succeeded
+Writing 3f 
+Time 1488197520.025524918 Len:8 RSSI:FB LQI : 32 CRC:OK
+ 05  CA  AD  01  00  2C  FB  B2 
+Packet 2c*Succeeded
+Writing 3f 
+Time 1488197520.031594792 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  2D  FA  B2 
+Packet 2d*Succeeded
+Writing 3f 
+Time 1488197520.037735864 Len:8 RSSI:FA LQI : 32 CRC:OK
+ 05  CA  AD  01  00  2E  FA  B2 
+Packet 2e*Succeeded
+Writing 3f 
+Time 1488197520.043856363 Len:8 RSSI:FA LQI : 31 CRC:OK
+ 05  CA  AD  01  00  2F  FA  B1 
+Packet 2f*Succeeded
+Writing 3f 
+Time 1488197520.050040873 Len:8 RSSI:FB LQI : 31 CRC:OK
+ 05  CA  AD  01  00  30  FB  B1 
+Packet 30*Succeeded
+Writing 3f 
+Time 1488197520.056259029 Len:8 RSSI:FF LQI : 32 CRC:OK
+ 05  CA  AD  01  00  31  FF  B2 
+Packet 31*Succeeded
+Writing 3f 
+Time 1488197520.062401299 Len:8 RSSI:FE LQI : 32 CRC:OK
+ 05  CA  AD  01  00  32  FE  B2 
+Packet 32*Succeeded
+Writing 3f 
+Time 1488197520.068517788 Len:8 RSSI:FE LQI : 32 CRC:OK
+ 05  CA  AD  01  00  33  FE  B2 
+Packet 33*Succeeded
+Writing 3f 
+Time 1488197520.074660683 Len:8 RSSI:FD LQI : 31 CRC:OK
+ 05  CA  AD  01  00  34  FD  B1 
+Packet 34*Succeeded
+Writing 3f 
+Time 1488197520.080801494 Len:8 RSSI:FD LQI : 32 CRC:OK
+ 05  CA  AD  01  00  35  FD  B2 
+Packet 35*Succeeded
+Writing 3f 
+Time 1488197520.086851160 Len:8 RSSI:FC LQI : 30 CRC:OK
+ 05  CA  AD  01  00  36  FC  B0 
+Packet 36*Succeeded
+Writing 3f 
+Time 1488197520.092966607 Len:8 RSSI:FD LQI : 31 CRC:OK
+ 05  CA  AD  01  00  37  FD  B1 
+Packet 37*Succeeded
+Writing 3f 
+Time 1488197520.099085647 Len:8 RSSI:FC LQI : 31 CRC:OK
+ 05  CA  AD  01  00  38  FC  B1 
+Packet 38*Succeeded
+Writing 3f 
+Time 1488197520.105253699 Len:8 RSSI:FC LQI : 31 CRC:OK
+ 05  CA  AD  01  00  39  FC  B1 
+Packet 39*Succeeded
+Writing 3f 
+Time 1488197520.109721794 Len:8 RSSI:FE LQI : 30 CRC:OK
+ 05  CA  AD  01  00  3A  FE  B0 
+Packet 3a*Succeeded
+Writing 3f 
+Time 1488197520.114008430 Len:8 RSSI:FC LQI : 30 CRC:OK
+ 05  CA  AD  01  00  3B  FC  B0 

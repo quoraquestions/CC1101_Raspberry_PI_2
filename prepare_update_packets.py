@@ -93,11 +93,11 @@ def prepare_fragments(payload, sizelimit):
         if not frag[packet_offset_nr_hi]:
              frag[packet_offset_nr_hi] = '0'
         frag_idx +=1 
-        frag[packet_offset_len] = str(hex(len(frag)))[2:]
+        frag[packet_offset_len] = str(hex(len(frag)-1))[2:]
         fragments.append(frag)
     return fragments
 
-def prepare_packets(segs, sizelimit = 55):
+def prepare_packets(segs, sizelimit = 54):
     global frag_idx
     frag_idx = 0
     packetlist = []
@@ -124,6 +124,6 @@ if __name__ == '__main__':
         print("Specify ti hex file")
     else:
         for f in sys.argv[1:]:
-            segs =  get_segs(sys.argv[1])
-            packet_lists.append(prepare_packets(segs))
+            segs =  get_segs(f)
+            packet_lists.append(prepare_packets(segs, 54))
         generate_c_hdr(packet_lists)

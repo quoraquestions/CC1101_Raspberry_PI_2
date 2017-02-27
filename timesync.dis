@@ -16,132 +16,132 @@ Disassembly of section .plt:
    10884:	e59fe004 	ldr	lr, [pc, #4]	; 10890 <_init+0x1c>
    10888:	e08fe00e 	add	lr, pc, lr
    1088c:	e5bef008 	ldr	pc, [lr, #8]!
-   10890:	00012884 	.word	0x00012884
+   10890:	000122b0 	.word	0x000122b0
 
 00010894 <open@plt>:
    10894:	e28fc600 	add	ip, pc, #0, 12
    10898:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   1089c:	e5bcf884 	ldr	pc, [ip, #2180]!	; 0x884
+   1089c:	e5bcf2b0 	ldr	pc, [ip, #688]!	; 0x2b0
 
 000108a0 <mmap@plt>:
    108a0:	e28fc600 	add	ip, pc, #0, 12
    108a4:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   108a8:	e5bcf87c 	ldr	pc, [ip, #2172]!	; 0x87c
+   108a8:	e5bcf2a8 	ldr	pc, [ip, #680]!	; 0x2a8
 
 000108ac <abort@plt>:
    108ac:	e28fc600 	add	ip, pc, #0, 12
    108b0:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   108b4:	e5bcf874 	ldr	pc, [ip, #2164]!	; 0x874
+   108b4:	e5bcf2a0 	ldr	pc, [ip, #672]!	; 0x2a0
 
 000108b8 <memcmp@plt>:
    108b8:	e28fc600 	add	ip, pc, #0, 12
    108bc:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   108c0:	e5bcf86c 	ldr	pc, [ip, #2156]!	; 0x86c
+   108c0:	e5bcf298 	ldr	pc, [ip, #664]!	; 0x298
 
 000108c4 <__libc_start_main@plt>:
    108c4:	e28fc600 	add	ip, pc, #0, 12
    108c8:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   108cc:	e5bcf864 	ldr	pc, [ip, #2148]!	; 0x864
+   108cc:	e5bcf290 	ldr	pc, [ip, #656]!	; 0x290
 
 000108d0 <clock_gettime@plt>:
    108d0:	e28fc600 	add	ip, pc, #0, 12
    108d4:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   108d8:	e5bcf85c 	ldr	pc, [ip, #2140]!	; 0x85c
+   108d8:	e5bcf288 	ldr	pc, [ip, #648]!	; 0x288
 
 000108dc <__gmon_start__@plt>:
    108dc:	e28fc600 	add	ip, pc, #0, 12
    108e0:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   108e4:	e5bcf854 	ldr	pc, [ip, #2132]!	; 0x854
+   108e4:	e5bcf280 	ldr	pc, [ip, #640]!	; 0x280
 
 000108e8 <putchar@plt>:
    108e8:	e28fc600 	add	ip, pc, #0, 12
    108ec:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   108f0:	e5bcf84c 	ldr	pc, [ip, #2124]!	; 0x84c
+   108f0:	e5bcf278 	ldr	pc, [ip, #632]!	; 0x278
 
 000108f4 <calloc@plt>:
    108f4:	e28fc600 	add	ip, pc, #0, 12
    108f8:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   108fc:	e5bcf844 	ldr	pc, [ip, #2116]!	; 0x844
+   108fc:	e5bcf270 	ldr	pc, [ip, #624]!	; 0x270
 
 00010900 <memset@plt>:
    10900:	e28fc600 	add	ip, pc, #0, 12
    10904:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10908:	e5bcf83c 	ldr	pc, [ip, #2108]!	; 0x83c
+   10908:	e5bcf268 	ldr	pc, [ip, #616]!	; 0x268
 
 0001090c <perror@plt>:
    1090c:	e28fc600 	add	ip, pc, #0, 12
    10910:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10914:	e5bcf834 	ldr	pc, [ip, #2100]!	; 0x834
+   10914:	e5bcf260 	ldr	pc, [ip, #608]!	; 0x260
 
 00010918 <__assert_fail@plt>:
    10918:	e28fc600 	add	ip, pc, #0, 12
    1091c:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10920:	e5bcf82c 	ldr	pc, [ip, #2092]!	; 0x82c
+   10920:	e5bcf258 	ldr	pc, [ip, #600]!	; 0x258
 
 00010924 <free@plt>:
    10924:	e28fc600 	add	ip, pc, #0, 12
    10928:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   1092c:	e5bcf824 	ldr	pc, [ip, #2084]!	; 0x824
+   1092c:	e5bcf250 	ldr	pc, [ip, #592]!	; 0x250
 
 00010930 <fflush@plt>:
    10930:	e28fc600 	add	ip, pc, #0, 12
    10934:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10938:	e5bcf81c 	ldr	pc, [ip, #2076]!	; 0x81c
+   10938:	e5bcf248 	ldr	pc, [ip, #584]!	; 0x248
 
 0001093c <ioctl@plt>:
    1093c:	e28fc600 	add	ip, pc, #0, 12
    10940:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10944:	e5bcf814 	ldr	pc, [ip, #2068]!	; 0x814
+   10944:	e5bcf240 	ldr	pc, [ip, #576]!	; 0x240
 
 00010948 <__ubsan_handle_add_overflow@plt>:
    10948:	e28fc600 	add	ip, pc, #0, 12
    1094c:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10950:	e5bcf80c 	ldr	pc, [ip, #2060]!	; 0x80c
+   10950:	e5bcf238 	ldr	pc, [ip, #568]!	; 0x238
 
 00010954 <printf@plt>:
    10954:	e28fc600 	add	ip, pc, #0, 12
    10958:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   1095c:	e5bcf804 	ldr	pc, [ip, #2052]!	; 0x804
+   1095c:	e5bcf230 	ldr	pc, [ip, #560]!	; 0x230
 
 00010960 <__ubsan_handle_shift_out_of_bounds@plt>:
    10960:	e28fc600 	add	ip, pc, #0, 12
    10964:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10968:	e5bcf7fc 	ldr	pc, [ip, #2044]!	; 0x7fc
+   10968:	e5bcf228 	ldr	pc, [ip, #552]!	; 0x228
 
 0001096c <close@plt>:
    1096c:	e28fc600 	add	ip, pc, #0, 12
    10970:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10974:	e5bcf7f4 	ldr	pc, [ip, #2036]!	; 0x7f4
+   10974:	e5bcf220 	ldr	pc, [ip, #544]!	; 0x220
 
 00010978 <malloc@plt>:
    10978:	e28fc600 	add	ip, pc, #0, 12
    1097c:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10980:	e5bcf7ec 	ldr	pc, [ip, #2028]!	; 0x7ec
+   10980:	e5bcf218 	ldr	pc, [ip, #536]!	; 0x218
 
 00010984 <__ubsan_handle_type_mismatch@plt>:
    10984:	e28fc600 	add	ip, pc, #0, 12
    10988:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   1098c:	e5bcf7e4 	ldr	pc, [ip, #2020]!	; 0x7e4
+   1098c:	e5bcf210 	ldr	pc, [ip, #528]!	; 0x210
 
 00010990 <puts@plt>:
    10990:	e28fc600 	add	ip, pc, #0, 12
    10994:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   10998:	e5bcf7dc 	ldr	pc, [ip, #2012]!	; 0x7dc
+   10998:	e5bcf208 	ldr	pc, [ip, #520]!	; 0x208
 
 0001099c <nanosleep@plt>:
    1099c:	e28fc600 	add	ip, pc, #0, 12
    109a0:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   109a4:	e5bcf7d4 	ldr	pc, [ip, #2004]!	; 0x7d4
+   109a4:	e5bcf200 	ldr	pc, [ip, #512]!	; 0x200
 
 000109a8 <strcmp@plt>:
    109a8:	e28fc600 	add	ip, pc, #0, 12
    109ac:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   109b0:	e5bcf7cc 	ldr	pc, [ip, #1996]!	; 0x7cc
+   109b0:	e5bcf1f8 	ldr	pc, [ip, #504]!	; 0x1f8
 
 000109b4 <exit@plt>:
    109b4:	e28fc600 	add	ip, pc, #0, 12
    109b8:	e28cca12 	add	ip, ip, #73728	; 0x12000
-   109bc:	e5bcf7c4 	ldr	pc, [ip, #1988]!	; 0x7c4
+   109bc:	e5bcf1f0 	ldr	pc, [ip, #496]!	; 0x1f0
 
 Disassembly of section .text:
 
@@ -158,9 +158,9 @@ Disassembly of section .text:
    109da:	4b04      	ldr	r3, [pc, #16]	; (109ec <_start+0x2c>)
    109dc:	f7ff ef72 	blx	108c4 <__libc_start_main@plt>
    109e0:	f7ff ef64 	blx	108ac <abort@plt>
-   109e4:	0001266d 	.word	0x0001266d
-   109e8:	000124dd 	.word	0x000124dd
-   109ec:	0001262d 	.word	0x0001262d
+   109e4:	000126b1 	.word	0x000126b1
+   109e8:	00012521 	.word	0x00012521
+   109ec:	00012671 	.word	0x00012671
 
 000109f0 <call_weak_fn>:
    109f0:	e59f3014 	ldr	r3, [pc, #20]	; 10a0c <call_weak_fn+0x1c>
@@ -170,12 +170,12 @@ Disassembly of section .text:
    10a00:	e3520000 	cmp	r2, #0
    10a04:	012fff1e 	bxeq	lr
    10a08:	eaffffb3 	b	108dc <__gmon_start__@plt>
-   10a0c:	00012714 	.word	0x00012714
+   10a0c:	00012140 	.word	0x00012140
    10a10:	00000070 	.word	0x00000070
 
 00010a14 <deregister_tm_clones>:
    10a14:	4b07      	ldr	r3, [pc, #28]	; (10a34 <deregister_tm_clones+0x20>)
-   10a16:	f644 20ec 	movw	r0, #19180	; 0x4aec
+   10a16:	f649 504c 	movw	r0, #40268	; 0x9d4c
    10a1a:	f2c0 0002 	movt	r0, #2
    10a1e:	1a1b      	subs	r3, r3, r0
    10a20:	2b06      	cmp	r3, #6
@@ -186,11 +186,11 @@ Disassembly of section .text:
    10a2e:	4718      	bx	r3
    10a30:	4770      	bx	lr
    10a32:	bf00      	nop
-   10a34:	00024aef 	.word	0x00024aef
+   10a34:	00029d4f 	.word	0x00029d4f
 
 00010a38 <register_tm_clones>:
-   10a38:	f644 23ec 	movw	r3, #19180	; 0x4aec
-   10a3c:	f644 20ec 	movw	r0, #19180	; 0x4aec
+   10a38:	f649 534c 	movw	r3, #40268	; 0x9d4c
+   10a3c:	f649 504c 	movw	r0, #40268	; 0x9d4c
    10a40:	f2c0 0302 	movt	r3, #2
    10a44:	f2c0 0002 	movt	r0, #2
    10a48:	1a19      	subs	r1, r3, r0
@@ -207,7 +207,7 @@ Disassembly of section .text:
 
 00010a64 <__do_global_dtors_aux>:
    10a64:	b510      	push	{r4, lr}
-   10a66:	f644 24f0 	movw	r4, #19184	; 0x4af0
+   10a66:	f649 5450 	movw	r4, #40272	; 0x9d50
    10a6a:	f2c0 0402 	movt	r4, #2
    10a6e:	7823      	ldrb	r3, [r4, #0]
    10a70:	b91b      	cbnz	r3, 10a7a <__do_global_dtors_aux+0x16>
@@ -217,7 +217,7 @@ Disassembly of section .text:
    10a7a:	bd10      	pop	{r4, pc}
 
 00010a7c <frame_dummy>:
-   10a7c:	f243 0008 	movw	r0, #12296	; 0x3008
+   10a7c:	f642 2034 	movw	r0, #10804	; 0x2a34
    10a80:	b508      	push	{r3, lr}
    10a82:	f2c0 0002 	movt	r0, #2
    10a86:	6803      	ldr	r3, [r0, #0]
@@ -243,22 +243,22 @@ void setup_io()
    10aa4:	af02      	add	r7, sp, #8
    /* open /dev/mem */
    if ((mem_fd = open("/dev/mem", O_RDWR|O_SYNC) ) < 0) {
-   10aa6:	f242 60c8 	movw	r0, #9928	; 0x26c8
+   10aa6:	f242 700c 	movw	r0, #9996	; 0x270c
    10aaa:	f2c0 0001 	movt	r0, #1
    10aae:	f241 0102 	movw	r1, #4098	; 0x1002
    10ab2:	f2c0 0110 	movt	r1, #16
    10ab6:	f7ff eeee 	blx	10894 <open@plt>
    10aba:	4602      	mov	r2, r0
-   10abc:	f644 23f4 	movw	r3, #19188	; 0x4af4
+   10abc:	f649 5354 	movw	r3, #40276	; 0x9d54
    10ac0:	f2c0 0302 	movt	r3, #2
    10ac4:	601a      	str	r2, [r3, #0]
-   10ac6:	f644 23f4 	movw	r3, #19188	; 0x4af4
+   10ac6:	f649 5354 	movw	r3, #40276	; 0x9d54
    10aca:	f2c0 0302 	movt	r3, #2
    10ace:	681b      	ldr	r3, [r3, #0]
    10ad0:	2b00      	cmp	r3, #0
    10ad2:	da09      	bge.n	10ae8 <setup_io+0x48>
       printf("can't open /dev/mem \n");
-   10ad4:	f242 60d4 	movw	r0, #9940	; 0x26d4
+   10ad4:	f242 7018 	movw	r0, #10008	; 0x2718
    10ad8:	f2c0 0001 	movt	r0, #1
    10adc:	f7ff ef58 	blx	10990 <puts@plt>
       exit(-1);
@@ -268,7 +268,7 @@ void setup_io()
  
    /* mmap GPIO */
    gpio_map = mmap(
-   10ae8:	f644 23f4 	movw	r3, #19188	; 0x4af4
+   10ae8:	f649 5354 	movw	r3, #40276	; 0x9d54
    10aec:	f2c0 0302 	movt	r3, #2
    10af0:	681b      	ldr	r3, [r3, #0]
    10af2:	9300      	str	r3, [sp, #0]
@@ -281,7 +281,7 @@ void setup_io()
    10b04:	2301      	movs	r3, #1
    10b06:	f7ff eecc 	blx	108a0 <mmap@plt>
    10b0a:	4602      	mov	r2, r0
-   10b0c:	f644 23fc 	movw	r3, #19196	; 0x4afc
+   10b0c:	f649 535c 	movw	r3, #40284	; 0x9d5c
    10b10:	f2c0 0302 	movt	r3, #2
    10b14:	601a      	str	r2, [r3, #0]
       MAP_SHARED,       //Shared with other processes
@@ -290,23 +290,23 @@ void setup_io()
    );
  
    close(mem_fd); //No need to keep mem_fd open after mmap
-   10b16:	f644 23f4 	movw	r3, #19188	; 0x4af4
+   10b16:	f649 5354 	movw	r3, #40276	; 0x9d54
    10b1a:	f2c0 0302 	movt	r3, #2
    10b1e:	681b      	ldr	r3, [r3, #0]
    10b20:	4618      	mov	r0, r3
    10b22:	f7ff ef24 	blx	1096c <close@plt>
  
    if (gpio_map == MAP_FAILED) {
-   10b26:	f644 23fc 	movw	r3, #19196	; 0x4afc
+   10b26:	f649 535c 	movw	r3, #40284	; 0x9d5c
    10b2a:	f2c0 0302 	movt	r3, #2
    10b2e:	681b      	ldr	r3, [r3, #0]
    10b30:	f1b3 3fff 	cmp.w	r3, #4294967295
    10b34:	d10f      	bne.n	10b56 <setup_io+0xb6>
       printf("mmap error %d\n", (int)gpio_map);//errno also set!
-   10b36:	f644 23fc 	movw	r3, #19196	; 0x4afc
+   10b36:	f649 535c 	movw	r3, #40284	; 0x9d5c
    10b3a:	f2c0 0302 	movt	r3, #2
    10b3e:	681b      	ldr	r3, [r3, #0]
-   10b40:	f242 60ec 	movw	r0, #9964	; 0x26ec
+   10b40:	f242 7030 	movw	r0, #10032	; 0x2730
    10b44:	f2c0 0001 	movt	r0, #1
    10b48:	4619      	mov	r1, r3
    10b4a:	f7ff ef04 	blx	10954 <printf@plt>
@@ -317,10 +317,10 @@ void setup_io()
  
    // Always use volatile pointer!
    gpio = (volatile unsigned *)gpio_map;
-   10b56:	f644 23fc 	movw	r3, #19196	; 0x4afc
+   10b56:	f649 535c 	movw	r3, #40284	; 0x9d5c
    10b5a:	f2c0 0302 	movt	r3, #2
    10b5e:	681a      	ldr	r2, [r3, #0]
-   10b60:	f644 4300 	movw	r3, #19456	; 0x4c00
+   10b60:	f649 6360 	movw	r3, #40544	; 0x9e60
    10b64:	f2c0 0302 	movt	r3, #2
    10b68:	601a      	str	r2, [r3, #0]
  
@@ -351,7 +351,7 @@ int open_spi(const char *devname)
    10b86:	da09      	bge.n	10b9c <open_spi+0x2c>
     {
         perror("Open Failed\n");
-   10b88:	f242 700c 	movw	r0, #9996	; 0x270c
+   10b88:	f242 7050 	movw	r0, #10064	; 0x2750
    10b8c:	f2c0 0001 	movt	r0, #1
    10b90:	f7ff eebc 	blx	1090c <perror@plt>
         exit(-1);
@@ -383,7 +383,7 @@ int close_spi(int fd)
    10bba:	d009      	beq.n	10bd0 <close_spi+0x28>
     {
         perror("Close Failed\n");
-   10bbc:	f242 701c 	movw	r0, #10012	; 0x271c
+   10bbc:	f242 7060 	movw	r0, #10080	; 0x2760
    10bc0:	f2c0 0001 	movt	r0, #1
    10bc4:	f7ff eea2 	blx	1090c <perror@plt>
         exit(-1);
@@ -423,7 +423,7 @@ void default_spi_config(int fd)
    10c00:	d005      	beq.n	10c0e <default_spi_config+0x32>
     {
         perror("Failed to set mode to SPI_MODE_0");
-   10c02:	f242 702c 	movw	r0, #10028	; 0x272c
+   10c02:	f242 7070 	movw	r0, #10096	; 0x2770
    10c06:	f2c0 0001 	movt	r0, #1
    10c0a:	f7ff ee80 	blx	1090c <perror@plt>
     }
@@ -443,7 +443,7 @@ void default_spi_config(int fd)
    10c30:	d005      	beq.n	10c3e <default_spi_config+0x62>
     {
         perror("Failed to set speed");
-   10c32:	f242 7050 	movw	r0, #10064	; 0x2750
+   10c32:	f242 7094 	movw	r0, #10132	; 0x2794
    10c36:	f2c0 0001 	movt	r0, #1
    10c3a:	f7ff ee68 	blx	1090c <perror@plt>
     }
@@ -462,7 +462,7 @@ void default_spi_config(int fd)
    10c5a:	d006      	beq.n	10c6a <default_spi_config+0x8e>
     {
         perror("Failed to set bpw");
-   10c5c:	f242 7064 	movw	r0, #10084	; 0x2764
+   10c5c:	f242 70a8 	movw	r0, #10152	; 0x27a8
    10c60:	f2c0 0001 	movt	r0, #1
    10c64:	f7ff ee52 	blx	1090c <perror@plt>
    10c68:	e01b      	b.n	10ca2 <default_spi_config+0xc6>
@@ -479,7 +479,7 @@ void default_spi_config(int fd)
    10c82:	d006      	beq.n	10c92 <default_spi_config+0xb6>
     {
         perror("Failed to get bwp");
-   10c84:	f242 7078 	movw	r0, #10104	; 0x2778
+   10c84:	f242 70bc 	movw	r0, #10172	; 0x27bc
    10c88:	f2c0 0001 	movt	r0, #1
    10c8c:	f7ff ee3e 	blx	1090c <perror@plt>
    10c90:	e007      	b.n	10ca2 <default_spi_config+0xc6>
@@ -488,7 +488,7 @@ void default_spi_config(int fd)
     {
         printf("BPW: %d\n", x);
    10c92:	68fb      	ldr	r3, [r7, #12]
-   10c94:	f242 708c 	movw	r0, #10124	; 0x278c
+   10c94:	f242 70d0 	movw	r0, #10192	; 0x27d0
    10c98:	f2c0 0001 	movt	r0, #1
    10c9c:	4619      	mov	r1, r3
    10c9e:	f7ff ee5a 	blx	10954 <printf@plt>
@@ -549,7 +549,7 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
    10cf0:	6bfb      	ldr	r3, [r7, #60]	; 0x3c
    10cf2:	2b00      	cmp	r3, #0
    10cf4:	d106      	bne.n	10d04 <write_reg+0x5c>
-   10cf6:	f244 1054 	movw	r0, #16724	; 0x4154
+   10cf6:	f249 30b4 	movw	r0, #37812	; 0x93b4
    10cfa:	f2c0 0002 	movt	r0, #2
    10cfe:	2100      	movs	r1, #0
    10d00:	f7ff ee40 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -561,7 +561,7 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
    10d0c:	1c5c      	adds	r4, r3, #1
    10d0e:	2c00      	cmp	r4, #0
    10d10:	d106      	bne.n	10d20 <write_reg+0x78>
-   10d12:	f244 106c 	movw	r0, #16748	; 0x416c
+   10d12:	f249 30cc 	movw	r0, #37836	; 0x93cc
    10d16:	f2c0 0002 	movt	r0, #2
    10d1a:	2100      	movs	r1, #0
    10d1c:	f7ff ee32 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -569,13 +569,13 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
    10d22:	7023      	strb	r3, [r4, #0]
 
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
-   10d24:	f644 4300 	movw	r3, #19456	; 0x4c00
+   10d24:	f649 6360 	movw	r3, #40544	; 0x9e60
    10d28:	f2c0 0302 	movt	r3, #2
    10d2c:	681b      	ldr	r3, [r3, #0]
    10d2e:	f103 0428 	add.w	r4, r3, #40	; 0x28
    10d32:	2c00      	cmp	r4, #0
    10d34:	d106      	bne.n	10d44 <write_reg+0x9c>
-   10d36:	f244 10a0 	movw	r0, #16800	; 0x41a0
+   10d36:	f249 4000 	movw	r0, #37888	; 0x9400
    10d3a:	f2c0 0002 	movt	r0, #2
    10d3e:	2100      	movs	r1, #0
    10d40:	f7ff ee20 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -598,13 +598,13 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
    10d5e:	e001      	b.n	10d64 <write_reg+0xbc>
    10d60:	42a5      	cmp	r5, r4
    10d62:	dd07      	ble.n	10d74 <write_reg+0xcc>
-   10d64:	f244 2018 	movw	r0, #16920	; 0x4218
+   10d64:	f249 4078 	movw	r0, #38008	; 0x9478
    10d68:	f2c0 0002 	movt	r0, #2
    10d6c:	4621      	mov	r1, r4
    10d6e:	2201      	movs	r2, #1
    10d70:	f7ff edea 	blx	10948 <__ubsan_handle_add_overflow@plt>
    10d74:	637d      	str	r5, [r7, #52]	; 0x34
-   10d76:	f242 70a4 	movw	r0, #10148	; 0x27a4
+   10d76:	f242 70e8 	movw	r0, #10216	; 0x27e8
    10d7a:	f2c0 0001 	movt	r0, #1
    10d7e:	4621      	mov	r1, r4
    10d80:	f7ff ede8 	blx	10954 <printf@plt>
@@ -614,13 +614,13 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
 
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
     while(GET_GPIO(GPIO_RDY))
-   10d84:	f644 4300 	movw	r3, #19456	; 0x4c00
+   10d84:	f649 6360 	movw	r3, #40544	; 0x9e60
    10d88:	f2c0 0302 	movt	r3, #2
    10d8c:	681b      	ldr	r3, [r3, #0]
    10d8e:	f103 0434 	add.w	r4, r3, #52	; 0x34
    10d92:	2c00      	cmp	r4, #0
    10d94:	d106      	bne.n	10da4 <write_reg+0xfc>
-   10d96:	f244 10b8 	movw	r0, #16824	; 0x41b8
+   10d96:	f249 4018 	movw	r0, #37912	; 0x9418
    10d9a:	f2c0 0002 	movt	r0, #2
    10d9e:	2100      	movs	r1, #0
    10da0:	f7ff edf0 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -673,7 +673,7 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
    10dfc:	2b00      	cmp	r3, #0
    10dfe:	dc05      	bgt.n	10e0c <write_reg+0x164>
         perror("can't send spi message");
-   10e00:	f242 70c0 	movw	r0, #10176	; 0x27c0
+   10e00:	f642 0004 	movw	r0, #10244	; 0x2804
    10e04:	f2c0 0001 	movt	r0, #1
    10e08:	f7ff ed80 	blx	1090c <perror@plt>
 #if 0
@@ -689,7 +689,7 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
    10e12:	6bbb      	ldr	r3, [r7, #56]	; 0x38
    10e14:	2b00      	cmp	r3, #0
    10e16:	d106      	bne.n	10e26 <write_reg+0x17e>
-   10e18:	f244 10d0 	movw	r0, #16848	; 0x41d0
+   10e18:	f249 4030 	movw	r0, #37936	; 0x9430
    10e1c:	f2c0 0002 	movt	r0, #2
    10e20:	2100      	movs	r1, #0
    10e22:	f7ff edb0 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -698,7 +698,7 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
    10e2a:	687b      	ldr	r3, [r7, #4]
    10e2c:	2b00      	cmp	r3, #0
    10e2e:	d106      	bne.n	10e3e <write_reg+0x196>
-   10e30:	f244 10e8 	movw	r0, #16872	; 0x41e8
+   10e30:	f249 4048 	movw	r0, #37960	; 0x9448
    10e34:	f2c0 0002 	movt	r0, #2
    10e38:	2100      	movs	r1, #0
    10e3a:	f7ff eda4 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -706,13 +706,13 @@ void write_reg(int fd, uint8_t addr, uint8_t value, uint8_t *response)
    10e40:	4622      	mov	r2, r4
    10e42:	701a      	strb	r2, [r3, #0]
     GPIO_SET = 1 << (GPIO_CHIP_SEL);
-   10e44:	f644 4300 	movw	r3, #19456	; 0x4c00
+   10e44:	f649 6360 	movw	r3, #40544	; 0x9e60
    10e48:	f2c0 0302 	movt	r3, #2
    10e4c:	681b      	ldr	r3, [r3, #0]
    10e4e:	f103 041c 	add.w	r4, r3, #28
    10e52:	2c00      	cmp	r4, #0
    10e54:	d106      	bne.n	10e64 <write_reg+0x1bc>
-   10e56:	f244 2000 	movw	r0, #16896	; 0x4200
+   10e56:	f249 4060 	movw	r0, #37984	; 0x9460
    10e5a:	f2c0 0002 	movt	r0, #2
    10e5e:	2100      	movs	r1, #0
    10e60:	f7ff ed90 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -758,7 +758,7 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
    10e9c:	e001      	b.n	10ea2 <read_reg_burst+0x26>
    10e9e:	429c      	cmp	r4, r3
    10ea0:	dd07      	ble.n	10eb2 <read_reg_burst+0x36>
-   10ea2:	f244 20b8 	movw	r0, #17080	; 0x42b8
+   10ea2:	f249 5018 	movw	r0, #38168	; 0x9518
    10ea6:	f2c0 0002 	movt	r0, #2
    10eaa:	4619      	mov	r1, r3
    10eac:	2201      	movs	r2, #1
@@ -779,7 +779,7 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
    10ecc:	e001      	b.n	10ed2 <read_reg_burst+0x56>
    10ece:	429c      	cmp	r4, r3
    10ed0:	dd07      	ble.n	10ee2 <read_reg_burst+0x66>
-   10ed2:	f244 20c8 	movw	r0, #17096	; 0x42c8
+   10ed2:	f249 5028 	movw	r0, #38184	; 0x9528
    10ed6:	f2c0 0002 	movt	r0, #2
    10eda:	4619      	mov	r1, r3
    10edc:	2201      	movs	r2, #1
@@ -818,7 +818,7 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
    10f24:	6bfb      	ldr	r3, [r7, #60]	; 0x3c
    10f26:	2b00      	cmp	r3, #0
    10f28:	d106      	bne.n	10f38 <read_reg_burst+0xbc>
-   10f2a:	f244 2028 	movw	r0, #16936	; 0x4228
+   10f2a:	f249 4088 	movw	r0, #38024	; 0x9488
    10f2e:	f2c0 0002 	movt	r0, #2
    10f32:	2100      	movs	r1, #0
    10f34:	f7ff ed26 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -827,13 +827,13 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
    10f3c:	701a      	strb	r2, [r3, #0]
 
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
-   10f3e:	f644 4300 	movw	r3, #19456	; 0x4c00
+   10f3e:	f649 6360 	movw	r3, #40544	; 0x9e60
    10f42:	f2c0 0302 	movt	r3, #2
    10f46:	681b      	ldr	r3, [r3, #0]
    10f48:	f103 0428 	add.w	r4, r3, #40	; 0x28
    10f4c:	2c00      	cmp	r4, #0
    10f4e:	d106      	bne.n	10f5e <read_reg_burst+0xe2>
-   10f50:	f244 2040 	movw	r0, #16960	; 0x4240
+   10f50:	f249 40a0 	movw	r0, #38048	; 0x94a0
    10f54:	f2c0 0002 	movt	r0, #2
    10f58:	2100      	movs	r1, #0
    10f5a:	f7ff ed14 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -847,7 +847,7 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
    10f66:	6c7b      	ldr	r3, [r7, #68]	; 0x44
    10f68:	1c5a      	adds	r2, r3, #1
    10f6a:	647a      	str	r2, [r7, #68]	; 0x44
-   10f6c:	f242 70a4 	movw	r0, #10148	; 0x27a4
+   10f6c:	f242 70e8 	movw	r0, #10216	; 0x27e8
    10f70:	f2c0 0001 	movt	r0, #1
    10f74:	4619      	mov	r1, r3
    10f76:	f7ff ecee 	blx	10954 <printf@plt>
@@ -857,13 +857,13 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
 
     while(GET_GPIO(GPIO_RDY))
-   10f7a:	f644 4300 	movw	r3, #19456	; 0x4c00
+   10f7a:	f649 6360 	movw	r3, #40544	; 0x9e60
    10f7e:	f2c0 0302 	movt	r3, #2
    10f82:	681b      	ldr	r3, [r3, #0]
    10f84:	f103 0434 	add.w	r4, r3, #52	; 0x34
    10f88:	2c00      	cmp	r4, #0
    10f8a:	d106      	bne.n	10f9a <read_reg_burst+0x11e>
-   10f8c:	f244 2058 	movw	r0, #16984	; 0x4258
+   10f8c:	f249 40b8 	movw	r0, #38072	; 0x94b8
    10f90:	f2c0 0002 	movt	r0, #2
    10f94:	2100      	movs	r1, #0
    10f96:	f7ff ecf6 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -897,7 +897,7 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
    10fca:	e001      	b.n	10fd0 <read_reg_burst+0x154>
    10fcc:	429c      	cmp	r4, r3
    10fce:	dd07      	ble.n	10fe0 <read_reg_burst+0x164>
-   10fd0:	f244 20d8 	movw	r0, #17112	; 0x42d8
+   10fd0:	f249 5038 	movw	r0, #38200	; 0x9538
    10fd4:	f2c0 0002 	movt	r0, #2
    10fd8:	4619      	mov	r1, r3
    10fda:	2201      	movs	r2, #1
@@ -931,7 +931,7 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
    11016:	2b00      	cmp	r3, #0
    11018:	dc05      	bgt.n	11026 <read_reg_burst+0x1aa>
         perror("can't send spi message");
-   1101a:	f242 70c0 	movw	r0, #10176	; 0x27c0
+   1101a:	f642 0004 	movw	r0, #10244	; 0x2804
    1101e:	f2c0 0001 	movt	r0, #1
    11022:	f7ff ec74 	blx	1090c <perror@plt>
 #if 0
@@ -959,14 +959,14 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
    1103e:	18d5      	adds	r5, r2, r3
    11040:	2d00      	cmp	r5, #0
    11042:	d106      	bne.n	11052 <read_reg_burst+0x1d6>
-   11044:	f244 2070 	movw	r0, #17008	; 0x4270
+   11044:	f249 40d0 	movw	r0, #38096	; 0x94d0
    11048:	f2c0 0002 	movt	r0, #2
    1104c:	2100      	movs	r1, #0
    1104e:	f7ff ec9a 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    11052:	782d      	ldrb	r5, [r5, #0]
    11054:	2c00      	cmp	r4, #0
    11056:	d106      	bne.n	11066 <read_reg_burst+0x1ea>
-   11058:	f244 2088 	movw	r0, #17032	; 0x4288
+   11058:	f249 40e8 	movw	r0, #38120	; 0x94e8
    1105c:	f2c0 0002 	movt	r0, #2
    11060:	2100      	movs	r1, #0
    11062:	f7ff ec90 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -990,7 +990,7 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
    1107c:	6c3b      	ldr	r3, [r7, #64]	; 0x40
    1107e:	429c      	cmp	r4, r3
    11080:	dd07      	ble.n	11092 <read_reg_burst+0x216>
-   11082:	f244 20e8 	movw	r0, #17128	; 0x42e8
+   11082:	f249 5048 	movw	r0, #38216	; 0x9548
    11086:	f2c0 0002 	movt	r0, #2
    1108a:	6c39      	ldr	r1, [r7, #64]	; 0x40
    1108c:	2201      	movs	r2, #1
@@ -1003,13 +1003,13 @@ void read_reg_burst(int fd, uint8_t addr, uint8_t len, uint8_t *dest)
             dest[i] = rd[i + 1];
     }
     GPIO_SET = 1 << (GPIO_CHIP_SEL);
-   1109c:	f644 4300 	movw	r3, #19456	; 0x4c00
+   1109c:	f649 6360 	movw	r3, #40544	; 0x9e60
    110a0:	f2c0 0302 	movt	r3, #2
    110a4:	681b      	ldr	r3, [r3, #0]
    110a6:	f103 041c 	add.w	r4, r3, #28
    110aa:	2c00      	cmp	r4, #0
    110ac:	d106      	bne.n	110bc <read_reg_burst+0x240>
-   110ae:	f244 20a0 	movw	r0, #17056	; 0x42a0
+   110ae:	f249 5000 	movw	r0, #38144	; 0x9500
    110b2:	f2c0 0002 	movt	r0, #2
    110b6:	2100      	movs	r1, #0
    110b8:	f7ff ec64 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1059,7 +1059,7 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    110fa:	e001      	b.n	11100 <write_reg_burst+0x28>
    110fc:	429c      	cmp	r4, r3
    110fe:	dd07      	ble.n	11110 <write_reg_burst+0x38>
-   11100:	f244 30a0 	movw	r0, #17312	; 0x43a0
+   11100:	f249 6000 	movw	r0, #38400	; 0x9600
    11104:	f2c0 0002 	movt	r0, #2
    11108:	4619      	mov	r1, r3
    1110a:	2201      	movs	r2, #1
@@ -1080,7 +1080,7 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    1112a:	e001      	b.n	11130 <write_reg_burst+0x58>
    1112c:	429c      	cmp	r4, r3
    1112e:	dd07      	ble.n	11140 <write_reg_burst+0x68>
-   11130:	f244 30b0 	movw	r0, #17328	; 0x43b0
+   11130:	f249 6010 	movw	r0, #38416	; 0x9610
    11134:	f2c0 0002 	movt	r0, #2
    11138:	4619      	mov	r1, r3
    1113a:	2201      	movs	r2, #1
@@ -1114,7 +1114,7 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    11176:	6bfb      	ldr	r3, [r7, #60]	; 0x3c
    11178:	2b00      	cmp	r3, #0
    1117a:	d106      	bne.n	1118a <write_reg_burst+0xb2>
-   1117c:	f244 20f8 	movw	r0, #17144	; 0x42f8
+   1117c:	f249 5058 	movw	r0, #38232	; 0x9558
    11180:	f2c0 0002 	movt	r0, #2
    11184:	2100      	movs	r1, #0
    11186:	f7ff ebfe 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1138,14 +1138,14 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    111a6:	607b      	str	r3, [r7, #4]
    111a8:	2d00      	cmp	r5, #0
    111aa:	d106      	bne.n	111ba <write_reg_burst+0xe2>
-   111ac:	f244 3010 	movw	r0, #17168	; 0x4310
+   111ac:	f249 5070 	movw	r0, #38256	; 0x9570
    111b0:	f2c0 0002 	movt	r0, #2
    111b4:	2100      	movs	r1, #0
    111b6:	f7ff ebe6 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    111ba:	782d      	ldrb	r5, [r5, #0]
    111bc:	2c00      	cmp	r4, #0
    111be:	d106      	bne.n	111ce <write_reg_burst+0xf6>
-   111c0:	f244 3028 	movw	r0, #17192	; 0x4328
+   111c0:	f249 5088 	movw	r0, #38280	; 0x9588
    111c4:	f2c0 0002 	movt	r0, #2
    111c8:	2100      	movs	r1, #0
    111ca:	f7ff ebdc 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1169,7 +1169,7 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    111e4:	6c3b      	ldr	r3, [r7, #64]	; 0x40
    111e6:	429c      	cmp	r4, r3
    111e8:	dd07      	ble.n	111fa <write_reg_burst+0x122>
-   111ea:	f244 30c0 	movw	r0, #17344	; 0x43c0
+   111ea:	f249 6020 	movw	r0, #38432	; 0x9620
    111ee:	f2c0 0002 	movt	r0, #2
    111f2:	6c39      	ldr	r1, [r7, #64]	; 0x40
    111f4:	2201      	movs	r2, #1
@@ -1181,13 +1181,13 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    11202:	dccb      	bgt.n	1119c <write_reg_burst+0xc4>
         *ptr++ = *value++;
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
-   11204:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11204:	f649 6360 	movw	r3, #40544	; 0x9e60
    11208:	f2c0 0302 	movt	r3, #2
    1120c:	681b      	ldr	r3, [r3, #0]
    1120e:	f103 0428 	add.w	r4, r3, #40	; 0x28
    11212:	2c00      	cmp	r4, #0
    11214:	d106      	bne.n	11224 <write_reg_burst+0x14c>
-   11216:	f244 3040 	movw	r0, #17216	; 0x4340
+   11216:	f249 50a0 	movw	r0, #38304	; 0x95a0
    1121a:	f2c0 0002 	movt	r0, #2
    1121e:	2100      	movs	r1, #0
    11220:	f7ff ebb0 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1210,13 +1210,13 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    1123e:	e001      	b.n	11244 <write_reg_burst+0x16c>
    11240:	42a5      	cmp	r5, r4
    11242:	dd07      	ble.n	11254 <write_reg_burst+0x17c>
-   11244:	f244 30d0 	movw	r0, #17360	; 0x43d0
+   11244:	f249 6030 	movw	r0, #38448	; 0x9630
    11248:	f2c0 0002 	movt	r0, #2
    1124c:	4621      	mov	r1, r4
    1124e:	2201      	movs	r2, #1
    11250:	f7ff eb7a 	blx	10948 <__ubsan_handle_add_overflow@plt>
    11254:	637d      	str	r5, [r7, #52]	; 0x34
-   11256:	f242 70a4 	movw	r0, #10148	; 0x27a4
+   11256:	f242 70e8 	movw	r0, #10216	; 0x27e8
    1125a:	f2c0 0001 	movt	r0, #1
    1125e:	4621      	mov	r1, r4
    11260:	f7ff eb78 	blx	10954 <printf@plt>
@@ -1226,13 +1226,13 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
         *ptr++ = *value++;
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
     while(GET_GPIO(GPIO_RDY))
-   11264:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11264:	f649 6360 	movw	r3, #40544	; 0x9e60
    11268:	f2c0 0302 	movt	r3, #2
    1126c:	681b      	ldr	r3, [r3, #0]
    1126e:	f103 0434 	add.w	r4, r3, #52	; 0x34
    11272:	2c00      	cmp	r4, #0
    11274:	d106      	bne.n	11284 <write_reg_burst+0x1ac>
-   11276:	f244 3058 	movw	r0, #17240	; 0x4358
+   11276:	f249 50b8 	movw	r0, #38328	; 0x95b8
    1127a:	f2c0 0002 	movt	r0, #2
    1127e:	2100      	movs	r1, #0
    11280:	f7ff eb80 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1246,7 +1246,7 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
     }
     printf("Writing %02x \n", addr);
    1128e:	7afb      	ldrb	r3, [r7, #11]
-   11290:	f242 70d8 	movw	r0, #10200	; 0x27d8
+   11290:	f642 001c 	movw	r0, #10268	; 0x281c
    11294:	f2c0 0001 	movt	r0, #1
    11298:	4619      	mov	r1, r3
    1129a:	f7ff eb5c 	blx	10954 <printf@plt>
@@ -1271,7 +1271,7 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    112c4:	e001      	b.n	112ca <write_reg_burst+0x1f2>
    112c6:	429c      	cmp	r4, r3
    112c8:	dd07      	ble.n	112da <write_reg_burst+0x202>
-   112ca:	f244 30e0 	movw	r0, #17376	; 0x43e0
+   112ca:	f249 6040 	movw	r0, #38464	; 0x9640
    112ce:	f2c0 0002 	movt	r0, #2
    112d2:	4619      	mov	r1, r3
    112d4:	2201      	movs	r2, #1
@@ -1305,7 +1305,7 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    11310:	2b00      	cmp	r3, #0
    11312:	dc05      	bgt.n	11320 <write_reg_burst+0x248>
         perror("can't send spi message");
-   11314:	f242 70c0 	movw	r0, #10176	; 0x27c0
+   11314:	f642 0004 	movw	r0, #10244	; 0x2804
    11318:	f2c0 0001 	movt	r0, #1
    1131c:	f7ff eaf6 	blx	1090c <perror@plt>
 #if 0
@@ -1314,13 +1314,13 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
     }
 #endif
     GPIO_SET = 1 << (GPIO_CHIP_SEL);
-   11320:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11320:	f649 6360 	movw	r3, #40544	; 0x9e60
    11324:	f2c0 0302 	movt	r3, #2
    11328:	681b      	ldr	r3, [r3, #0]
    1132a:	f103 041c 	add.w	r4, r3, #28
    1132e:	2c00      	cmp	r4, #0
    11330:	d106      	bne.n	11340 <write_reg_burst+0x268>
-   11332:	f244 3070 	movw	r0, #17264	; 0x4370
+   11332:	f249 50d0 	movw	r0, #38352	; 0x95d0
    11336:	f2c0 0002 	movt	r0, #2
    1133a:	2100      	movs	r1, #0
    1133c:	f7ff eb22 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1336,7 +1336,7 @@ uint8_t write_reg_burst(int fd, uint8_t addr, uint8_t *value, uint8_t len)
    11352:	6bbb      	ldr	r3, [r7, #56]	; 0x38
    11354:	2b00      	cmp	r3, #0
    11356:	d106      	bne.n	11366 <write_reg_burst+0x28e>
-   11358:	f244 3088 	movw	r0, #17288	; 0x4388
+   11358:	f249 50e8 	movw	r0, #38376	; 0x95e8
    1135c:	f2c0 0002 	movt	r0, #2
    11360:	2100      	movs	r1, #0
    11362:	f7ff eb10 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1393,7 +1393,7 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
    113b8:	6bfb      	ldr	r3, [r7, #60]	; 0x3c
    113ba:	2b00      	cmp	r3, #0
    113bc:	d106      	bne.n	113cc <read_reg+0x58>
-   113be:	f244 30f0 	movw	r0, #17392	; 0x43f0
+   113be:	f249 6050 	movw	r0, #38480	; 0x9650
    113c2:	f2c0 0002 	movt	r0, #2
    113c6:	2100      	movs	r1, #0
    113c8:	f7ff eadc 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1405,7 +1405,7 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
    113d4:	1c5c      	adds	r4, r3, #1
    113d6:	2c00      	cmp	r4, #0
    113d8:	d106      	bne.n	113e8 <read_reg+0x74>
-   113da:	f244 4008 	movw	r0, #17416	; 0x4408
+   113da:	f249 6068 	movw	r0, #38504	; 0x9668
    113de:	f2c0 0002 	movt	r0, #2
    113e2:	2100      	movs	r1, #0
    113e4:	f7ff eace 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1420,7 +1420,7 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
    113f2:	6bfb      	ldr	r3, [r7, #60]	; 0x3c
    113f4:	2b00      	cmp	r3, #0
    113f6:	d106      	bne.n	11406 <read_reg+0x92>
-   113f8:	f244 4020 	movw	r0, #17440	; 0x4420
+   113f8:	f249 6080 	movw	r0, #38528	; 0x9680
    113fc:	f2c0 0002 	movt	r0, #2
    11400:	2100      	movs	r1, #0
    11402:	f7ff eac0 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1431,7 +1431,7 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
    11410:	6bfb      	ldr	r3, [r7, #60]	; 0x3c
    11412:	2b00      	cmp	r3, #0
    11414:	d106      	bne.n	11424 <read_reg+0xb0>
-   11416:	f244 4038 	movw	r0, #17464	; 0x4438
+   11416:	f249 6098 	movw	r0, #38552	; 0x9698
    1141a:	f2c0 0002 	movt	r0, #2
    1141e:	2100      	movs	r1, #0
    11420:	f7ff eab0 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1441,13 +1441,13 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
     }
 
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
-   1142a:	f644 4300 	movw	r3, #19456	; 0x4c00
+   1142a:	f649 6360 	movw	r3, #40544	; 0x9e60
    1142e:	f2c0 0302 	movt	r3, #2
    11432:	681b      	ldr	r3, [r3, #0]
    11434:	f103 0428 	add.w	r4, r3, #40	; 0x28
    11438:	2c00      	cmp	r4, #0
    1143a:	d106      	bne.n	1144a <read_reg+0xd6>
-   1143c:	f244 4050 	movw	r0, #17488	; 0x4450
+   1143c:	f249 60b0 	movw	r0, #38576	; 0x96b0
    11440:	f2c0 0002 	movt	r0, #2
    11444:	2100      	movs	r1, #0
    11446:	f7ff ea9e 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1470,13 +1470,13 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
    11464:	e001      	b.n	1146a <read_reg+0xf6>
    11466:	42a5      	cmp	r5, r4
    11468:	dd07      	ble.n	1147a <read_reg+0x106>
-   1146a:	f244 40e0 	movw	r0, #17632	; 0x44e0
+   1146a:	f249 7040 	movw	r0, #38720	; 0x9740
    1146e:	f2c0 0002 	movt	r0, #2
    11472:	4621      	mov	r1, r4
    11474:	2201      	movs	r2, #1
    11476:	f7ff ea68 	blx	10948 <__ubsan_handle_add_overflow@plt>
    1147a:	637d      	str	r5, [r7, #52]	; 0x34
-   1147c:	f242 70a4 	movw	r0, #10148	; 0x27a4
+   1147c:	f242 70e8 	movw	r0, #10216	; 0x27e8
    11480:	f2c0 0001 	movt	r0, #1
    11484:	4621      	mov	r1, r4
    11486:	f7ff ea66 	blx	10954 <printf@plt>
@@ -1486,13 +1486,13 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
 
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
     while(GET_GPIO(GPIO_RDY))
-   1148a:	f644 4300 	movw	r3, #19456	; 0x4c00
+   1148a:	f649 6360 	movw	r3, #40544	; 0x9e60
    1148e:	f2c0 0302 	movt	r3, #2
    11492:	681b      	ldr	r3, [r3, #0]
    11494:	f103 0434 	add.w	r4, r3, #52	; 0x34
    11498:	2c00      	cmp	r4, #0
    1149a:	d106      	bne.n	114aa <read_reg+0x136>
-   1149c:	f244 4068 	movw	r0, #17512	; 0x4468
+   1149c:	f249 60c8 	movw	r0, #38600	; 0x96c8
    114a0:	f2c0 0002 	movt	r0, #2
    114a4:	2100      	movs	r1, #0
    114a6:	f7ff ea6e 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1545,7 +1545,7 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
    11502:	2b00      	cmp	r3, #0
    11504:	dc05      	bgt.n	11512 <read_reg+0x19e>
         perror("can't send spi message");
-   11506:	f242 70c0 	movw	r0, #10176	; 0x27c0
+   11506:	f642 0004 	movw	r0, #10244	; 0x2804
    1150a:	f2c0 0001 	movt	r0, #1
    1150e:	f7ff e9fe 	blx	1090c <perror@plt>
 #if 0
@@ -1554,13 +1554,13 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
     }
 #endif
     GPIO_SET = 1 << (GPIO_CHIP_SEL);
-   11512:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11512:	f649 6360 	movw	r3, #40544	; 0x9e60
    11516:	f2c0 0302 	movt	r3, #2
    1151a:	681b      	ldr	r3, [r3, #0]
    1151c:	f103 041c 	add.w	r4, r3, #28
    11520:	2c00      	cmp	r4, #0
    11522:	d106      	bne.n	11532 <read_reg+0x1be>
-   11524:	f244 4080 	movw	r0, #17536	; 0x4480
+   11524:	f249 60e0 	movw	r0, #38624	; 0x96e0
    11528:	f2c0 0002 	movt	r0, #2
    1152c:	2100      	movs	r1, #0
    1152e:	f7ff ea2a 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1574,7 +1574,7 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
    1153e:	6bbb      	ldr	r3, [r7, #56]	; 0x38
    11540:	2b00      	cmp	r3, #0
    11542:	d106      	bne.n	11552 <read_reg+0x1de>
-   11544:	f244 4098 	movw	r0, #17560	; 0x4498
+   11544:	f249 60f8 	movw	r0, #38648	; 0x96f8
    11548:	f2c0 0002 	movt	r0, #2
    1154c:	2100      	movs	r1, #0
    1154e:	f7ff ea1a 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1583,7 +1583,7 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
    11556:	687b      	ldr	r3, [r7, #4]
    11558:	2b00      	cmp	r3, #0
    1155a:	d106      	bne.n	1156a <read_reg+0x1f6>
-   1155c:	f244 40b0 	movw	r0, #17584	; 0x44b0
+   1155c:	f249 7010 	movw	r0, #38672	; 0x9710
    11560:	f2c0 0002 	movt	r0, #2
    11564:	2100      	movs	r1, #0
    11566:	f7ff ea0e 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1594,7 +1594,7 @@ uint8_t read_reg(int fd, uint8_t addr, uint8_t *status)
    11570:	6bbb      	ldr	r3, [r7, #56]	; 0x38
    11572:	2b00      	cmp	r3, #0
    11574:	d106      	bne.n	11584 <read_reg+0x210>
-   11576:	f244 40c8 	movw	r0, #17608	; 0x44c8
+   11576:	f249 7028 	movw	r0, #38696	; 0x9728
    1157a:	f2c0 0002 	movt	r0, #2
    1157e:	2100      	movs	r1, #0
    11580:	f7ff ea00 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1624,12 +1624,12 @@ void strobe_cmd(int fd, uint8_t cmd, uint8_t *response)
    115a4:	7afb      	ldrb	r3, [r7, #11]
    115a6:	2b2f      	cmp	r3, #47	; 0x2f
    115a8:	d80f      	bhi.n	115ca <strobe_cmd+0x3a>
-   115aa:	f242 70e8 	movw	r0, #10216	; 0x27e8
+   115aa:	f642 002c 	movw	r0, #10284	; 0x282c
    115ae:	f2c0 0001 	movt	r0, #1
-   115b2:	f242 7198 	movw	r1, #10136	; 0x2798
+   115b2:	f242 71dc 	movw	r1, #10204	; 0x27dc
    115b6:	f2c0 0101 	movt	r1, #1
    115ba:	f240 2246 	movw	r2, #582	; 0x246
-   115be:	f642 13b4 	movw	r3, #10676	; 0x29b4
+   115be:	f642 13f8 	movw	r3, #10744	; 0x29f8
    115c2:	f2c0 0301 	movt	r3, #1
    115c6:	f7ff e9a8 	blx	10918 <__assert_fail@plt>
     write_reg(fd, cmd, 0, response); 
@@ -1654,17 +1654,17 @@ void cfg_gpio()
    115e0:	b5b0      	push	{r4, r5, r7, lr}
    115e2:	af00      	add	r7, sp, #0
     INP_GPIO(GPIO_CHIP_SEL); // must use INP_GPIO before we can use OUT_GPIO
-   115e4:	f644 4300 	movw	r3, #19456	; 0x4c00
+   115e4:	f649 6360 	movw	r3, #40544	; 0x9e60
    115e8:	f2c0 0302 	movt	r3, #2
    115ec:	681b      	ldr	r3, [r3, #0]
    115ee:	f103 0408 	add.w	r4, r3, #8
-   115f2:	f644 4300 	movw	r3, #19456	; 0x4c00
+   115f2:	f649 6360 	movw	r3, #40544	; 0x9e60
    115f6:	f2c0 0302 	movt	r3, #2
    115fa:	681b      	ldr	r3, [r3, #0]
    115fc:	f103 0508 	add.w	r5, r3, #8
    11600:	2d00      	cmp	r5, #0
    11602:	d106      	bne.n	11612 <cfg_gpio+0x32>
-   11604:	f244 40f0 	movw	r0, #17648	; 0x44f0
+   11604:	f249 7050 	movw	r0, #38736	; 0x9750
    11608:	f2c0 0002 	movt	r0, #2
    1160c:	2100      	movs	r1, #0
    1160e:	f7ff e9ba 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1672,23 +1672,23 @@ void cfg_gpio()
    11614:	f423 75e0 	bic.w	r5, r3, #448	; 0x1c0
    11618:	2c00      	cmp	r4, #0
    1161a:	d106      	bne.n	1162a <cfg_gpio+0x4a>
-   1161c:	f244 5008 	movw	r0, #17672	; 0x4508
+   1161c:	f249 7068 	movw	r0, #38760	; 0x9768
    11620:	f2c0 0002 	movt	r0, #2
    11624:	2100      	movs	r1, #0
    11626:	f7ff e9ae 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    1162a:	6025      	str	r5, [r4, #0]
     OUT_GPIO(GPIO_CHIP_SEL);
-   1162c:	f644 4300 	movw	r3, #19456	; 0x4c00
+   1162c:	f649 6360 	movw	r3, #40544	; 0x9e60
    11630:	f2c0 0302 	movt	r3, #2
    11634:	681b      	ldr	r3, [r3, #0]
    11636:	f103 0408 	add.w	r4, r3, #8
-   1163a:	f644 4300 	movw	r3, #19456	; 0x4c00
+   1163a:	f649 6360 	movw	r3, #40544	; 0x9e60
    1163e:	f2c0 0302 	movt	r3, #2
    11642:	681b      	ldr	r3, [r3, #0]
    11644:	f103 0508 	add.w	r5, r3, #8
    11648:	2d00      	cmp	r5, #0
    1164a:	d106      	bne.n	1165a <cfg_gpio+0x7a>
-   1164c:	f244 5020 	movw	r0, #17696	; 0x4520
+   1164c:	f249 7080 	movw	r0, #38784	; 0x9780
    11650:	f2c0 0002 	movt	r0, #2
    11654:	2100      	movs	r1, #0
    11656:	f7ff e996 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1696,19 +1696,19 @@ void cfg_gpio()
    1165c:	f043 0540 	orr.w	r5, r3, #64	; 0x40
    11660:	2c00      	cmp	r4, #0
    11662:	d106      	bne.n	11672 <cfg_gpio+0x92>
-   11664:	f244 5038 	movw	r0, #17720	; 0x4538
+   11664:	f249 7098 	movw	r0, #38808	; 0x9798
    11668:	f2c0 0002 	movt	r0, #2
    1166c:	2100      	movs	r1, #0
    1166e:	f7ff e98a 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    11672:	6025      	str	r5, [r4, #0]
     GPIO_SET = 1<<GPIO_CHIP_SEL;
-   11674:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11674:	f649 6360 	movw	r3, #40544	; 0x9e60
    11678:	f2c0 0302 	movt	r3, #2
    1167c:	681b      	ldr	r3, [r3, #0]
    1167e:	f103 041c 	add.w	r4, r3, #28
    11682:	2c00      	cmp	r4, #0
    11684:	d106      	bne.n	11694 <cfg_gpio+0xb4>
-   11686:	f244 5050 	movw	r0, #17744	; 0x4550
+   11686:	f249 70b0 	movw	r0, #38832	; 0x97b0
    1168a:	f2c0 0002 	movt	r0, #2
    1168e:	2100      	movs	r1, #0
    11690:	f7ff e978 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1716,17 +1716,17 @@ void cfg_gpio()
    11698:	6023      	str	r3, [r4, #0]
 
     INP_GPIO(GPIO_RDY); // must use INP_GPIO before we can use OUT_GPIO
-   1169a:	f644 4300 	movw	r3, #19456	; 0x4c00
+   1169a:	f649 6360 	movw	r3, #40544	; 0x9e60
    1169e:	f2c0 0302 	movt	r3, #2
    116a2:	681b      	ldr	r3, [r3, #0]
    116a4:	f103 0408 	add.w	r4, r3, #8
-   116a8:	f644 4300 	movw	r3, #19456	; 0x4c00
+   116a8:	f649 6360 	movw	r3, #40544	; 0x9e60
    116ac:	f2c0 0302 	movt	r3, #2
    116b0:	681b      	ldr	r3, [r3, #0]
    116b2:	f103 0508 	add.w	r5, r3, #8
    116b6:	2d00      	cmp	r5, #0
    116b8:	d106      	bne.n	116c8 <cfg_gpio+0xe8>
-   116ba:	f244 5068 	movw	r0, #17768	; 0x4568
+   116ba:	f249 70c8 	movw	r0, #38856	; 0x97c8
    116be:	f2c0 0002 	movt	r0, #2
    116c2:	2100      	movs	r1, #0
    116c4:	f7ff e95e 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1734,24 +1734,24 @@ void cfg_gpio()
    116ca:	f423 3560 	bic.w	r5, r3, #229376	; 0x38000
    116ce:	2c00      	cmp	r4, #0
    116d0:	d106      	bne.n	116e0 <cfg_gpio+0x100>
-   116d2:	f244 5080 	movw	r0, #17792	; 0x4580
+   116d2:	f249 70e0 	movw	r0, #38880	; 0x97e0
    116d6:	f2c0 0002 	movt	r0, #2
    116da:	2100      	movs	r1, #0
    116dc:	f7ff e952 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    116e0:	6025      	str	r5, [r4, #0]
 
     INP_GPIO(GPIO_GD0);
-   116e2:	f644 4300 	movw	r3, #19456	; 0x4c00
+   116e2:	f649 6360 	movw	r3, #40544	; 0x9e60
    116e6:	f2c0 0302 	movt	r3, #2
    116ea:	681b      	ldr	r3, [r3, #0]
    116ec:	f103 0408 	add.w	r4, r3, #8
-   116f0:	f644 4300 	movw	r3, #19456	; 0x4c00
+   116f0:	f649 6360 	movw	r3, #40544	; 0x9e60
    116f4:	f2c0 0302 	movt	r3, #2
    116f8:	681b      	ldr	r3, [r3, #0]
    116fa:	f103 0508 	add.w	r5, r3, #8
    116fe:	2d00      	cmp	r5, #0
    11700:	d106      	bne.n	11710 <cfg_gpio+0x130>
-   11702:	f244 5098 	movw	r0, #17816	; 0x4598
+   11702:	f249 70f8 	movw	r0, #38904	; 0x97f8
    11706:	f2c0 0002 	movt	r0, #2
    1170a:	2100      	movs	r1, #0
    1170c:	f7ff e93a 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1759,23 +1759,23 @@ void cfg_gpio()
    11712:	f423 45e0 	bic.w	r5, r3, #28672	; 0x7000
    11716:	2c00      	cmp	r4, #0
    11718:	d106      	bne.n	11728 <cfg_gpio+0x148>
-   1171a:	f244 50b0 	movw	r0, #17840	; 0x45b0
+   1171a:	f649 0010 	movw	r0, #38928	; 0x9810
    1171e:	f2c0 0002 	movt	r0, #2
    11722:	2100      	movs	r1, #0
    11724:	f7ff e92e 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    11728:	6025      	str	r5, [r4, #0]
     INP_GPIO(GPIO_GD2);
-   1172a:	f644 4300 	movw	r3, #19456	; 0x4c00
+   1172a:	f649 6360 	movw	r3, #40544	; 0x9e60
    1172e:	f2c0 0302 	movt	r3, #2
    11732:	681b      	ldr	r3, [r3, #0]
    11734:	f103 0408 	add.w	r4, r3, #8
-   11738:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11738:	f649 6360 	movw	r3, #40544	; 0x9e60
    1173c:	f2c0 0302 	movt	r3, #2
    11740:	681b      	ldr	r3, [r3, #0]
    11742:	f103 0508 	add.w	r5, r3, #8
    11746:	2d00      	cmp	r5, #0
    11748:	d106      	bne.n	11758 <cfg_gpio+0x178>
-   1174a:	f244 50c8 	movw	r0, #17864	; 0x45c8
+   1174a:	f649 0028 	movw	r0, #38952	; 0x9828
    1174e:	f2c0 0002 	movt	r0, #2
    11752:	2100      	movs	r1, #0
    11754:	f7ff e916 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1783,7 +1783,7 @@ void cfg_gpio()
    1175a:	f423 6560 	bic.w	r5, r3, #3584	; 0xe00
    1175e:	2c00      	cmp	r4, #0
    11760:	d106      	bne.n	11770 <cfg_gpio+0x190>
-   11762:	f244 50e0 	movw	r0, #17888	; 0x45e0
+   11762:	f649 0040 	movw	r0, #38976	; 0x9840
    11766:	f2c0 0002 	movt	r0, #2
    1176a:	2100      	movs	r1, #0
    1176c:	f7ff e90a 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1814,7 +1814,7 @@ void delay_loop(int count)
    11792:	e001      	b.n	11798 <delay_loop+0x24>
    11794:	42a5      	cmp	r5, r4
    11796:	dd08      	ble.n	117aa <delay_loop+0x36>
-   11798:	f244 50f8 	movw	r0, #17912	; 0x45f8
+   11798:	f649 0058 	movw	r0, #39000	; 0x9858
    1179c:	f2c0 0002 	movt	r0, #2
    117a0:	4621      	mov	r1, r4
    117a2:	f04f 32ff 	mov.w	r2, #4294967295
@@ -1838,17 +1838,17 @@ void cc1101_reset()
    117ba:	af00      	add	r7, sp, #0
     /*SCK HIGH*/
     INP_GPIO(GPIO_SCK); // must use INP_GPIO before we can use OUT_GPIO
-   117bc:	f644 4300 	movw	r3, #19456	; 0x4c00
+   117bc:	f649 6360 	movw	r3, #40544	; 0x9e60
    117c0:	f2c0 0302 	movt	r3, #2
    117c4:	681b      	ldr	r3, [r3, #0]
    117c6:	1d1c      	adds	r4, r3, #4
-   117c8:	f644 4300 	movw	r3, #19456	; 0x4c00
+   117c8:	f649 6360 	movw	r3, #40544	; 0x9e60
    117cc:	f2c0 0302 	movt	r3, #2
    117d0:	681b      	ldr	r3, [r3, #0]
    117d2:	1d1d      	adds	r5, r3, #4
    117d4:	2d00      	cmp	r5, #0
    117d6:	d106      	bne.n	117e6 <cc1101_reset+0x2e>
-   117d8:	f244 6008 	movw	r0, #17928	; 0x4608
+   117d8:	f649 0068 	movw	r0, #39016	; 0x9868
    117dc:	f2c0 0002 	movt	r0, #2
    117e0:	2100      	movs	r1, #0
    117e2:	f7ff e8d0 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1856,23 +1856,23 @@ void cc1101_reset()
    117e8:	f023 0538 	bic.w	r5, r3, #56	; 0x38
    117ec:	2c00      	cmp	r4, #0
    117ee:	d106      	bne.n	117fe <cc1101_reset+0x46>
-   117f0:	f244 6020 	movw	r0, #17952	; 0x4620
+   117f0:	f649 0080 	movw	r0, #39040	; 0x9880
    117f4:	f2c0 0002 	movt	r0, #2
    117f8:	2100      	movs	r1, #0
    117fa:	f7ff e8c4 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    117fe:	6025      	str	r5, [r4, #0]
     OUT_GPIO(GPIO_SCK);
-   11800:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11800:	f649 6360 	movw	r3, #40544	; 0x9e60
    11804:	f2c0 0302 	movt	r3, #2
    11808:	681b      	ldr	r3, [r3, #0]
    1180a:	1d1c      	adds	r4, r3, #4
-   1180c:	f644 4300 	movw	r3, #19456	; 0x4c00
+   1180c:	f649 6360 	movw	r3, #40544	; 0x9e60
    11810:	f2c0 0302 	movt	r3, #2
    11814:	681b      	ldr	r3, [r3, #0]
    11816:	1d1d      	adds	r5, r3, #4
    11818:	2d00      	cmp	r5, #0
    1181a:	d106      	bne.n	1182a <cc1101_reset+0x72>
-   1181c:	f244 6038 	movw	r0, #17976	; 0x4638
+   1181c:	f649 0098 	movw	r0, #39064	; 0x9898
    11820:	f2c0 0002 	movt	r0, #2
    11824:	2100      	movs	r1, #0
    11826:	f7ff e8ae 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1880,19 +1880,19 @@ void cc1101_reset()
    1182c:	f043 0508 	orr.w	r5, r3, #8
    11830:	2c00      	cmp	r4, #0
    11832:	d106      	bne.n	11842 <cc1101_reset+0x8a>
-   11834:	f244 6050 	movw	r0, #18000	; 0x4650
+   11834:	f649 00b0 	movw	r0, #39088	; 0x98b0
    11838:	f2c0 0002 	movt	r0, #2
    1183c:	2100      	movs	r1, #0
    1183e:	f7ff e8a2 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    11842:	6025      	str	r5, [r4, #0]
     GPIO_SET = 1<<GPIO_SCK;
-   11844:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11844:	f649 6360 	movw	r3, #40544	; 0x9e60
    11848:	f2c0 0302 	movt	r3, #2
    1184c:	681b      	ldr	r3, [r3, #0]
    1184e:	f103 041c 	add.w	r4, r3, #28
    11852:	2c00      	cmp	r4, #0
    11854:	d106      	bne.n	11864 <cc1101_reset+0xac>
-   11856:	f244 6068 	movw	r0, #18024	; 0x4668
+   11856:	f649 00c8 	movw	r0, #39112	; 0x98c8
    1185a:	f2c0 0002 	movt	r0, #2
    1185e:	2100      	movs	r1, #0
    11860:	f7ff e890 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1901,17 +1901,17 @@ void cc1101_reset()
 
     /*MOSI LOW */
     INP_GPIO(GPIO_MOSI); // must use INP_GPIO before we can use OUT_GPIO
-   1186a:	f644 4300 	movw	r3, #19456	; 0x4c00
+   1186a:	f649 6360 	movw	r3, #40544	; 0x9e60
    1186e:	f2c0 0302 	movt	r3, #2
    11872:	681b      	ldr	r3, [r3, #0]
    11874:	1d1c      	adds	r4, r3, #4
-   11876:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11876:	f649 6360 	movw	r3, #40544	; 0x9e60
    1187a:	f2c0 0302 	movt	r3, #2
    1187e:	681b      	ldr	r3, [r3, #0]
    11880:	1d1d      	adds	r5, r3, #4
    11882:	2d00      	cmp	r5, #0
    11884:	d106      	bne.n	11894 <cc1101_reset+0xdc>
-   11886:	f244 6080 	movw	r0, #18048	; 0x4680
+   11886:	f649 00e0 	movw	r0, #39136	; 0x98e0
    1188a:	f2c0 0002 	movt	r0, #2
    1188e:	2100      	movs	r1, #0
    11890:	f7ff e878 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1919,23 +1919,23 @@ void cc1101_reset()
    11896:	f023 0507 	bic.w	r5, r3, #7
    1189a:	2c00      	cmp	r4, #0
    1189c:	d106      	bne.n	118ac <cc1101_reset+0xf4>
-   1189e:	f244 6098 	movw	r0, #18072	; 0x4698
+   1189e:	f649 00f8 	movw	r0, #39160	; 0x98f8
    118a2:	f2c0 0002 	movt	r0, #2
    118a6:	2100      	movs	r1, #0
    118a8:	f7ff e86c 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    118ac:	6025      	str	r5, [r4, #0]
     OUT_GPIO(GPIO_MOSI);
-   118ae:	f644 4300 	movw	r3, #19456	; 0x4c00
+   118ae:	f649 6360 	movw	r3, #40544	; 0x9e60
    118b2:	f2c0 0302 	movt	r3, #2
    118b6:	681b      	ldr	r3, [r3, #0]
    118b8:	1d1c      	adds	r4, r3, #4
-   118ba:	f644 4300 	movw	r3, #19456	; 0x4c00
+   118ba:	f649 6360 	movw	r3, #40544	; 0x9e60
    118be:	f2c0 0302 	movt	r3, #2
    118c2:	681b      	ldr	r3, [r3, #0]
    118c4:	1d1d      	adds	r5, r3, #4
    118c6:	2d00      	cmp	r5, #0
    118c8:	d106      	bne.n	118d8 <cc1101_reset+0x120>
-   118ca:	f244 60b0 	movw	r0, #18096	; 0x46b0
+   118ca:	f649 1010 	movw	r0, #39184	; 0x9910
    118ce:	f2c0 0002 	movt	r0, #2
    118d2:	2100      	movs	r1, #0
    118d4:	f7ff e856 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1943,19 +1943,19 @@ void cc1101_reset()
    118da:	f043 0501 	orr.w	r5, r3, #1
    118de:	2c00      	cmp	r4, #0
    118e0:	d106      	bne.n	118f0 <cc1101_reset+0x138>
-   118e2:	f244 60c8 	movw	r0, #18120	; 0x46c8
+   118e2:	f649 1028 	movw	r0, #39208	; 0x9928
    118e6:	f2c0 0002 	movt	r0, #2
    118ea:	2100      	movs	r1, #0
    118ec:	f7ff e84a 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    118f0:	6025      	str	r5, [r4, #0]
     GPIO_CLR = 1<<GPIO_MOSI;
-   118f2:	f644 4300 	movw	r3, #19456	; 0x4c00
+   118f2:	f649 6360 	movw	r3, #40544	; 0x9e60
    118f6:	f2c0 0302 	movt	r3, #2
    118fa:	681b      	ldr	r3, [r3, #0]
    118fc:	f103 0428 	add.w	r4, r3, #40	; 0x28
    11900:	2c00      	cmp	r4, #0
    11902:	d106      	bne.n	11912 <cc1101_reset+0x15a>
-   11904:	f244 60e0 	movw	r0, #18144	; 0x46e0
+   11904:	f649 1040 	movw	r0, #39232	; 0x9940
    11908:	f2c0 0002 	movt	r0, #2
    1190c:	2100      	movs	r1, #0
    1190e:	f7ff e83a 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1963,13 +1963,13 @@ void cc1101_reset()
    11916:	6023      	str	r3, [r4, #0]
 
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
-   11918:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11918:	f649 6360 	movw	r3, #40544	; 0x9e60
    1191c:	f2c0 0302 	movt	r3, #2
    11920:	681b      	ldr	r3, [r3, #0]
    11922:	f103 0428 	add.w	r4, r3, #40	; 0x28
    11926:	2c00      	cmp	r4, #0
    11928:	d106      	bne.n	11938 <cc1101_reset+0x180>
-   1192a:	f244 60f8 	movw	r0, #18168	; 0x46f8
+   1192a:	f649 1058 	movw	r0, #39256	; 0x9958
    1192e:	f2c0 0002 	movt	r0, #2
    11932:	2100      	movs	r1, #0
    11934:	f7ff e826 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1979,13 +1979,13 @@ void cc1101_reset()
    1193e:	2064      	movs	r0, #100	; 0x64
    11940:	f7ff ff18 	bl	11774 <delay_loop>
     GPIO_SET = 1<<(GPIO_CHIP_SEL);
-   11944:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11944:	f649 6360 	movw	r3, #40544	; 0x9e60
    11948:	f2c0 0302 	movt	r3, #2
    1194c:	681b      	ldr	r3, [r3, #0]
    1194e:	f103 041c 	add.w	r4, r3, #28
    11952:	2c00      	cmp	r4, #0
    11954:	d106      	bne.n	11964 <cc1101_reset+0x1ac>
-   11956:	f244 7010 	movw	r0, #18192	; 0x4710
+   11956:	f649 1070 	movw	r0, #39280	; 0x9970
    1195a:	f2c0 0002 	movt	r0, #2
    1195e:	2100      	movs	r1, #0
    11960:	f7ff e810 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -1996,13 +1996,13 @@ void cc1101_reset()
    1196e:	f7ff ff01 	bl	11774 <delay_loop>
 
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
-   11972:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11972:	f649 6360 	movw	r3, #40544	; 0x9e60
    11976:	f2c0 0302 	movt	r3, #2
    1197a:	681b      	ldr	r3, [r3, #0]
    1197c:	f103 0428 	add.w	r4, r3, #40	; 0x28
    11980:	2c00      	cmp	r4, #0
    11982:	d106      	bne.n	11992 <cc1101_reset+0x1da>
-   11984:	f244 7028 	movw	r0, #18216	; 0x4728
+   11984:	f649 1088 	movw	r0, #39304	; 0x9988
    11988:	f2c0 0002 	movt	r0, #2
    1198c:	2100      	movs	r1, #0
    1198e:	f7fe effa 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2012,7 +2012,7 @@ void cc1101_reset()
     while(GET_GPIO(GPIO_RDY))
    11998:	e005      	b.n	119a6 <cc1101_reset+0x1ee>
         printf("Waiting for GPIO_RDY");
-   1199a:	f642 0004 	movw	r0, #10244	; 0x2804
+   1199a:	f642 0048 	movw	r0, #10312	; 0x2848
    1199e:	f2c0 0001 	movt	r0, #1
    119a2:	f7fe efd8 	blx	10954 <printf@plt>
     GPIO_SET = 1<<(GPIO_CHIP_SEL);
@@ -2021,13 +2021,13 @@ void cc1101_reset()
     GPIO_CLR = 1<<(GPIO_CHIP_SEL);
 
     while(GET_GPIO(GPIO_RDY))
-   119a6:	f644 4300 	movw	r3, #19456	; 0x4c00
+   119a6:	f649 6360 	movw	r3, #40544	; 0x9e60
    119aa:	f2c0 0302 	movt	r3, #2
    119ae:	681b      	ldr	r3, [r3, #0]
    119b0:	f103 0434 	add.w	r4, r3, #52	; 0x34
    119b4:	2c00      	cmp	r4, #0
    119b6:	d106      	bne.n	119c6 <cc1101_reset+0x20e>
-   119b8:	f244 7040 	movw	r0, #18240	; 0x4740
+   119b8:	f649 10a0 	movw	r0, #39328	; 0x99a0
    119bc:	f2c0 0002 	movt	r0, #2
    119c0:	2100      	movs	r1, #0
    119c2:	f7fe efe0 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2038,17 +2038,17 @@ void cc1101_reset()
         printf("Waiting for GPIO_RDY");
 
     INP_GPIO(GPIO_SCK); // must use INP_GPIO before we can use OUT_GPIO
-   119d0:	f644 4300 	movw	r3, #19456	; 0x4c00
+   119d0:	f649 6360 	movw	r3, #40544	; 0x9e60
    119d4:	f2c0 0302 	movt	r3, #2
    119d8:	681b      	ldr	r3, [r3, #0]
    119da:	1d1c      	adds	r4, r3, #4
-   119dc:	f644 4300 	movw	r3, #19456	; 0x4c00
+   119dc:	f649 6360 	movw	r3, #40544	; 0x9e60
    119e0:	f2c0 0302 	movt	r3, #2
    119e4:	681b      	ldr	r3, [r3, #0]
    119e6:	1d1d      	adds	r5, r3, #4
    119e8:	2d00      	cmp	r5, #0
    119ea:	d106      	bne.n	119fa <cc1101_reset+0x242>
-   119ec:	f244 7058 	movw	r0, #18264	; 0x4758
+   119ec:	f649 10b8 	movw	r0, #39352	; 0x99b8
    119f0:	f2c0 0002 	movt	r0, #2
    119f4:	2100      	movs	r1, #0
    119f6:	f7fe efc6 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2056,23 +2056,23 @@ void cc1101_reset()
    119fc:	f023 0538 	bic.w	r5, r3, #56	; 0x38
    11a00:	2c00      	cmp	r4, #0
    11a02:	d106      	bne.n	11a12 <cc1101_reset+0x25a>
-   11a04:	f244 7070 	movw	r0, #18288	; 0x4770
+   11a04:	f649 10d0 	movw	r0, #39376	; 0x99d0
    11a08:	f2c0 0002 	movt	r0, #2
    11a0c:	2100      	movs	r1, #0
    11a0e:	f7fe efba 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    11a12:	6025      	str	r5, [r4, #0]
     SET_GPIO_ALT(GPIO_SCK,0);
-   11a14:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11a14:	f649 6360 	movw	r3, #40544	; 0x9e60
    11a18:	f2c0 0302 	movt	r3, #2
    11a1c:	681b      	ldr	r3, [r3, #0]
    11a1e:	1d1c      	adds	r4, r3, #4
-   11a20:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11a20:	f649 6360 	movw	r3, #40544	; 0x9e60
    11a24:	f2c0 0302 	movt	r3, #2
    11a28:	681b      	ldr	r3, [r3, #0]
    11a2a:	1d1d      	adds	r5, r3, #4
    11a2c:	2d00      	cmp	r5, #0
    11a2e:	d106      	bne.n	11a3e <cc1101_reset+0x286>
-   11a30:	f244 7088 	movw	r0, #18312	; 0x4788
+   11a30:	f649 10e8 	movw	r0, #39400	; 0x99e8
    11a34:	f2c0 0002 	movt	r0, #2
    11a38:	2100      	movs	r1, #0
    11a3a:	f7fe efa4 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2080,24 +2080,24 @@ void cc1101_reset()
    11a40:	f043 0520 	orr.w	r5, r3, #32
    11a44:	2c00      	cmp	r4, #0
    11a46:	d106      	bne.n	11a56 <cc1101_reset+0x29e>
-   11a48:	f244 70a0 	movw	r0, #18336	; 0x47a0
+   11a48:	f649 2000 	movw	r0, #39424	; 0x9a00
    11a4c:	f2c0 0002 	movt	r0, #2
    11a50:	2100      	movs	r1, #0
    11a52:	f7fe ef98 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    11a56:	6025      	str	r5, [r4, #0]
 
     INP_GPIO(GPIO_MOSI); // must use INP_GPIO before we can use OUT_GPIO
-   11a58:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11a58:	f649 6360 	movw	r3, #40544	; 0x9e60
    11a5c:	f2c0 0302 	movt	r3, #2
    11a60:	681b      	ldr	r3, [r3, #0]
    11a62:	1d1c      	adds	r4, r3, #4
-   11a64:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11a64:	f649 6360 	movw	r3, #40544	; 0x9e60
    11a68:	f2c0 0302 	movt	r3, #2
    11a6c:	681b      	ldr	r3, [r3, #0]
    11a6e:	1d1d      	adds	r5, r3, #4
    11a70:	2d00      	cmp	r5, #0
    11a72:	d106      	bne.n	11a82 <cc1101_reset+0x2ca>
-   11a74:	f244 70b8 	movw	r0, #18360	; 0x47b8
+   11a74:	f649 2018 	movw	r0, #39448	; 0x9a18
    11a78:	f2c0 0002 	movt	r0, #2
    11a7c:	2100      	movs	r1, #0
    11a7e:	f7fe ef82 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2105,23 +2105,23 @@ void cc1101_reset()
    11a84:	f023 0507 	bic.w	r5, r3, #7
    11a88:	2c00      	cmp	r4, #0
    11a8a:	d106      	bne.n	11a9a <cc1101_reset+0x2e2>
-   11a8c:	f244 70d0 	movw	r0, #18384	; 0x47d0
+   11a8c:	f649 2030 	movw	r0, #39472	; 0x9a30
    11a90:	f2c0 0002 	movt	r0, #2
    11a94:	2100      	movs	r1, #0
    11a96:	f7fe ef76 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    11a9a:	6025      	str	r5, [r4, #0]
     SET_GPIO_ALT(GPIO_MOSI, 0);
-   11a9c:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11a9c:	f649 6360 	movw	r3, #40544	; 0x9e60
    11aa0:	f2c0 0302 	movt	r3, #2
    11aa4:	681b      	ldr	r3, [r3, #0]
    11aa6:	1d1c      	adds	r4, r3, #4
-   11aa8:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11aa8:	f649 6360 	movw	r3, #40544	; 0x9e60
    11aac:	f2c0 0302 	movt	r3, #2
    11ab0:	681b      	ldr	r3, [r3, #0]
    11ab2:	1d1d      	adds	r5, r3, #4
    11ab4:	2d00      	cmp	r5, #0
    11ab6:	d106      	bne.n	11ac6 <cc1101_reset+0x30e>
-   11ab8:	f244 70e8 	movw	r0, #18408	; 0x47e8
+   11ab8:	f649 2048 	movw	r0, #39496	; 0x9a48
    11abc:	f2c0 0002 	movt	r0, #2
    11ac0:	2100      	movs	r1, #0
    11ac2:	f7fe ef60 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2129,7 +2129,7 @@ void cc1101_reset()
    11ac8:	f043 0504 	orr.w	r5, r3, #4
    11acc:	2c00      	cmp	r4, #0
    11ace:	d106      	bne.n	11ade <cc1101_reset+0x326>
-   11ad0:	f644 0000 	movw	r0, #18432	; 0x4800
+   11ad0:	f649 2060 	movw	r0, #39520	; 0x9a60
    11ad4:	f2c0 0002 	movt	r0, #2
    11ad8:	2100      	movs	r1, #0
    11ada:	f7fe ef54 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2152,12 +2152,12 @@ void cc1101_cfg_band(int fd, fset_t fset)
    11aee:	683b      	ldr	r3, [r7, #0]
    11af0:	2b02      	cmp	r3, #2
    11af2:	d90f      	bls.n	11b14 <cc1101_cfg_band+0x30>
-   11af4:	f642 001c 	movw	r0, #10268	; 0x281c
+   11af4:	f642 0060 	movw	r0, #10336	; 0x2860
    11af8:	f2c0 0001 	movt	r0, #1
-   11afc:	f242 7198 	movw	r1, #10136	; 0x2798
+   11afc:	f242 71dc 	movw	r1, #10204	; 0x27dc
    11b00:	f2c0 0101 	movt	r1, #1
    11b04:	f44f 7220 	mov.w	r2, #640	; 0x280
-   11b08:	f642 13c0 	movw	r3, #10688	; 0x29c0
+   11b08:	f642 2304 	movw	r3, #10756	; 0x2a04
    11b0c:	f2c0 0301 	movt	r3, #1
    11b10:	f7fe ef02 	blx	10918 <__assert_fail@plt>
     for ( i = 0; i < sizeof(band_regs)/sizeof(band_regs[0]); i++)
@@ -2167,11 +2167,11 @@ void cc1101_cfg_band(int fd, fset_t fset)
     {
         write_reg(fd, band_regs[i], freq_config[fset][i], NULL);
    11b1a:	7bfa      	ldrb	r2, [r7, #15]
-   11b1c:	f244 1324 	movw	r3, #16676	; 0x4124
+   11b1c:	f249 3384 	movw	r3, #37764	; 0x9384
    11b20:	f2c0 0302 	movt	r3, #2
    11b24:	5c9c      	ldrb	r4, [r3, r2]
    11b26:	7bf8      	ldrb	r0, [r7, #15]
-   11b28:	f244 122c 	movw	r2, #16684	; 0x412c
+   11b28:	f249 328c 	movw	r2, #37772	; 0x938c
    11b2c:	f2c0 0202 	movt	r2, #2
    11b30:	6839      	ldr	r1, [r7, #0]
    11b32:	460b      	mov	r3, r1
@@ -2221,13 +2221,13 @@ void cc1101_cfg_regs(int fd)
    11b68:	e01b      	b.n	11ba2 <cc1101_cfg_regs+0x46>
     {
         uint8_t reg = wbslRadioCfg[i][0];
-   11b6a:	f242 637c 	movw	r3, #9852	; 0x267c
+   11b6a:	f242 63c0 	movw	r3, #9920	; 0x26c0
    11b6e:	f2c0 0301 	movt	r3, #1
    11b72:	68fa      	ldr	r2, [r7, #12]
    11b74:	f813 3012 	ldrb.w	r3, [r3, r2, lsl #1]
    11b78:	72fb      	strb	r3, [r7, #11]
         uint8_t val = wbslRadioCfg[i][1];
-   11b7a:	f242 627c 	movw	r2, #9852	; 0x267c
+   11b7a:	f242 62c0 	movw	r2, #9920	; 0x26c0
    11b7e:	f2c0 0201 	movt	r2, #1
    11b82:	68fb      	ldr	r3, [r7, #12]
    11b84:	005b      	lsls	r3, r3, #1
@@ -2302,7 +2302,7 @@ void cc1101_initialize(int fd, fset_t fset)
     {
         printf("Waiting for Radio to idle....%02X\n", response);
    11be6:	7bfb      	ldrb	r3, [r7, #15]
-   11be8:	f642 0040 	movw	r0, #10304	; 0x2840
+   11be8:	f642 0084 	movw	r0, #10372	; 0x2884
    11bec:	f2c0 0001 	movt	r0, #1
    11bf0:	4619      	mov	r1, r3
    11bf2:	f7fe eeb0 	blx	10954 <printf@plt>
@@ -2385,7 +2385,7 @@ void rxoff(int fd)
     {
         printf("Waiting for Radio to idle....%02X\n", response);
    11c62:	7bfb      	ldrb	r3, [r7, #15]
-   11c64:	f642 0040 	movw	r0, #10304	; 0x2840
+   11c64:	f642 0084 	movw	r0, #10372	; 0x2884
    11c68:	f2c0 0001 	movt	r0, #1
    11c6c:	4619      	mov	r1, r3
    11c6e:	f7fe ee72 	blx	10954 <printf@plt>
@@ -2459,7 +2459,7 @@ void txoff(int fd)
     {
         printf("Waiting for Radio to idle....%02X\n", response);
    11cce:	7bfb      	ldrb	r3, [r7, #15]
-   11cd0:	f642 0040 	movw	r0, #10304	; 0x2840
+   11cd0:	f642 0084 	movw	r0, #10372	; 0x2884
    11cd4:	f2c0 0001 	movt	r0, #1
    11cd8:	4619      	mov	r1, r3
    11cda:	f7fe ee3c 	blx	10954 <printf@plt>
@@ -2515,7 +2515,7 @@ uint8_t CheckRx(int fd)
    11d1e:	d10b      	bne.n	11d38 <CheckRx+0x3c>
     {
         printf("RX overflow\n");
-   11d20:	f642 0064 	movw	r0, #10340	; 0x2864
+   11d20:	f642 00a8 	movw	r0, #10408	; 0x28a8
    11d24:	f2c0 0001 	movt	r0, #1
    11d28:	f7fe ee32 	blx	10990 <puts@plt>
         rxoff(fd);
@@ -2526,13 +2526,13 @@ uint8_t CheckRx(int fd)
    11d34:	f7ff ff76 	bl	11c24 <rxon>
     }
     if (!GET_GPIO(GPIO_GD2))
-   11d38:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11d38:	f649 6360 	movw	r3, #40544	; 0x9e60
    11d3c:	f2c0 0302 	movt	r3, #2
    11d40:	681b      	ldr	r3, [r3, #0]
    11d42:	f103 0434 	add.w	r4, r3, #52	; 0x34
    11d46:	2c00      	cmp	r4, #0
    11d48:	d106      	bne.n	11d58 <CheckRx+0x5c>
-   11d4a:	f644 0018 	movw	r0, #18456	; 0x4818
+   11d4a:	f649 2078 	movw	r0, #39544	; 0x9a78
    11d4e:	f2c0 0002 	movt	r0, #2
    11d52:	2100      	movs	r1, #0
    11d54:	f7fe ee16 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2612,7 +2612,7 @@ uint8_t CheckRx(int fd)
    11dc4:	2300      	movs	r3, #0
    11dc6:	73bb      	strb	r3, [r7, #14]
             printf("Radio Reset due to false detection !!!\n");
-   11dc8:	f642 0070 	movw	r0, #10352	; 0x2870
+   11dc8:	f642 00b4 	movw	r0, #10420	; 0x28b4
    11dcc:	f2c0 0001 	movt	r0, #1
    11dd0:	f7fe edde 	blx	10990 <puts@plt>
         }
@@ -2671,7 +2671,7 @@ void TransmitPkt(int fd, uint8_t *payload, uint8_t len)
    11e18:	68bb      	ldr	r3, [r7, #8]
    11e1a:	2b00      	cmp	r3, #0
    11e1c:	d106      	bne.n	11e2c <TransmitPkt+0x28>
-   11e1e:	f644 0030 	movw	r0, #18480	; 0x4830
+   11e1e:	f649 2090 	movw	r0, #39568	; 0x9a90
    11e22:	f2c0 0002 	movt	r0, #2
    11e26:	2100      	movs	r1, #0
    11e28:	f7fe edac 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2688,7 +2688,7 @@ void TransmitPkt(int fd, uint8_t *payload, uint8_t len)
    11e42:	e001      	b.n	11e48 <TransmitPkt+0x44>
    11e44:	429c      	cmp	r4, r3
    11e46:	dd08      	ble.n	11e5a <TransmitPkt+0x56>
-   11e48:	f644 0078 	movw	r0, #18552	; 0x4878
+   11e48:	f649 20d8 	movw	r0, #39640	; 0x9ad8
    11e4c:	f2c0 0002 	movt	r0, #2
    11e50:	4619      	mov	r1, r3
    11e52:	f04f 32ff 	mov.w	r2, #4294967295
@@ -2696,12 +2696,12 @@ void TransmitPkt(int fd, uint8_t *payload, uint8_t len)
    11e5a:	4623      	mov	r3, r4
    11e5c:	429d      	cmp	r5, r3
    11e5e:	d00f      	beq.n	11e80 <TransmitPkt+0x7c>
-   11e60:	f642 0098 	movw	r0, #10392	; 0x2898
+   11e60:	f642 00dc 	movw	r0, #10460	; 0x28dc
    11e64:	f2c0 0001 	movt	r0, #1
-   11e68:	f242 7198 	movw	r1, #10136	; 0x2798
+   11e68:	f242 71dc 	movw	r1, #10204	; 0x27dc
    11e6c:	f2c0 0101 	movt	r1, #1
    11e70:	f240 22fd 	movw	r2, #765	; 0x2fd
-   11e74:	f642 13d0 	movw	r3, #10704	; 0x29d0
+   11e74:	f642 2314 	movw	r3, #10772	; 0x2a14
    11e78:	f2c0 0301 	movt	r3, #1
    11e7c:	f7fe ed4c 	blx	10918 <__assert_fail@plt>
     write_reg_burst(fd, TXFIFO, payload, len);
@@ -2715,13 +2715,13 @@ void TransmitPkt(int fd, uint8_t *payload, uint8_t len)
    11e8e:	f7ff feff 	bl	11c90 <txstart>
     while(!GET_GPIO(GPIO_GD0));
    11e92:	bf00      	nop
-   11e94:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11e94:	f649 6360 	movw	r3, #40544	; 0x9e60
    11e98:	f2c0 0302 	movt	r3, #2
    11e9c:	681b      	ldr	r3, [r3, #0]
    11e9e:	f103 0434 	add.w	r4, r3, #52	; 0x34
    11ea2:	2c00      	cmp	r4, #0
    11ea4:	d106      	bne.n	11eb4 <TransmitPkt+0xb0>
-   11ea6:	f644 0048 	movw	r0, #18504	; 0x4848
+   11ea6:	f649 20a8 	movw	r0, #39592	; 0x9aa8
    11eaa:	f2c0 0002 	movt	r0, #2
    11eae:	2100      	movs	r1, #0
    11eb0:	f7fe ed68 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2731,13 +2731,13 @@ void TransmitPkt(int fd, uint8_t *payload, uint8_t len)
    11ebc:	d0ea      	beq.n	11e94 <TransmitPkt+0x90>
     while(GET_GPIO(GPIO_GD0));
    11ebe:	bf00      	nop
-   11ec0:	f644 4300 	movw	r3, #19456	; 0x4c00
+   11ec0:	f649 6360 	movw	r3, #40544	; 0x9e60
    11ec4:	f2c0 0302 	movt	r3, #2
    11ec8:	681b      	ldr	r3, [r3, #0]
    11eca:	f103 0434 	add.w	r4, r3, #52	; 0x34
    11ece:	2c00      	cmp	r4, #0
    11ed0:	d106      	bne.n	11ee0 <TransmitPkt+0xdc>
-   11ed2:	f644 0060 	movw	r0, #18528	; 0x4860
+   11ed2:	f649 20c0 	movw	r0, #39616	; 0x9ac0
    11ed6:	f2c0 0002 	movt	r0, #2
    11eda:	2100      	movs	r1, #0
    11edc:	f7fe ed52 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2819,14 +2819,14 @@ uint8_t GetPacket(int fd, uint8_t *pktbuf)
         printf("Time %ld.%09ld ", now.tv_sec, now.tv_nsec);
    11f52:	68fa      	ldr	r2, [r7, #12]
    11f54:	693b      	ldr	r3, [r7, #16]
-   11f56:	f642 00b0 	movw	r0, #10416	; 0x28b0
+   11f56:	f642 00f4 	movw	r0, #10484	; 0x28f4
    11f5a:	f2c0 0001 	movt	r0, #1
    11f5e:	4611      	mov	r1, r2
    11f60:	461a      	mov	r2, r3
    11f62:	f7fe ecf8 	blx	10954 <printf@plt>
         printf("Len:%x ", len); 
    11f66:	7ffb      	ldrb	r3, [r7, #31]
-   11f68:	f642 00c0 	movw	r0, #10432	; 0x28c0
+   11f68:	f642 1004 	movw	r0, #10500	; 0x2904
    11f6c:	f2c0 0001 	movt	r0, #1
    11f70:	4619      	mov	r1, r3
    11f72:	f7fe ecf0 	blx	10954 <printf@plt>
@@ -2840,7 +2840,7 @@ uint8_t GetPacket(int fd, uint8_t *pktbuf)
    11f82:	683b      	ldr	r3, [r7, #0]
    11f84:	2b00      	cmp	r3, #0
    11f86:	d106      	bne.n	11f96 <GetPacket+0x7e>
-   11f88:	f644 0088 	movw	r0, #18568	; 0x4888
+   11f88:	f649 20e8 	movw	r0, #39656	; 0x9ae8
    11f8c:	f2c0 0002 	movt	r0, #2
    11f90:	2100      	movs	r1, #0
    11f92:	f7fe ecf8 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2851,7 +2851,7 @@ uint8_t GetPacket(int fd, uint8_t *pktbuf)
    11f9e:	18d4      	adds	r4, r2, r3
    11fa0:	2c00      	cmp	r4, #0
    11fa2:	d106      	bne.n	11fb2 <GetPacket+0x9a>
-   11fa4:	f644 00a0 	movw	r0, #18592	; 0x48a0
+   11fa4:	f649 3000 	movw	r0, #39680	; 0x9b00
    11fa8:	f2c0 0002 	movt	r0, #2
    11fac:	2100      	movs	r1, #0
    11fae:	f7fe ecea 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2861,7 +2861,7 @@ uint8_t GetPacket(int fd, uint8_t *pktbuf)
    11fb6:	683b      	ldr	r3, [r7, #0]
    11fb8:	2b00      	cmp	r3, #0
    11fba:	d106      	bne.n	11fca <GetPacket+0xb2>
-   11fbc:	f644 00b8 	movw	r0, #18616	; 0x48b8
+   11fbc:	f649 3018 	movw	r0, #39704	; 0x9b18
    11fc0:	f2c0 0002 	movt	r0, #2
    11fc4:	2100      	movs	r1, #0
    11fc6:	f7fe ecde 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2872,7 +2872,7 @@ uint8_t GetPacket(int fd, uint8_t *pktbuf)
    11fd2:	18d4      	adds	r4, r2, r3
    11fd4:	2c00      	cmp	r4, #0
    11fd6:	d106      	bne.n	11fe6 <GetPacket+0xce>
-   11fd8:	f644 00d0 	movw	r0, #18640	; 0x48d0
+   11fd8:	f649 3030 	movw	r0, #39728	; 0x9b30
    11fdc:	f2c0 0002 	movt	r0, #2
    11fe0:	2100      	movs	r1, #0
    11fe2:	f7fe ecd0 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -2882,7 +2882,7 @@ uint8_t GetPacket(int fd, uint8_t *pktbuf)
    11fea:	7dba      	ldrb	r2, [r7, #22]
    11fec:	7dfb      	ldrb	r3, [r7, #23]
    11fee:	f003 037f 	and.w	r3, r3, #127	; 0x7f
-   11ff2:	f642 00c8 	movw	r0, #10440	; 0x28c8
+   11ff2:	f642 100c 	movw	r0, #10508	; 0x290c
    11ff6:	f2c0 0001 	movt	r0, #1
    11ffa:	4611      	mov	r1, r2
    11ffc:	461a      	mov	r2, r3
@@ -2893,14 +2893,14 @@ uint8_t GetPacket(int fd, uint8_t *pktbuf)
    12006:	2b00      	cmp	r3, #0
    12008:	da06      	bge.n	12018 <GetPacket+0x100>
             printf("CRC:OK\n");
-   1200a:	f642 00e0 	movw	r0, #10464	; 0x28e0
+   1200a:	f642 1024 	movw	r0, #10532	; 0x2924
    1200e:	f2c0 0001 	movt	r0, #1
    12012:	f7fe ecbe 	blx	10990 <puts@plt>
    12016:	e007      	b.n	12028 <GetPacket+0x110>
         else
         {
             printf("CRC:Fail\n");
-   12018:	f642 00e8 	movw	r0, #10472	; 0x28e8
+   12018:	f642 102c 	movw	r0, #10540	; 0x292c
    1201c:	f2c0 0001 	movt	r0, #1
    12020:	f7fe ecb6 	blx	10990 <puts@plt>
             len = 0;
@@ -2936,12 +2936,12 @@ uint8_t GetPacket(int fd, uint8_t *pktbuf)
    1205a:	18d4      	adds	r4, r2, r3
    1205c:	2c00      	cmp	r4, #0
    1205e:	d106      	bne.n	1206e <GetPacket+0x156>
-   12060:	f644 00e8 	movw	r0, #18664	; 0x48e8
+   12060:	f649 3048 	movw	r0, #39752	; 0x9b48
    12064:	f2c0 0002 	movt	r0, #2
    12068:	2100      	movs	r1, #0
    1206a:	f7fe ec8c 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    1206e:	7823      	ldrb	r3, [r4, #0]
-   12070:	f642 00f4 	movw	r0, #10484	; 0x28f4
+   12070:	f642 1038 	movw	r0, #10552	; 0x2938
    12074:	f2c0 0001 	movt	r0, #1
    12078:	4619      	mov	r1, r3
    1207a:	f7fe ec6c 	blx	10954 <printf@plt>
@@ -2967,7 +2967,7 @@ uint8_t GetPacket(int fd, uint8_t *pktbuf)
    1208c:	200a      	movs	r0, #10
    1208e:	f7fe ec2c 	blx	108e8 <putchar@plt>
         fflush(stdout);
-   12092:	f644 23ec 	movw	r3, #19180	; 0x4aec
+   12092:	f649 534c 	movw	r3, #40268	; 0x9d4c
    12096:	f2c0 0302 	movt	r3, #2
    1209a:	681b      	ldr	r3, [r3, #0]
    1209c:	4618      	mov	r0, r3
@@ -2995,7 +2995,7 @@ void wait_for_discovery(int fd, int force)
    120b2:	6078      	str	r0, [r7, #4]
    120b4:	6039      	str	r1, [r7, #0]
     uint8_t discoveryPayload[]= {0xBA,0x5E,0xBA,0x11};
-   120b6:	f642 131c 	movw	r3, #10524	; 0x291c
+   120b6:	f642 1360 	movw	r3, #10592	; 0x2960
    120ba:	f2c0 0301 	movt	r3, #1
    120be:	f107 020c 	add.w	r2, r7, #12
    120c2:	6818      	ldr	r0, [r3, #0]
@@ -3004,7 +3004,7 @@ void wait_for_discovery(int fd, int force)
    120c6:	2300      	movs	r3, #0
    120c8:	75fb      	strb	r3, [r7, #23]
     wbsl_disc_pkt_t *disc = (wbsl_disc_pkt_t *)RxPktBuf;
-   120ca:	f644 3300 	movw	r3, #19200	; 0x4b00
+   120ca:	f649 5360 	movw	r3, #40288	; 0x9d60
    120ce:	f2c0 0302 	movt	r3, #2
    120d2:	613b      	str	r3, [r7, #16]
     while (!linked || force)
@@ -3012,7 +3012,7 @@ void wait_for_discovery(int fd, int force)
     {
         len = GetPacket(fd, RxPktBuf);
    120d6:	6878      	ldr	r0, [r7, #4]
-   120d8:	f644 3100 	movw	r1, #19200	; 0x4b00
+   120d8:	f649 5160 	movw	r1, #40288	; 0x9d60
    120dc:	f2c0 0102 	movt	r1, #2
    120e0:	f7ff ff1a 	bl	11f18 <GetPacket>
    120e4:	4603      	mov	r3, r0
@@ -3027,7 +3027,7 @@ void wait_for_discovery(int fd, int force)
    120f0:	693b      	ldr	r3, [r7, #16]
    120f2:	2b00      	cmp	r3, #0
    120f4:	d106      	bne.n	12104 <wait_for_discovery+0x58>
-   120f6:	f644 1020 	movw	r0, #18720	; 0x4920
+   120f6:	f649 3080 	movw	r0, #39808	; 0x9b80
    120fa:	f2c0 0002 	movt	r0, #2
    120fe:	2100      	movs	r1, #0
    12100:	f7fe ec40 	blx	10984 <__ubsan_handle_type_mismatch@plt>
@@ -3050,13 +3050,13 @@ void wait_for_discovery(int fd, int force)
    12124:	693b      	ldr	r3, [r7, #16]
    12126:	2b00      	cmp	r3, #0
    12128:	d106      	bne.n	12138 <wait_for_discovery+0x8c>
-   1212a:	f644 1038 	movw	r0, #18744	; 0x4938
+   1212a:	f649 3098 	movw	r0, #39832	; 0x9b98
    1212e:	f2c0 0002 	movt	r0, #2
    12132:	2100      	movs	r1, #0
    12134:	f7fe ec26 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    12138:	693b      	ldr	r3, [r7, #16]
    1213a:	789b      	ldrb	r3, [r3, #2]
-   1213c:	f642 00fc 	movw	r0, #10492	; 0x28fc
+   1213c:	f642 1040 	movw	r0, #10560	; 0x2940
    12140:	f2c0 0001 	movt	r0, #1
    12144:	4619      	mov	r1, r3
    12146:	f7fe ec06 	blx	10954 <printf@plt>
@@ -3064,17 +3064,17 @@ void wait_for_discovery(int fd, int force)
    1214a:	693b      	ldr	r3, [r7, #16]
    1214c:	2b00      	cmp	r3, #0
    1214e:	d106      	bne.n	1215e <wait_for_discovery+0xb2>
-   12150:	f644 1050 	movw	r0, #18768	; 0x4950
+   12150:	f649 30b0 	movw	r0, #39856	; 0x9bb0
    12154:	f2c0 0002 	movt	r0, #2
    12158:	2100      	movs	r1, #0
    1215a:	f7fe ec14 	blx	10984 <__ubsan_handle_type_mismatch@plt>
    1215e:	693b      	ldr	r3, [r7, #16]
    12160:	789a      	ldrb	r2, [r3, #2]
-   12162:	f644 23f8 	movw	r3, #19192	; 0x4af8
+   12162:	f649 5358 	movw	r3, #40280	; 0x9d58
    12166:	f2c0 0302 	movt	r3, #2
    1216a:	701a      	strb	r2, [r3, #0]
             linked = true;
-   1216c:	f644 4304 	movw	r3, #19460	; 0x4c04
+   1216c:	f649 6364 	movw	r3, #40548	; 0x9e64
    12170:	f2c0 0302 	movt	r3, #2
    12174:	2201      	movs	r2, #1
    12176:	701a      	strb	r2, [r3, #0]
@@ -3083,7 +3083,7 @@ void wait_for_discovery(int fd, int force)
         else
         {
             printf("Not Disc\n");
-   1217a:	f642 1010 	movw	r0, #10512	; 0x2910
+   1217a:	f642 1054 	movw	r0, #10580	; 0x2954
    1217e:	f2c0 0001 	movt	r0, #1
    12182:	f7fe ec06 	blx	10990 <puts@plt>
             continue;
@@ -3094,7 +3094,7 @@ void wait_for_discovery(int fd, int force)
     uint8_t len = 0;
     wbsl_disc_pkt_t *disc = (wbsl_disc_pkt_t *)RxPktBuf;
     while (!linked || force)
-   12188:	f644 4304 	movw	r3, #19460	; 0x4c04
+   12188:	f649 6364 	movw	r3, #40548	; 0x9e64
    1218c:	f2c0 0302 	movt	r3, #2
    12190:	781b      	ldrb	r3, [r3, #0]
    12192:	2b00      	cmp	r3, #0
@@ -3125,7 +3125,7 @@ void send_disc_ack(int fd)
     wbsl_disc_ack_t dack = {
    121ac:	2303      	movs	r3, #3
    121ae:	733b      	strb	r3, [r7, #12]
-   121b0:	f644 23f8 	movw	r3, #19192	; 0x4af8
+   121b0:	f649 5358 	movw	r3, #40280	; 0x9d58
    121b4:	f2c0 0302 	movt	r3, #2
    121b8:	781b      	ldrb	r3, [r3, #0]
    121ba:	737b      	strb	r3, [r7, #13]
@@ -3154,587 +3154,613 @@ uint8_t init_packet[] = { 5, 0xad, 0xca, 0, 0 ,0};
 int start_update(int fd)
 {
    121d8:	b5b0      	push	{r4, r5, r7, lr}
-   121da:	b08a      	sub	sp, #40	; 0x28
+   121da:	b08c      	sub	sp, #48	; 0x30
    121dc:	af00      	add	r7, sp, #0
    121de:	6078      	str	r0, [r7, #4]
     int i;
     int j;
     uint8_t retx = 0;
    121e0:	2300      	movs	r3, #0
-   121e2:	77fb      	strb	r3, [r7, #31]
+   121e2:	f887 3027 	strb.w	r3, [r7, #39]	; 0x27
     uint8_t len = 0;
-   121e4:	2300      	movs	r3, #0
-   121e6:	77bb      	strb	r3, [r7, #30]
+   121e6:	2300      	movs	r3, #0
+   121e8:	f887 3026 	strb.w	r3, [r7, #38]	; 0x26
     struct timespec ack_timeout = { .tv_nsec = 20000};
-   121e8:	2300      	movs	r3, #0
-   121ea:	60fb      	str	r3, [r7, #12]
    121ec:	2300      	movs	r3, #0
-   121ee:	613b      	str	r3, [r7, #16]
-   121f0:	f644 6320 	movw	r3, #20000	; 0x4e20
-   121f4:	613b      	str	r3, [r7, #16]
+   121ee:	617b      	str	r3, [r7, #20]
+   121f0:	2300      	movs	r3, #0
+   121f2:	61bb      	str	r3, [r7, #24]
+   121f4:	f644 6320 	movw	r3, #20000	; 0x4e20
+   121f8:	61bb      	str	r3, [r7, #24]
+    struct timespec wait_restart = { .tv_nsec = 200000};
+   121fa:	2300      	movs	r3, #0
+   121fc:	60fb      	str	r3, [r7, #12]
+   121fe:	2300      	movs	r3, #0
+   12200:	613b      	str	r3, [r7, #16]
+   12202:	f44f 6354 	mov.w	r3, #3392	; 0xd40
+   12206:	f2c0 0303 	movt	r3, #3
+   1220a:	613b      	str	r3, [r7, #16]
     for ( i = 0; i <  sizeof(npkts)/sizeof(npkts[0]); i++)
-   121f6:	2300      	movs	r3, #0
-   121f8:	627b      	str	r3, [r7, #36]	; 0x24
-   121fa:	e166      	b.n	124ca <start_update+0x2f2>
+   1220c:	2300      	movs	r3, #0
+   1220e:	62fb      	str	r3, [r7, #44]	; 0x2c
+   12210:	e17d      	b.n	1250e <start_update+0x336>
     {  
         wait_for_discovery(fd, false);
-   121fc:	6878      	ldr	r0, [r7, #4]
-   121fe:	2100      	movs	r1, #0
-   12200:	f7ff ff54 	bl	120ac <wait_for_discovery>
-        rxoff(fd);
-   12204:	6878      	ldr	r0, [r7, #4]
-   12206:	f7ff fd19 	bl	11c3c <rxoff>
+   12212:	6878      	ldr	r0, [r7, #4]
+   12214:	2100      	movs	r1, #0
+   12216:	f7ff ff49 	bl	120ac <wait_for_discovery>
         nanosleep(&ack_timeout, NULL);
-   1220a:	f107 030c 	add.w	r3, r7, #12
-   1220e:	4618      	mov	r0, r3
-   12210:	2100      	movs	r1, #0
-   12212:	f7fe ebc4 	blx	1099c <nanosleep@plt>
+   1221a:	f107 0314 	add.w	r3, r7, #20
+   1221e:	4618      	mov	r0, r3
+   12220:	2100      	movs	r1, #0
+   12222:	f7fe ebbc 	blx	1099c <nanosleep@plt>
         send_disc_ack(fd);
-   12216:	6878      	ldr	r0, [r7, #4]
-   12218:	f7ff ffc4 	bl	121a4 <send_disc_ack>
+   12226:	6878      	ldr	r0, [r7, #4]
+   12228:	f7ff ffbc 	bl	121a4 <send_disc_ack>
         init_packet[3] = npkts[i] & 0xff;
-   1221c:	f243 1390 	movw	r3, #12688	; 0x3190
-   12220:	f2c0 0302 	movt	r3, #2
-   12224:	6a7a      	ldr	r2, [r7, #36]	; 0x24
-   12226:	f833 3012 	ldrh.w	r3, [r3, r2, lsl #1]
-   1222a:	b2da      	uxtb	r2, r3
-   1222c:	f644 1368 	movw	r3, #18792	; 0x4968
+   1222c:	f642 33bc 	movw	r3, #11196	; 0x2bbc
    12230:	f2c0 0302 	movt	r3, #2
-   12234:	70da      	strb	r2, [r3, #3]
+   12234:	6afa      	ldr	r2, [r7, #44]	; 0x2c
+   12236:	f833 3012 	ldrh.w	r3, [r3, r2, lsl #1]
+   1223a:	b2da      	uxtb	r2, r3
+   1223c:	f649 33c8 	movw	r3, #39880	; 0x9bc8
+   12240:	f2c0 0302 	movt	r3, #2
+   12244:	70da      	strb	r2, [r3, #3]
         init_packet[4] = (npkts[i] >> 8 ) & 0xff;
-   12236:	f243 1390 	movw	r3, #12688	; 0x3190
-   1223a:	f2c0 0302 	movt	r3, #2
-   1223e:	6a7a      	ldr	r2, [r7, #36]	; 0x24
-   12240:	f833 3012 	ldrh.w	r3, [r3, r2, lsl #1]
-   12244:	0a1b      	lsrs	r3, r3, #8
-   12246:	b29b      	uxth	r3, r3
-   12248:	b2da      	uxtb	r2, r3
-   1224a:	f644 1368 	movw	r3, #18792	; 0x4968
-   1224e:	f2c0 0302 	movt	r3, #2
-   12252:	711a      	strb	r2, [r3, #4]
+   12246:	f642 33bc 	movw	r3, #11196	; 0x2bbc
+   1224a:	f2c0 0302 	movt	r3, #2
+   1224e:	6afa      	ldr	r2, [r7, #44]	; 0x2c
+   12250:	f833 3012 	ldrh.w	r3, [r3, r2, lsl #1]
+   12254:	0a1b      	lsrs	r3, r3, #8
+   12256:	b29b      	uxth	r3, r3
+   12258:	b2da      	uxtb	r2, r3
+   1225a:	f649 33c8 	movw	r3, #39880	; 0x9bc8
+   1225e:	f2c0 0302 	movt	r3, #2
+   12262:	711a      	strb	r2, [r3, #4]
         while(1) {
             retx++;
-   12254:	7ffb      	ldrb	r3, [r7, #31]
-   12256:	3301      	adds	r3, #1
-   12258:	77fb      	strb	r3, [r7, #31]
+   12264:	f897 3027 	ldrb.w	r3, [r7, #39]	; 0x27
+   12268:	3301      	adds	r3, #1
+   1226a:	f887 3027 	strb.w	r3, [r7, #39]	; 0x27
             init_packet[5] = 1;
-   1225a:	f644 1368 	movw	r3, #18792	; 0x4968
-   1225e:	f2c0 0302 	movt	r3, #2
-   12262:	2201      	movs	r2, #1
-   12264:	715a      	strb	r2, [r3, #5]
+   1226e:	f649 33c8 	movw	r3, #39880	; 0x9bc8
+   12272:	f2c0 0302 	movt	r3, #2
+   12276:	2201      	movs	r2, #1
+   12278:	715a      	strb	r2, [r3, #5]
             TransmitPkt(fd, init_packet, sizeof(init_packet));
-   12266:	6878      	ldr	r0, [r7, #4]
-   12268:	f644 1168 	movw	r1, #18792	; 0x4968
-   1226c:	f2c0 0102 	movt	r1, #2
-   12270:	2206      	movs	r2, #6
-   12272:	f7ff fdc7 	bl	11e04 <TransmitPkt>
+   1227a:	6878      	ldr	r0, [r7, #4]
+   1227c:	f649 31c8 	movw	r1, #39880	; 0x9bc8
+   12280:	f2c0 0102 	movt	r1, #2
+   12284:	2206      	movs	r2, #6
+   12286:	f7ff fdbd 	bl	11e04 <TransmitPkt>
             nanosleep(&ack_timeout, NULL);
-   12276:	f107 030c 	add.w	r3, r7, #12
-   1227a:	4618      	mov	r0, r3
-   1227c:	2100      	movs	r1, #0
-   1227e:	f7fe eb8e 	blx	1099c <nanosleep@plt>
+   1228a:	f107 0314 	add.w	r3, r7, #20
+   1228e:	4618      	mov	r0, r3
+   12290:	2100      	movs	r1, #0
+   12292:	f7fe eb84 	blx	1099c <nanosleep@plt>
             if((len = GetPacket(fd, RxPktBuf)))
-   12282:	6878      	ldr	r0, [r7, #4]
-   12284:	f644 3100 	movw	r1, #19200	; 0x4b00
-   12288:	f2c0 0102 	movt	r1, #2
-   1228c:	f7ff fe44 	bl	11f18 <GetPacket>
-   12290:	4603      	mov	r3, r0
-   12292:	77bb      	strb	r3, [r7, #30]
-   12294:	7fbb      	ldrb	r3, [r7, #30]
-   12296:	2b00      	cmp	r3, #0
-   12298:	d011      	beq.n	122be <start_update+0xe6>
+   12296:	6878      	ldr	r0, [r7, #4]
+   12298:	f649 5160 	movw	r1, #40288	; 0x9d60
+   1229c:	f2c0 0102 	movt	r1, #2
+   122a0:	f7ff fe3a 	bl	11f18 <GetPacket>
+   122a4:	4603      	mov	r3, r0
+   122a6:	f887 3026 	strb.w	r3, [r7, #38]	; 0x26
+   122aa:	f897 3026 	ldrb.w	r3, [r7, #38]	; 0x26
+   122ae:	2b00      	cmp	r3, #0
+   122b0:	d012      	beq.n	122d8 <start_update+0x100>
             {
                printf("Success Init Packet\n");
-   1229a:	f642 1020 	movw	r0, #10528	; 0x2920
-   1229e:	f2c0 0001 	movt	r0, #1
-   122a2:	f7fe eb76 	blx	10990 <puts@plt>
+   122b2:	f642 1064 	movw	r0, #10596	; 0x2964
+   122b6:	f2c0 0001 	movt	r0, #1
+   122ba:	f7fe eb6a 	blx	10990 <puts@plt>
                retx = 0;
-   122a6:	2300      	movs	r3, #0
-   122a8:	77fb      	strb	r3, [r7, #31]
+   122be:	2300      	movs	r3, #0
+   122c0:	f887 3027 	strb.w	r3, [r7, #39]	; 0x27
                break;
-   122aa:	bf00      	nop
+   122c4:	bf00      	nop
             }
         }
 
         nanosleep(&ack_timeout, NULL);
-   122ac:	f107 030c 	add.w	r3, r7, #12
-   122b0:	4618      	mov	r0, r3
-   122b2:	2100      	movs	r1, #0
-   122b4:	f7fe eb72 	blx	1099c <nanosleep@plt>
+   122c6:	f107 0314 	add.w	r3, r7, #20
+   122ca:	4618      	mov	r0, r3
+   122cc:	2100      	movs	r1, #0
+   122ce:	f7fe eb66 	blx	1099c <nanosleep@plt>
 
         for(j = 0; j < npkts[i]; j++)
-   122b8:	2300      	movs	r3, #0
-   122ba:	623b      	str	r3, [r7, #32]
-   122bc:	e0e4      	b.n	12488 <start_update+0x2b0>
+   122d2:	2300      	movs	r3, #0
+   122d4:	62bb      	str	r3, [r7, #40]	; 0x28
+   122d6:	e0ec      	b.n	124b2 <start_update+0x2da>
             {
                printf("Success Init Packet\n");
                retx = 0;
                break;
             }
         }
-   122be:	e7c9      	b.n	12254 <start_update+0x7c>
+   122d8:	e7c4      	b.n	12264 <start_update+0x8c>
 
         nanosleep(&ack_timeout, NULL);
 
         for(j = 0; j < npkts[i]; j++)
         {
             TransmitPkt(fd, packets[i][j], packets[i][j][0]+1);
-   122c0:	f244 022c 	movw	r2, #16428	; 0x402c
-   122c4:	f2c0 0202 	movt	r2, #2
-   122c8:	6a79      	ldr	r1, [r7, #36]	; 0x24
-   122ca:	460b      	mov	r3, r1
-   122cc:	011b      	lsls	r3, r3, #4
-   122ce:	1a5b      	subs	r3, r3, r1
-   122d0:	009b      	lsls	r3, r3, #2
-   122d2:	6a39      	ldr	r1, [r7, #32]
-   122d4:	440b      	add	r3, r1
-   122d6:	f852 5023 	ldr.w	r5, [r2, r3, lsl #2]
-   122da:	f244 022c 	movw	r2, #16428	; 0x402c
+   122da:	f648 1264 	movw	r2, #35172	; 0x8964
    122de:	f2c0 0202 	movt	r2, #2
-   122e2:	6a79      	ldr	r1, [r7, #36]	; 0x24
+   122e2:	6af9      	ldr	r1, [r7, #44]	; 0x2c
    122e4:	460b      	mov	r3, r1
-   122e6:	011b      	lsls	r3, r3, #4
-   122e8:	1a5b      	subs	r3, r3, r1
-   122ea:	009b      	lsls	r3, r3, #2
-   122ec:	6a39      	ldr	r1, [r7, #32]
-   122ee:	440b      	add	r3, r1
-   122f0:	f852 4023 	ldr.w	r4, [r2, r3, lsl #2]
-   122f4:	2c00      	cmp	r4, #0
-   122f6:	d106      	bne.n	12306 <start_update+0x12e>
-   122f8:	f644 10a4 	movw	r0, #18852	; 0x49a4
-   122fc:	f2c0 0002 	movt	r0, #2
-   12300:	2100      	movs	r1, #0
-   12302:	f7fe eb40 	blx	10984 <__ubsan_handle_type_mismatch@plt>
-   12306:	7823      	ldrb	r3, [r4, #0]
-   12308:	3301      	adds	r3, #1
-   1230a:	b2db      	uxtb	r3, r3
-   1230c:	6878      	ldr	r0, [r7, #4]
-   1230e:	4629      	mov	r1, r5
-   12310:	461a      	mov	r2, r3
-   12312:	f7ff fd77 	bl	11e04 <TransmitPkt>
+   122e6:	00db      	lsls	r3, r3, #3
+   122e8:	440b      	add	r3, r1
+   122ea:	005b      	lsls	r3, r3, #1
+   122ec:	440b      	add	r3, r1
+   122ee:	0119      	lsls	r1, r3, #4
+   122f0:	440b      	add	r3, r1
+   122f2:	6ab9      	ldr	r1, [r7, #40]	; 0x28
+   122f4:	440b      	add	r3, r1
+   122f6:	f852 5023 	ldr.w	r5, [r2, r3, lsl #2]
+   122fa:	f648 1264 	movw	r2, #35172	; 0x8964
+   122fe:	f2c0 0202 	movt	r2, #2
+   12302:	6af9      	ldr	r1, [r7, #44]	; 0x2c
+   12304:	460b      	mov	r3, r1
+   12306:	00db      	lsls	r3, r3, #3
+   12308:	440b      	add	r3, r1
+   1230a:	005b      	lsls	r3, r3, #1
+   1230c:	440b      	add	r3, r1
+   1230e:	0119      	lsls	r1, r3, #4
+   12310:	440b      	add	r3, r1
+   12312:	6ab9      	ldr	r1, [r7, #40]	; 0x28
+   12314:	440b      	add	r3, r1
+   12316:	f852 4023 	ldr.w	r4, [r2, r3, lsl #2]
+   1231a:	2c00      	cmp	r4, #0
+   1231c:	d106      	bne.n	1232c <start_update+0x154>
+   1231e:	f649 4004 	movw	r0, #39940	; 0x9c04
+   12322:	f2c0 0002 	movt	r0, #2
+   12326:	2100      	movs	r1, #0
+   12328:	f7fe eb2c 	blx	10984 <__ubsan_handle_type_mismatch@plt>
+   1232c:	7823      	ldrb	r3, [r4, #0]
+   1232e:	3301      	adds	r3, #1
+   12330:	b2db      	uxtb	r3, r3
+   12332:	6878      	ldr	r0, [r7, #4]
+   12334:	4629      	mov	r1, r5
+   12336:	461a      	mov	r2, r3
+   12338:	f7ff fd64 	bl	11e04 <TransmitPkt>
             if((len = GetPacket(fd, RxPktBuf)))
-   12316:	6878      	ldr	r0, [r7, #4]
-   12318:	f644 3100 	movw	r1, #19200	; 0x4b00
-   1231c:	f2c0 0102 	movt	r1, #2
-   12320:	f7ff fdfa 	bl	11f18 <GetPacket>
-   12324:	4603      	mov	r3, r0
-   12326:	77bb      	strb	r3, [r7, #30]
-   12328:	7fbb      	ldrb	r3, [r7, #30]
-   1232a:	2b00      	cmp	r3, #0
-   1232c:	f000 8097 	beq.w	1245e <start_update+0x286>
+   1233c:	6878      	ldr	r0, [r7, #4]
+   1233e:	f649 5160 	movw	r1, #40288	; 0x9d60
+   12342:	f2c0 0102 	movt	r1, #2
+   12346:	f7ff fde7 	bl	11f18 <GetPacket>
+   1234a:	4603      	mov	r3, r0
+   1234c:	f887 3026 	strb.w	r3, [r7, #38]	; 0x26
+   12350:	f897 3026 	ldrb.w	r3, [r7, #38]	; 0x26
+   12354:	2b00      	cmp	r3, #0
+   12356:	f000 8097 	beq.w	12488 <start_update+0x2b0>
             {
                 wbsl_data_ack_t *da = RxPktBuf;
-   12330:	f644 3300 	movw	r3, #19200	; 0x4b00
-   12334:	f2c0 0302 	movt	r3, #2
-   12338:	61bb      	str	r3, [r7, #24]
+   1235a:	f649 5360 	movw	r3, #40288	; 0x9d60
+   1235e:	f2c0 0302 	movt	r3, #2
+   12362:	623b      	str	r3, [r7, #32]
                 printf("Packet %x", (da->packethi << 8) + da->packetlo);
-   1233a:	69bb      	ldr	r3, [r7, #24]
-   1233c:	2b00      	cmp	r3, #0
-   1233e:	d106      	bne.n	1234e <start_update+0x176>
-   12340:	f644 10dc 	movw	r0, #18908	; 0x49dc
-   12344:	f2c0 0002 	movt	r0, #2
-   12348:	2100      	movs	r1, #0
-   1234a:	f7fe eb1c 	blx	10984 <__ubsan_handle_type_mismatch@plt>
-   1234e:	69bb      	ldr	r3, [r7, #24]
-   12350:	791b      	ldrb	r3, [r3, #4]
-   12352:	461c      	mov	r4, r3
-   12354:	4623      	mov	r3, r4
-   12356:	0ddb      	lsrs	r3, r3, #23
-   12358:	2b00      	cmp	r3, #0
-   1235a:	bf14      	ite	ne
-   1235c:	2301      	movne	r3, #1
-   1235e:	2300      	moveq	r3, #0
-   12360:	b2db      	uxtb	r3, r3
-   12362:	2b00      	cmp	r3, #0
-   12364:	d008      	beq.n	12378 <start_update+0x1a0>
-   12366:	4623      	mov	r3, r4
-   12368:	f644 107c 	movw	r0, #18812	; 0x497c
-   1236c:	f2c0 0002 	movt	r0, #2
-   12370:	4619      	mov	r1, r3
-   12372:	2208      	movs	r2, #8
-   12374:	f7fe eaf4 	blx	10960 <__ubsan_handle_shift_out_of_bounds@plt>
-   12378:	0224      	lsls	r4, r4, #8
-   1237a:	69bb      	ldr	r3, [r7, #24]
-   1237c:	2b00      	cmp	r3, #0
-   1237e:	d106      	bne.n	1238e <start_update+0x1b6>
-   12380:	f644 10f4 	movw	r0, #18932	; 0x49f4
-   12384:	f2c0 0002 	movt	r0, #2
-   12388:	2100      	movs	r1, #0
-   1238a:	f7fe eafc 	blx	10984 <__ubsan_handle_type_mismatch@plt>
-   1238e:	69bb      	ldr	r3, [r7, #24]
-   12390:	795b      	ldrb	r3, [r3, #5]
-   12392:	18e5      	adds	r5, r4, r3
-   12394:	2b00      	cmp	r3, #0
-   12396:	db02      	blt.n	1239e <start_update+0x1c6>
-   12398:	42a5      	cmp	r5, r4
-   1239a:	da0a      	bge.n	123b2 <start_update+0x1da>
-   1239c:	e001      	b.n	123a2 <start_update+0x1ca>
-   1239e:	42a5      	cmp	r5, r4
-   123a0:	dd07      	ble.n	123b2 <start_update+0x1da>
-   123a2:	f644 2054 	movw	r0, #19028	; 0x4a54
-   123a6:	f2c0 0002 	movt	r0, #2
-   123aa:	4621      	mov	r1, r4
-   123ac:	461a      	mov	r2, r3
-   123ae:	f7fe eacc 	blx	10948 <__ubsan_handle_add_overflow@plt>
-   123b2:	462b      	mov	r3, r5
-   123b4:	f642 1034 	movw	r0, #10548	; 0x2934
-   123b8:	f2c0 0001 	movt	r0, #1
-   123bc:	4619      	mov	r1, r3
-   123be:	f7fe eaca 	blx	10954 <printf@plt>
+   12364:	6a3b      	ldr	r3, [r7, #32]
+   12366:	2b00      	cmp	r3, #0
+   12368:	d106      	bne.n	12378 <start_update+0x1a0>
+   1236a:	f649 403c 	movw	r0, #39996	; 0x9c3c
+   1236e:	f2c0 0002 	movt	r0, #2
+   12372:	2100      	movs	r1, #0
+   12374:	f7fe eb06 	blx	10984 <__ubsan_handle_type_mismatch@plt>
+   12378:	6a3b      	ldr	r3, [r7, #32]
+   1237a:	791b      	ldrb	r3, [r3, #4]
+   1237c:	461c      	mov	r4, r3
+   1237e:	4623      	mov	r3, r4
+   12380:	0ddb      	lsrs	r3, r3, #23
+   12382:	2b00      	cmp	r3, #0
+   12384:	bf14      	ite	ne
+   12386:	2301      	movne	r3, #1
+   12388:	2300      	moveq	r3, #0
+   1238a:	b2db      	uxtb	r3, r3
+   1238c:	2b00      	cmp	r3, #0
+   1238e:	d008      	beq.n	123a2 <start_update+0x1ca>
+   12390:	4623      	mov	r3, r4
+   12392:	f649 30dc 	movw	r0, #39900	; 0x9bdc
+   12396:	f2c0 0002 	movt	r0, #2
+   1239a:	4619      	mov	r1, r3
+   1239c:	2208      	movs	r2, #8
+   1239e:	f7fe eae0 	blx	10960 <__ubsan_handle_shift_out_of_bounds@plt>
+   123a2:	0224      	lsls	r4, r4, #8
+   123a4:	6a3b      	ldr	r3, [r7, #32]
+   123a6:	2b00      	cmp	r3, #0
+   123a8:	d106      	bne.n	123b8 <start_update+0x1e0>
+   123aa:	f649 4054 	movw	r0, #40020	; 0x9c54
+   123ae:	f2c0 0002 	movt	r0, #2
+   123b2:	2100      	movs	r1, #0
+   123b4:	f7fe eae6 	blx	10984 <__ubsan_handle_type_mismatch@plt>
+   123b8:	6a3b      	ldr	r3, [r7, #32]
+   123ba:	795b      	ldrb	r3, [r3, #5]
+   123bc:	18e5      	adds	r5, r4, r3
+   123be:	2b00      	cmp	r3, #0
+   123c0:	db02      	blt.n	123c8 <start_update+0x1f0>
+   123c2:	42a5      	cmp	r5, r4
+   123c4:	da0a      	bge.n	123dc <start_update+0x204>
+   123c6:	e001      	b.n	123cc <start_update+0x1f4>
+   123c8:	42a5      	cmp	r5, r4
+   123ca:	dd07      	ble.n	123dc <start_update+0x204>
+   123cc:	f649 40b4 	movw	r0, #40116	; 0x9cb4
+   123d0:	f2c0 0002 	movt	r0, #2
+   123d4:	4621      	mov	r1, r4
+   123d6:	461a      	mov	r2, r3
+   123d8:	f7fe eab6 	blx	10948 <__ubsan_handle_add_overflow@plt>
+   123dc:	462b      	mov	r3, r5
+   123de:	f642 1078 	movw	r0, #10616	; 0x2978
+   123e2:	f2c0 0001 	movt	r0, #1
+   123e6:	4619      	mov	r1, r3
+   123e8:	f7fe eab4 	blx	10954 <printf@plt>
                 if (da->status == WBSL_ACK_STATUS_SUCCESS)
-   123c2:	69bb      	ldr	r3, [r7, #24]
-   123c4:	2b00      	cmp	r3, #0
-   123c6:	d106      	bne.n	123d6 <start_update+0x1fe>
-   123c8:	f644 200c 	movw	r0, #18956	; 0x4a0c
-   123cc:	f2c0 0002 	movt	r0, #2
-   123d0:	2100      	movs	r1, #0
-   123d2:	f7fe ead8 	blx	10984 <__ubsan_handle_type_mismatch@plt>
-   123d6:	69bb      	ldr	r3, [r7, #24]
-   123d8:	78db      	ldrb	r3, [r3, #3]
-   123da:	2b01      	cmp	r3, #1
-   123dc:	d106      	bne.n	123ec <start_update+0x214>
+   123ec:	6a3b      	ldr	r3, [r7, #32]
+   123ee:	2b00      	cmp	r3, #0
+   123f0:	d106      	bne.n	12400 <start_update+0x228>
+   123f2:	f649 406c 	movw	r0, #40044	; 0x9c6c
+   123f6:	f2c0 0002 	movt	r0, #2
+   123fa:	2100      	movs	r1, #0
+   123fc:	f7fe eac2 	blx	10984 <__ubsan_handle_type_mismatch@plt>
+   12400:	6a3b      	ldr	r3, [r7, #32]
+   12402:	78db      	ldrb	r3, [r3, #3]
+   12404:	2b01      	cmp	r3, #1
+   12406:	d106      	bne.n	12416 <start_update+0x23e>
                 {
                     printf("*Succeeded\n");
-   123de:	f642 1040 	movw	r0, #10560	; 0x2940
-   123e2:	f2c0 0001 	movt	r0, #1
-   123e6:	f7fe ead4 	blx	10990 <puts@plt>
+   12408:	f642 1084 	movw	r0, #10628	; 0x2984
+   1240c:	f2c0 0001 	movt	r0, #1
+   12410:	f7fe eabe 	blx	10990 <puts@plt>
                     continue;
-   123ea:	e038      	b.n	1245e <start_update+0x286>
+   12414:	e038      	b.n	12488 <start_update+0x2b0>
                 }
                 else
                 {
                     printf("* Failed\n");
-   123ec:	f642 104c 	movw	r0, #10572	; 0x294c
-   123f0:	f2c0 0001 	movt	r0, #1
-   123f4:	f7fe eacc 	blx	10990 <puts@plt>
+   12416:	f642 1090 	movw	r0, #10640	; 0x2990
+   1241a:	f2c0 0001 	movt	r0, #1
+   1241e:	f7fe eab8 	blx	10990 <puts@plt>
                     uint16_t nack_nr  = (da->packethi << 8) + da->packetlo;
-   123f8:	69bb      	ldr	r3, [r7, #24]
-   123fa:	2b00      	cmp	r3, #0
-   123fc:	d106      	bne.n	1240c <start_update+0x234>
-   123fe:	f644 2024 	movw	r0, #18980	; 0x4a24
-   12402:	f2c0 0002 	movt	r0, #2
-   12406:	2100      	movs	r1, #0
-   12408:	f7fe eabc 	blx	10984 <__ubsan_handle_type_mismatch@plt>
-   1240c:	69bb      	ldr	r3, [r7, #24]
-   1240e:	791b      	ldrb	r3, [r3, #4]
-   12410:	461c      	mov	r4, r3
-   12412:	4623      	mov	r3, r4
-   12414:	0ddb      	lsrs	r3, r3, #23
-   12416:	2b00      	cmp	r3, #0
-   12418:	bf14      	ite	ne
-   1241a:	2301      	movne	r3, #1
-   1241c:	2300      	moveq	r3, #0
-   1241e:	b2db      	uxtb	r3, r3
-   12420:	2b00      	cmp	r3, #0
-   12422:	d008      	beq.n	12436 <start_update+0x25e>
-   12424:	4623      	mov	r3, r4
-   12426:	f644 1090 	movw	r0, #18832	; 0x4990
-   1242a:	f2c0 0002 	movt	r0, #2
-   1242e:	4619      	mov	r1, r3
-   12430:	2208      	movs	r2, #8
-   12432:	f7fe ea96 	blx	10960 <__ubsan_handle_shift_out_of_bounds@plt>
-   12436:	b2a3      	uxth	r3, r4
-   12438:	021b      	lsls	r3, r3, #8
-   1243a:	b29c      	uxth	r4, r3
-   1243c:	69bb      	ldr	r3, [r7, #24]
-   1243e:	2b00      	cmp	r3, #0
-   12440:	d106      	bne.n	12450 <start_update+0x278>
-   12442:	f644 203c 	movw	r0, #19004	; 0x4a3c
-   12446:	f2c0 0002 	movt	r0, #2
-   1244a:	2100      	movs	r1, #0
-   1244c:	f7fe ea9a 	blx	10984 <__ubsan_handle_type_mismatch@plt>
-   12450:	69bb      	ldr	r3, [r7, #24]
-   12452:	795b      	ldrb	r3, [r3, #5]
-   12454:	b29b      	uxth	r3, r3
-   12456:	4423      	add	r3, r4
-   12458:	82fb      	strh	r3, [r7, #22]
+   12422:	6a3b      	ldr	r3, [r7, #32]
+   12424:	2b00      	cmp	r3, #0
+   12426:	d106      	bne.n	12436 <start_update+0x25e>
+   12428:	f649 4084 	movw	r0, #40068	; 0x9c84
+   1242c:	f2c0 0002 	movt	r0, #2
+   12430:	2100      	movs	r1, #0
+   12432:	f7fe eaa8 	blx	10984 <__ubsan_handle_type_mismatch@plt>
+   12436:	6a3b      	ldr	r3, [r7, #32]
+   12438:	791b      	ldrb	r3, [r3, #4]
+   1243a:	461c      	mov	r4, r3
+   1243c:	4623      	mov	r3, r4
+   1243e:	0ddb      	lsrs	r3, r3, #23
+   12440:	2b00      	cmp	r3, #0
+   12442:	bf14      	ite	ne
+   12444:	2301      	movne	r3, #1
+   12446:	2300      	moveq	r3, #0
+   12448:	b2db      	uxtb	r3, r3
+   1244a:	2b00      	cmp	r3, #0
+   1244c:	d008      	beq.n	12460 <start_update+0x288>
+   1244e:	4623      	mov	r3, r4
+   12450:	f649 30f0 	movw	r0, #39920	; 0x9bf0
+   12454:	f2c0 0002 	movt	r0, #2
+   12458:	4619      	mov	r1, r3
+   1245a:	2208      	movs	r2, #8
+   1245c:	f7fe ea80 	blx	10960 <__ubsan_handle_shift_out_of_bounds@plt>
+   12460:	b2a3      	uxth	r3, r4
+   12462:	021b      	lsls	r3, r3, #8
+   12464:	b29c      	uxth	r4, r3
+   12466:	6a3b      	ldr	r3, [r7, #32]
+   12468:	2b00      	cmp	r3, #0
+   1246a:	d106      	bne.n	1247a <start_update+0x2a2>
+   1246c:	f649 409c 	movw	r0, #40092	; 0x9c9c
+   12470:	f2c0 0002 	movt	r0, #2
+   12474:	2100      	movs	r1, #0
+   12476:	f7fe ea86 	blx	10984 <__ubsan_handle_type_mismatch@plt>
+   1247a:	6a3b      	ldr	r3, [r7, #32]
+   1247c:	795b      	ldrb	r3, [r3, #5]
+   1247e:	b29b      	uxth	r3, r3
+   12480:	4423      	add	r3, r4
+   12482:	83fb      	strh	r3, [r7, #30]
                     j = nack_nr;
-   1245a:	8afb      	ldrh	r3, [r7, #22]
-   1245c:	623b      	str	r3, [r7, #32]
+   12484:	8bfb      	ldrh	r3, [r7, #30]
+   12486:	62bb      	str	r3, [r7, #40]	; 0x28
             }
         }
 
         nanosleep(&ack_timeout, NULL);
 
         for(j = 0; j < npkts[i]; j++)
-   1245e:	6a3b      	ldr	r3, [r7, #32]
-   12460:	1c5c      	adds	r4, r3, #1
-   12462:	2301      	movs	r3, #1
-   12464:	2b00      	cmp	r3, #0
-   12466:	db03      	blt.n	12470 <start_update+0x298>
-   12468:	6a3b      	ldr	r3, [r7, #32]
-   1246a:	429c      	cmp	r4, r3
-   1246c:	da0b      	bge.n	12486 <start_update+0x2ae>
-   1246e:	e002      	b.n	12476 <start_update+0x29e>
-   12470:	6a3b      	ldr	r3, [r7, #32]
-   12472:	429c      	cmp	r4, r3
-   12474:	dd07      	ble.n	12486 <start_update+0x2ae>
-   12476:	f644 2064 	movw	r0, #19044	; 0x4a64
-   1247a:	f2c0 0002 	movt	r0, #2
-   1247e:	6a39      	ldr	r1, [r7, #32]
-   12480:	2201      	movs	r2, #1
-   12482:	f7fe ea62 	blx	10948 <__ubsan_handle_add_overflow@plt>
-   12486:	623c      	str	r4, [r7, #32]
-   12488:	f243 1390 	movw	r3, #12688	; 0x3190
-   1248c:	f2c0 0302 	movt	r3, #2
-   12490:	6a7a      	ldr	r2, [r7, #36]	; 0x24
-   12492:	f833 3012 	ldrh.w	r3, [r3, r2, lsl #1]
-   12496:	461a      	mov	r2, r3
-   12498:	6a3b      	ldr	r3, [r7, #32]
-   1249a:	429a      	cmp	r2, r3
-   1249c:	f73f af10 	bgt.w	122c0 <start_update+0xe8>
-    int i;
-    int j;
-    uint8_t retx = 0;
-    uint8_t len = 0;
-    struct timespec ack_timeout = { .tv_nsec = 20000};
-    for ( i = 0; i <  sizeof(npkts)/sizeof(npkts[0]); i++)
-   124a0:	6a7b      	ldr	r3, [r7, #36]	; 0x24
-   124a2:	1c5c      	adds	r4, r3, #1
-   124a4:	2301      	movs	r3, #1
-   124a6:	2b00      	cmp	r3, #0
-   124a8:	db03      	blt.n	124b2 <start_update+0x2da>
-   124aa:	6a7b      	ldr	r3, [r7, #36]	; 0x24
-   124ac:	429c      	cmp	r4, r3
-   124ae:	da0b      	bge.n	124c8 <start_update+0x2f0>
-   124b0:	e002      	b.n	124b8 <start_update+0x2e0>
-   124b2:	6a7b      	ldr	r3, [r7, #36]	; 0x24
-   124b4:	429c      	cmp	r4, r3
-   124b6:	dd07      	ble.n	124c8 <start_update+0x2f0>
-   124b8:	f644 2074 	movw	r0, #19060	; 0x4a74
-   124bc:	f2c0 0002 	movt	r0, #2
-   124c0:	6a79      	ldr	r1, [r7, #36]	; 0x24
-   124c2:	2201      	movs	r2, #1
-   124c4:	f7fe ea40 	blx	10948 <__ubsan_handle_add_overflow@plt>
-   124c8:	627c      	str	r4, [r7, #36]	; 0x24
-   124ca:	6a7b      	ldr	r3, [r7, #36]	; 0x24
-   124cc:	2b00      	cmp	r3, #0
-   124ce:	f43f ae95 	beq.w	121fc <start_update+0x24>
+   12488:	6abb      	ldr	r3, [r7, #40]	; 0x28
+   1248a:	1c5c      	adds	r4, r3, #1
+   1248c:	2301      	movs	r3, #1
+   1248e:	2b00      	cmp	r3, #0
+   12490:	db03      	blt.n	1249a <start_update+0x2c2>
+   12492:	6abb      	ldr	r3, [r7, #40]	; 0x28
+   12494:	429c      	cmp	r4, r3
+   12496:	da0b      	bge.n	124b0 <start_update+0x2d8>
+   12498:	e002      	b.n	124a0 <start_update+0x2c8>
+   1249a:	6abb      	ldr	r3, [r7, #40]	; 0x28
+   1249c:	429c      	cmp	r4, r3
+   1249e:	dd07      	ble.n	124b0 <start_update+0x2d8>
+   124a0:	f649 40c4 	movw	r0, #40132	; 0x9cc4
+   124a4:	f2c0 0002 	movt	r0, #2
+   124a8:	6ab9      	ldr	r1, [r7, #40]	; 0x28
+   124aa:	2201      	movs	r2, #1
+   124ac:	f7fe ea4c 	blx	10948 <__ubsan_handle_add_overflow@plt>
+   124b0:	62bc      	str	r4, [r7, #40]	; 0x28
+   124b2:	f642 33bc 	movw	r3, #11196	; 0x2bbc
+   124b6:	f2c0 0302 	movt	r3, #2
+   124ba:	6afa      	ldr	r2, [r7, #44]	; 0x2c
+   124bc:	f833 3012 	ldrh.w	r3, [r3, r2, lsl #1]
+   124c0:	461a      	mov	r2, r3
+   124c2:	6abb      	ldr	r3, [r7, #40]	; 0x28
+   124c4:	429a      	cmp	r2, r3
+   124c6:	f73f af08 	bgt.w	122da <start_update+0x102>
                     j = nack_nr;
                 }
             }
         }
+
+        GetPacket(fd, RxPktBuf);
+   124ca:	6878      	ldr	r0, [r7, #4]
+   124cc:	f649 5160 	movw	r1, #40288	; 0x9d60
+   124d0:	f2c0 0102 	movt	r1, #2
+   124d4:	f7ff fd20 	bl	11f18 <GetPacket>
+        nanosleep(&wait_restart, NULL);
+   124d8:	f107 030c 	add.w	r3, r7, #12
+   124dc:	4618      	mov	r0, r3
+   124de:	2100      	movs	r1, #0
+   124e0:	f7fe ea5c 	blx	1099c <nanosleep@plt>
+    int j;
+    uint8_t retx = 0;
+    uint8_t len = 0;
+    struct timespec ack_timeout = { .tv_nsec = 20000};
+    struct timespec wait_restart = { .tv_nsec = 200000};
+    for ( i = 0; i <  sizeof(npkts)/sizeof(npkts[0]); i++)
+   124e4:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+   124e6:	1c5c      	adds	r4, r3, #1
+   124e8:	2301      	movs	r3, #1
+   124ea:	2b00      	cmp	r3, #0
+   124ec:	db03      	blt.n	124f6 <start_update+0x31e>
+   124ee:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+   124f0:	429c      	cmp	r4, r3
+   124f2:	da0b      	bge.n	1250c <start_update+0x334>
+   124f4:	e002      	b.n	124fc <start_update+0x324>
+   124f6:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+   124f8:	429c      	cmp	r4, r3
+   124fa:	dd07      	ble.n	1250c <start_update+0x334>
+   124fc:	f649 40d4 	movw	r0, #40148	; 0x9cd4
+   12500:	f2c0 0002 	movt	r0, #2
+   12504:	6af9      	ldr	r1, [r7, #44]	; 0x2c
+   12506:	2201      	movs	r2, #1
+   12508:	f7fe ea1e 	blx	10948 <__ubsan_handle_add_overflow@plt>
+   1250c:	62fc      	str	r4, [r7, #44]	; 0x2c
+   1250e:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+   12510:	2b01      	cmp	r3, #1
+   12512:	f67f ae7e 	bls.w	12212 <start_update+0x3a>
+        }
+
+        GetPacket(fd, RxPktBuf);
+        nanosleep(&wait_restart, NULL);
     }
     return 0;
-   124d2:	2300      	movs	r3, #0
+   12516:	2300      	movs	r3, #0
 }
-   124d4:	4618      	mov	r0, r3
-   124d6:	3728      	adds	r7, #40	; 0x28
-   124d8:	46bd      	mov	sp, r7
-   124da:	bdb0      	pop	{r4, r5, r7, pc}
+   12518:	4618      	mov	r0, r3
+   1251a:	3730      	adds	r7, #48	; 0x30
+   1251c:	46bd      	mov	sp, r7
+   1251e:	bdb0      	pop	{r4, r5, r7, pc}
 
-000124dc <main>:
+00012520 <main>:
 
 int main(int argc, char **argv)
 {
-   124dc:	b590      	push	{r4, r7, lr}
-   124de:	b087      	sub	sp, #28
-   124e0:	af00      	add	r7, sp, #0
-   124e2:	6078      	str	r0, [r7, #4]
-   124e4:	6039      	str	r1, [r7, #0]
+   12520:	b590      	push	{r4, r7, lr}
+   12522:	b087      	sub	sp, #28
+   12524:	af00      	add	r7, sp, #0
+   12526:	6078      	str	r0, [r7, #4]
+   12528:	6039      	str	r1, [r7, #0]
     int fd;
     fset_t fset = ISM_US;
-   124e6:	2301      	movs	r3, #1
-   124e8:	617b      	str	r3, [r7, #20]
+   1252a:	2301      	movs	r3, #1
+   1252c:	617b      	str	r3, [r7, #20]
     uint8_t status;
 
     if (argc == 2)
-   124ea:	687b      	ldr	r3, [r7, #4]
-   124ec:	2b02      	cmp	r3, #2
-   124ee:	d152      	bne.n	12596 <main+0xba>
+   1252e:	687b      	ldr	r3, [r7, #4]
+   12530:	2b02      	cmp	r3, #2
+   12532:	d152      	bne.n	125da <main+0xba>
     {
         if (!strcmp(argv[1], "US"))
-   124f0:	683b      	ldr	r3, [r7, #0]
-   124f2:	1d1c      	adds	r4, r3, #4
-   124f4:	2c00      	cmp	r4, #0
-   124f6:	d106      	bne.n	12506 <main+0x2a>
-   124f8:	f644 2094 	movw	r0, #19092	; 0x4a94
-   124fc:	f2c0 0002 	movt	r0, #2
-   12500:	2100      	movs	r1, #0
-   12502:	f7fe ea40 	blx	10984 <__ubsan_handle_type_mismatch@plt>
-   12506:	6823      	ldr	r3, [r4, #0]
-   12508:	4618      	mov	r0, r3
-   1250a:	f642 1158 	movw	r1, #10584	; 0x2958
-   1250e:	f2c0 0101 	movt	r1, #1
-   12512:	f7fe ea4a 	blx	109a8 <strcmp@plt>
-   12516:	4603      	mov	r3, r0
-   12518:	2b00      	cmp	r3, #0
-   1251a:	d102      	bne.n	12522 <main+0x46>
+   12534:	683b      	ldr	r3, [r7, #0]
+   12536:	1d1c      	adds	r4, r3, #4
+   12538:	2c00      	cmp	r4, #0
+   1253a:	d106      	bne.n	1254a <main+0x2a>
+   1253c:	f649 40f4 	movw	r0, #40180	; 0x9cf4
+   12540:	f2c0 0002 	movt	r0, #2
+   12544:	2100      	movs	r1, #0
+   12546:	f7fe ea1e 	blx	10984 <__ubsan_handle_type_mismatch@plt>
+   1254a:	6823      	ldr	r3, [r4, #0]
+   1254c:	4618      	mov	r0, r3
+   1254e:	f642 119c 	movw	r1, #10652	; 0x299c
+   12552:	f2c0 0101 	movt	r1, #1
+   12556:	f7fe ea28 	blx	109a8 <strcmp@plt>
+   1255a:	4603      	mov	r3, r0
+   1255c:	2b00      	cmp	r3, #0
+   1255e:	d102      	bne.n	12566 <main+0x46>
             fset = ISM_US;
-   1251c:	2301      	movs	r3, #1
-   1251e:	617b      	str	r3, [r7, #20]
-   12520:	e039      	b.n	12596 <main+0xba>
+   12560:	2301      	movs	r3, #1
+   12562:	617b      	str	r3, [r7, #20]
+   12564:	e039      	b.n	125da <main+0xba>
         else if (!strcmp(argv[1], "EU"))
-   12522:	683b      	ldr	r3, [r7, #0]
-   12524:	1d1c      	adds	r4, r3, #4
-   12526:	2c00      	cmp	r4, #0
-   12528:	d106      	bne.n	12538 <main+0x5c>
-   1252a:	f644 20ac 	movw	r0, #19116	; 0x4aac
-   1252e:	f2c0 0002 	movt	r0, #2
-   12532:	2100      	movs	r1, #0
-   12534:	f7fe ea26 	blx	10984 <__ubsan_handle_type_mismatch@plt>
-   12538:	6823      	ldr	r3, [r4, #0]
-   1253a:	4618      	mov	r0, r3
-   1253c:	f642 115c 	movw	r1, #10588	; 0x295c
-   12540:	f2c0 0101 	movt	r1, #1
-   12544:	f7fe ea30 	blx	109a8 <strcmp@plt>
-   12548:	4603      	mov	r3, r0
-   1254a:	2b00      	cmp	r3, #0
-   1254c:	d102      	bne.n	12554 <main+0x78>
+   12566:	683b      	ldr	r3, [r7, #0]
+   12568:	1d1c      	adds	r4, r3, #4
+   1256a:	2c00      	cmp	r4, #0
+   1256c:	d106      	bne.n	1257c <main+0x5c>
+   1256e:	f649 500c 	movw	r0, #40204	; 0x9d0c
+   12572:	f2c0 0002 	movt	r0, #2
+   12576:	2100      	movs	r1, #0
+   12578:	f7fe ea04 	blx	10984 <__ubsan_handle_type_mismatch@plt>
+   1257c:	6823      	ldr	r3, [r4, #0]
+   1257e:	4618      	mov	r0, r3
+   12580:	f642 11a0 	movw	r1, #10656	; 0x29a0
+   12584:	f2c0 0101 	movt	r1, #1
+   12588:	f7fe ea0e 	blx	109a8 <strcmp@plt>
+   1258c:	4603      	mov	r3, r0
+   1258e:	2b00      	cmp	r3, #0
+   12590:	d102      	bne.n	12598 <main+0x78>
             fset = ISM_EU;
-   1254e:	2300      	movs	r3, #0
-   12550:	617b      	str	r3, [r7, #20]
-   12552:	e020      	b.n	12596 <main+0xba>
+   12592:	2300      	movs	r3, #0
+   12594:	617b      	str	r3, [r7, #20]
+   12596:	e020      	b.n	125da <main+0xba>
         else if (!strcmp(argv[1], "LF"))
-   12554:	683b      	ldr	r3, [r7, #0]
-   12556:	1d1c      	adds	r4, r3, #4
-   12558:	2c00      	cmp	r4, #0
-   1255a:	d106      	bne.n	1256a <main+0x8e>
-   1255c:	f644 20c4 	movw	r0, #19140	; 0x4ac4
-   12560:	f2c0 0002 	movt	r0, #2
-   12564:	2100      	movs	r1, #0
-   12566:	f7fe ea0e 	blx	10984 <__ubsan_handle_type_mismatch@plt>
-   1256a:	6823      	ldr	r3, [r4, #0]
-   1256c:	4618      	mov	r0, r3
-   1256e:	f642 1160 	movw	r1, #10592	; 0x2960
-   12572:	f2c0 0101 	movt	r1, #1
-   12576:	f7fe ea18 	blx	109a8 <strcmp@plt>
-   1257a:	4603      	mov	r3, r0
-   1257c:	2b00      	cmp	r3, #0
-   1257e:	d102      	bne.n	12586 <main+0xaa>
+   12598:	683b      	ldr	r3, [r7, #0]
+   1259a:	1d1c      	adds	r4, r3, #4
+   1259c:	2c00      	cmp	r4, #0
+   1259e:	d106      	bne.n	125ae <main+0x8e>
+   125a0:	f649 5024 	movw	r0, #40228	; 0x9d24
+   125a4:	f2c0 0002 	movt	r0, #2
+   125a8:	2100      	movs	r1, #0
+   125aa:	f7fe e9ec 	blx	10984 <__ubsan_handle_type_mismatch@plt>
+   125ae:	6823      	ldr	r3, [r4, #0]
+   125b0:	4618      	mov	r0, r3
+   125b2:	f642 11a4 	movw	r1, #10660	; 0x29a4
+   125b6:	f2c0 0101 	movt	r1, #1
+   125ba:	f7fe e9f6 	blx	109a8 <strcmp@plt>
+   125be:	4603      	mov	r3, r0
+   125c0:	2b00      	cmp	r3, #0
+   125c2:	d102      	bne.n	125ca <main+0xaa>
             fset = ISM_LF;
-   12580:	2302      	movs	r3, #2
-   12582:	617b      	str	r3, [r7, #20]
-   12584:	e007      	b.n	12596 <main+0xba>
+   125c4:	2302      	movs	r3, #2
+   125c6:	617b      	str	r3, [r7, #20]
+   125c8:	e007      	b.n	125da <main+0xba>
         else 
         {
             printf("Unspecified Band, defaulting to 902MHz/US band\n");
-   12586:	f642 1064 	movw	r0, #10596	; 0x2964
-   1258a:	f2c0 0001 	movt	r0, #1
-   1258e:	f7fe ea00 	blx	10990 <puts@plt>
+   125ca:	f642 10a8 	movw	r0, #10664	; 0x29a8
+   125ce:	f2c0 0001 	movt	r0, #1
+   125d2:	f7fe e9de 	blx	10990 <puts@plt>
             fset = ISM_US;
-   12592:	2301      	movs	r3, #1
-   12594:	617b      	str	r3, [r7, #20]
+   125d6:	2301      	movs	r3, #1
+   125d8:	617b      	str	r3, [r7, #20]
         }
     }
 
     setup_io();
-   12596:	f7fe fa83 	bl	10aa0 <setup_io>
+   125da:	f7fe fa61 	bl	10aa0 <setup_io>
     cfg_gpio();
-   1259a:	f7ff f821 	bl	115e0 <cfg_gpio>
+   125de:	f7fe ffff 	bl	115e0 <cfg_gpio>
     fd = open_spi(SPI_DEVNAME);
-   1259e:	f242 60fc 	movw	r0, #9980	; 0x26fc
-   125a2:	f2c0 0001 	movt	r0, #1
-   125a6:	f7fe fae3 	bl	10b70 <open_spi>
-   125aa:	60f8      	str	r0, [r7, #12]
+   125e2:	f242 7040 	movw	r0, #10048	; 0x2740
+   125e6:	f2c0 0001 	movt	r0, #1
+   125ea:	f7fe fac1 	bl	10b70 <open_spi>
+   125ee:	60f8      	str	r0, [r7, #12]
     default_spi_config(fd);
-   125ac:	68f8      	ldr	r0, [r7, #12]
-   125ae:	f7fe fb15 	bl	10bdc <default_spi_config>
+   125f0:	68f8      	ldr	r0, [r7, #12]
+   125f2:	f7fe faf3 	bl	10bdc <default_spi_config>
     cc1101_initialize(fd, fset);
-   125b2:	68f8      	ldr	r0, [r7, #12]
-   125b4:	6979      	ldr	r1, [r7, #20]
-   125b6:	f7ff fb07 	bl	11bc8 <cc1101_initialize>
+   125f6:	68f8      	ldr	r0, [r7, #12]
+   125f8:	6979      	ldr	r1, [r7, #20]
+   125fa:	f7ff fae5 	bl	11bc8 <cc1101_initialize>
     for( int i = 0; i < 0x3e; i++)
-   125ba:	2300      	movs	r3, #0
-   125bc:	613b      	str	r3, [r7, #16]
-   125be:	e027      	b.n	12610 <main+0x134>
+   125fe:	2300      	movs	r3, #0
+   12600:	613b      	str	r3, [r7, #16]
+   12602:	e027      	b.n	12654 <main+0x134>
     printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
-   125c0:	693b      	ldr	r3, [r7, #16]
-   125c2:	b2da      	uxtb	r2, r3
-   125c4:	f107 030b 	add.w	r3, r7, #11
-   125c8:	68f8      	ldr	r0, [r7, #12]
-   125ca:	4611      	mov	r1, r2
-   125cc:	461a      	mov	r2, r3
-   125ce:	f7fe fed1 	bl	11374 <read_reg>
-   125d2:	4603      	mov	r3, r0
-   125d4:	461a      	mov	r2, r3
-   125d6:	7afb      	ldrb	r3, [r7, #11]
-   125d8:	f642 1094 	movw	r0, #10644	; 0x2994
-   125dc:	f2c0 0001 	movt	r0, #1
-   125e0:	6939      	ldr	r1, [r7, #16]
-   125e2:	f7fe e9b8 	blx	10954 <printf@plt>
+   12604:	693b      	ldr	r3, [r7, #16]
+   12606:	b2da      	uxtb	r2, r3
+   12608:	f107 030b 	add.w	r3, r7, #11
+   1260c:	68f8      	ldr	r0, [r7, #12]
+   1260e:	4611      	mov	r1, r2
+   12610:	461a      	mov	r2, r3
+   12612:	f7fe feaf 	bl	11374 <read_reg>
+   12616:	4603      	mov	r3, r0
+   12618:	461a      	mov	r2, r3
+   1261a:	7afb      	ldrb	r3, [r7, #11]
+   1261c:	f642 10d8 	movw	r0, #10712	; 0x29d8
+   12620:	f2c0 0001 	movt	r0, #1
+   12624:	6939      	ldr	r1, [r7, #16]
+   12626:	f7fe e996 	blx	10954 <printf@plt>
     setup_io();
     cfg_gpio();
     fd = open_spi(SPI_DEVNAME);
     default_spi_config(fd);
     cc1101_initialize(fd, fset);
     for( int i = 0; i < 0x3e; i++)
-   125e6:	693b      	ldr	r3, [r7, #16]
-   125e8:	1c5c      	adds	r4, r3, #1
-   125ea:	2301      	movs	r3, #1
-   125ec:	2b00      	cmp	r3, #0
-   125ee:	db03      	blt.n	125f8 <main+0x11c>
-   125f0:	693b      	ldr	r3, [r7, #16]
-   125f2:	429c      	cmp	r4, r3
-   125f4:	da0b      	bge.n	1260e <main+0x132>
-   125f6:	e002      	b.n	125fe <main+0x122>
-   125f8:	693b      	ldr	r3, [r7, #16]
-   125fa:	429c      	cmp	r4, r3
-   125fc:	dd07      	ble.n	1260e <main+0x132>
-   125fe:	f644 20dc 	movw	r0, #19164	; 0x4adc
-   12602:	f2c0 0002 	movt	r0, #2
-   12606:	6939      	ldr	r1, [r7, #16]
-   12608:	2201      	movs	r2, #1
-   1260a:	f7fe e99e 	blx	10948 <__ubsan_handle_add_overflow@plt>
-   1260e:	613c      	str	r4, [r7, #16]
-   12610:	693b      	ldr	r3, [r7, #16]
-   12612:	2b3d      	cmp	r3, #61	; 0x3d
-   12614:	ddd4      	ble.n	125c0 <main+0xe4>
+   1262a:	693b      	ldr	r3, [r7, #16]
+   1262c:	1c5c      	adds	r4, r3, #1
+   1262e:	2301      	movs	r3, #1
+   12630:	2b00      	cmp	r3, #0
+   12632:	db03      	blt.n	1263c <main+0x11c>
+   12634:	693b      	ldr	r3, [r7, #16]
+   12636:	429c      	cmp	r4, r3
+   12638:	da0b      	bge.n	12652 <main+0x132>
+   1263a:	e002      	b.n	12642 <main+0x122>
+   1263c:	693b      	ldr	r3, [r7, #16]
+   1263e:	429c      	cmp	r4, r3
+   12640:	dd07      	ble.n	12652 <main+0x132>
+   12642:	f649 503c 	movw	r0, #40252	; 0x9d3c
+   12646:	f2c0 0002 	movt	r0, #2
+   1264a:	6939      	ldr	r1, [r7, #16]
+   1264c:	2201      	movs	r2, #1
+   1264e:	f7fe e97c 	blx	10948 <__ubsan_handle_add_overflow@plt>
+   12652:	613c      	str	r4, [r7, #16]
+   12654:	693b      	ldr	r3, [r7, #16]
+   12656:	2b3d      	cmp	r3, #61	; 0x3d
+   12658:	ddd4      	ble.n	12604 <main+0xe4>
     printf("Reg %02x, Val %02x Status %02x\n", i, read_reg(fd, i, &status), status);
     start_update(fd);
-   12616:	68f8      	ldr	r0, [r7, #12]
-   12618:	f7ff fdde 	bl	121d8 <start_update>
+   1265a:	68f8      	ldr	r0, [r7, #12]
+   1265c:	f7ff fdbc 	bl	121d8 <start_update>
             fflush(stdout);
             //nanosleep(&sleepval, NULL);
         }
     }
 #endif
     close_spi(fd);
-   1261c:	68f8      	ldr	r0, [r7, #12]
-   1261e:	f7fe fac3 	bl	10ba8 <close_spi>
+   12660:	68f8      	ldr	r0, [r7, #12]
+   12662:	f7fe faa1 	bl	10ba8 <close_spi>
 
     return 0;
-   12622:	2300      	movs	r3, #0
+   12666:	2300      	movs	r3, #0
 }
-   12624:	4618      	mov	r0, r3
-   12626:	371c      	adds	r7, #28
-   12628:	46bd      	mov	sp, r7
-   1262a:	bd90      	pop	{r4, r7, pc}
+   12668:	4618      	mov	r0, r3
+   1266a:	371c      	adds	r7, #28
+   1266c:	46bd      	mov	sp, r7
+   1266e:	bd90      	pop	{r4, r7, pc}
 
-0001262c <__libc_csu_init>:
-   1262c:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
-   12630:	4607      	mov	r7, r0
-   12632:	4e0c      	ldr	r6, [pc, #48]	; (12664 <__libc_csu_init+0x38>)
-   12634:	4688      	mov	r8, r1
-   12636:	4d0c      	ldr	r5, [pc, #48]	; (12668 <__libc_csu_init+0x3c>)
-   12638:	4691      	mov	r9, r2
-   1263a:	447e      	add	r6, pc
-   1263c:	f7fe e91a 	blx	10874 <_init>
-   12640:	447d      	add	r5, pc
-   12642:	1b76      	subs	r6, r6, r5
-   12644:	10b6      	asrs	r6, r6, #2
-   12646:	d00a      	beq.n	1265e <__libc_csu_init+0x32>
-   12648:	3d04      	subs	r5, #4
-   1264a:	2400      	movs	r4, #0
-   1264c:	3401      	adds	r4, #1
-   1264e:	f855 3f04 	ldr.w	r3, [r5, #4]!
-   12652:	4638      	mov	r0, r7
-   12654:	4641      	mov	r1, r8
-   12656:	464a      	mov	r2, r9
-   12658:	4798      	blx	r3
-   1265a:	42b4      	cmp	r4, r6
-   1265c:	d1f6      	bne.n	1264c <__libc_csu_init+0x20>
-   1265e:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
-   12662:	bf00      	nop
-   12664:	000109c6 	.word	0x000109c6
-   12668:	000109bc 	.word	0x000109bc
+00012670 <__libc_csu_init>:
+   12670:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   12674:	4607      	mov	r7, r0
+   12676:	4e0c      	ldr	r6, [pc, #48]	; (126a8 <__libc_csu_init+0x38>)
+   12678:	4688      	mov	r8, r1
+   1267a:	4d0c      	ldr	r5, [pc, #48]	; (126ac <__libc_csu_init+0x3c>)
+   1267c:	4691      	mov	r9, r2
+   1267e:	447e      	add	r6, pc
+   12680:	f7fe e8f8 	blx	10874 <_init>
+   12684:	447d      	add	r5, pc
+   12686:	1b76      	subs	r6, r6, r5
+   12688:	10b6      	asrs	r6, r6, #2
+   1268a:	d00a      	beq.n	126a2 <__libc_csu_init+0x32>
+   1268c:	3d04      	subs	r5, #4
+   1268e:	2400      	movs	r4, #0
+   12690:	3401      	adds	r4, #1
+   12692:	f855 3f04 	ldr.w	r3, [r5, #4]!
+   12696:	4638      	mov	r0, r7
+   12698:	4641      	mov	r1, r8
+   1269a:	464a      	mov	r2, r9
+   1269c:	4798      	blx	r3
+   1269e:	42b4      	cmp	r4, r6
+   126a0:	d1f6      	bne.n	12690 <__libc_csu_init+0x20>
+   126a2:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   126a6:	bf00      	nop
+   126a8:	000103ae 	.word	0x000103ae
+   126ac:	000103a4 	.word	0x000103a4
 
-0001266c <__libc_csu_fini>:
-   1266c:	4770      	bx	lr
-   1266e:	bf00      	nop
+000126b0 <__libc_csu_fini>:
+   126b0:	4770      	bx	lr
+   126b2:	bf00      	nop
 
 Disassembly of section .fini:
 
-00012670 <_fini>:
-   12670:	e92d4008 	push	{r3, lr}
-   12674:	e8bd8008 	pop	{r3, pc}
+000126b4 <_fini>:
+   126b4:	e92d4008 	push	{r3, lr}
+   126b8:	e8bd8008 	pop	{r3, pc}

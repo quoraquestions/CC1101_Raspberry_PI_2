@@ -888,10 +888,10 @@ int start_update(int fd)
     uint8_t retx = 0;
     uint8_t len = 0;
     struct timespec ack_timeout = { .tv_nsec = 20000};
+    struct timespec wait_restart = { .tv_nsec = 200000};
     for ( i = 0; i <  sizeof(npkts)/sizeof(npkts[0]); i++)
     {  
         wait_for_discovery(fd, false);
-        rxoff(fd);
         nanosleep(&ack_timeout, NULL);
         send_disc_ack(fd);
         init_packet[3] = npkts[i] & 0xff;
@@ -931,6 +931,9 @@ int start_update(int fd)
                 }
             }
         }
+
+        GetPacket(fd, RxPktBuf);
+        //nanosleep(&wait_restart, NULL);
     }
     return 0;
 }
