@@ -12,13 +12,13 @@
 #include <string.h>
 #include <assert.h>
 #include <time.h>
+#include "fw.h"
 struct timespec sleepval = { .tv_nsec = 50000000 };
 #define SPI_DEVNAME "/dev/spidev0.0"
 #define SPI_SPEED (5000000) /*500Kbit*/
  
 #define BCM2708_PERI_BASE        (0x3F000000)
 #define GPIO_BASE                (BCM2708_PERI_BASE + 0x200000) /* GPIO controller */
- 
  
 //#define GD0_RX_OVERFLOW_DETECT
 
@@ -654,15 +654,8 @@ void cc1101_cfg_regs(int fd)
         uint8_t val = wbslRadioCfg[i][1];
         write_reg(fd, reg, val, NULL); 
     }
-#if defined(GD0_RX_OVERFLOW_DETECT)
-    write_reg(fd, IOCFG0, 4, NULL);
-#else
     write_reg(fd, IOCFG0, WBSL_GDO_SYNC, NULL);
-#endif
     write_reg(fd, IOCFG2, 7, NULL);
-#if 0
-    write_reg(fd, PA_TABLE0, WBSL_SETTING_PA_TABLE0, NULL);
-#endif
 }
 
 
@@ -723,12 +716,8 @@ void txoff(int fd)
 uint8_t CheckRx(int fd)
 {
     uint8_t bytes = 0;
-#if !defined(GD0_RX_OVERFLOW_DETECT)
     uint8_t marc_state = read_reg(fd, MARCSTATE, NULL) & 0x1f;
     if (marc_state == 0x11)
-#else
-    if (GET_GPIO(GPIO_GD0))
-#endif
     {
         printf("RX overflow\n");
         rxoff(fd);
@@ -766,44 +755,184 @@ uint8_t CheckRx(int fd)
 
 void ReceivePkt(int fd, uint8_t *pktbuf, uint8_t bytes)
 {
-#if 0
-    uint16_t i;
-    uint8_t status;
-    for(i = 0; i < bytes; i++)
-    {
-        pktbuf[i] = read_reg(fd, RXFIFO, &status);
-        printf("Status %x\n", status);
-    }
-#else
     read_reg_burst(fd, RXFIFO, bytes, pktbuf); 
-#endif
-
 }
 
 void TransmitPkt(int fd, uint8_t *payload, uint8_t len)
 {
+    /*convert to State machine*/
+    rxoff(fd);
+    assert(payload[0] == len - 1);
     write_reg_burst(fd, TXFIFO, payload, len);
     txstart(fd);
+    while(!GET_GPIO(GPIO_GD0));
+    while(GET_GPIO(GPIO_GD0));
 }
 
-uint8_t pktbuf[256];
-
-void wait_for_discovery(int fd)
+uint8_t RxPktBuf[256];
+uint8_t WaitRx(int fd)
 {
-
+    uint8_t len = 0;
+    while (!(len = CheckRx(fd)))
+        ;
+    return len;
 }
 
-typedef enum update_state {WAIT_FOR_DISCOVERY, SEND_DISCOVERY_ACK, SEND_ADDR_PKT, SEND_PAYLOAD, END_OF_UPDATE};
+uint8_t GetPacket(int fd, uint8_t *pktbuf)
+{
+    uint8_t len;
+    rxon(fd);
+    if((len = WaitRx(fd)))
+    {
+        uint32_t j = 0;
+        uint8_t clqi = 0, rssi = 0;
+        struct timespec now;
+        clock_gettime(CLOCK_REALTIME, &now);
+        printf("Time %ld.%09ld ", now.tv_sec, now.tv_nsec);
+        printf("Len:%x ", len); 
+        ReceivePkt(fd, pktbuf, len);
+        clqi = pktbuf[pktbuf[0] + 2];
+        rssi =  pktbuf[pktbuf[0] + 1];
+        printf("RSSI:%02X LQI : %02X ", rssi, (clqi & 0x7f));
+        if (clqi & 0x80)
+            printf("CRC:OK\n");
+        else
+        {
+            printf("CRC:Fail\n");
+            len = 0;
+        }
+        for (j = 0; j < len; j++)
+        {
+            if ( (4*j + 1) % 80 == false)
+                printf("\n");
+           printf(" %02X ", pktbuf[j]);
+        }
+        printf("\n");
+        fflush(stdout);
+        //nanosleep(&sleepval, NULL);
+    }
+    return len;
+}
 
+typedef struct wbsl_header {
+    uint8_t da;
+    uint8_t ta;
+} __attribute__((packed)) wbsl_header_t;
+
+typedef struct wbsl_disc_pkt{
+    uint8_t len;
+    wbsl_header_t hdr;
+    uint8_t vbatt;
+    uint8_t payload[4];
+}__attribute__((packed)) wbsl_disc_pkt_t;
+
+#define WBSL_ACK_STATUS_SUCCESS (1)
+#define WBSL_ACK_STATUS_FAIL    (0)
+
+typedef struct wbsl_disc_ack {
+    uint8_t len;
+    wbsl_header_t hdr;
+    uint8_t status;
+}__attribute__((packed)) wbsl_disc_ack_t; 
+
+typedef struct wbsl_data_ack {
+    uint8_t len;
+    wbsl_header_t hdr;
+    uint8_t status;
+    uint8_t packethi;
+    uint8_t packetlo;
+}__attribute__((packed)) wbsl_data_ack_t;
+
+uint8_t linked, epaddr;
+
+void wait_for_discovery(int fd, int force)
+{
+    uint8_t discoveryPayload[]= {0xBA,0x5E,0xBA,0x11};
+    uint8_t len = 0;
+    wbsl_disc_pkt_t *disc = (wbsl_disc_pkt_t *)RxPktBuf;
+    while (!linked || force)
+    {
+        len = GetPacket(fd, RxPktBuf);
+        if (len < 7)
+            continue;
+        if (!disc->hdr.da && !memcmp(discoveryPayload, disc->payload, sizeof(discoveryPayload)))
+        {
+            printf("Discovered %02X\n", disc->hdr.ta);
+            epaddr = disc->hdr.ta;
+            linked = true;
+        }
+        else
+        {
+            printf("Not Disc\n");
+            continue;
+        }
+    }
+}
+
+
+void send_disc_ack(int fd)
+{
+    wbsl_disc_ack_t dack = {
+        .len = sizeof(dack) - sizeof(dack.len), 
+        .hdr = { .da = epaddr, 
+            .ta = WBSL_AP_ADDRESS}, 
+        .status = WBSL_ACK_STATUS_SUCCESS };
+    TransmitPkt(fd, (uint8_t *)&dack, sizeof(dack));
+}
+
+uint8_t init_packet[] = { 5, 0xad, 0xca, 0, 0 ,0}; 
 int start_update(int fd)
 {
-    while(1)
-    {
+    int i;
+    int j;
+    uint8_t retx = 0;
+    uint8_t len = 0;
+    struct timespec ack_timeout = { .tv_nsec = 20000};
+    for ( i = 0; i <  sizeof(npkts)/sizeof(npkts[0]); i++)
+    {  
+        wait_for_discovery(fd, false);
+        rxoff(fd);
+        nanosleep(&ack_timeout, NULL);
+        send_disc_ack(fd);
+        init_packet[3] = npkts[i] & 0xff;
+        init_packet[4] = (npkts[i] >> 8 ) & 0xff;
+        while(1) {
+            retx++;
+            init_packet[5] = 1;
+            TransmitPkt(fd, init_packet, sizeof(init_packet));
+            nanosleep(&ack_timeout, NULL);
+            if((len = GetPacket(fd, RxPktBuf)))
+            {
+               printf("Success Init Packet\n");
+               retx = 0;
+               break;
+            }
+        }
 
+        nanosleep(&ack_timeout, NULL);
 
-
-        wait_for_discovery(fd);
+        for(j = 0; j < npkts[i]; j++)
+        {
+            TransmitPkt(fd, packets[i][j], packets[i][j][0]+1);
+            if((len = GetPacket(fd, RxPktBuf)))
+            {
+                wbsl_data_ack_t *da = RxPktBuf;
+                printf("Packet %x", (da->packethi << 8) + da->packetlo);
+                if (da->status == WBSL_ACK_STATUS_SUCCESS)
+                {
+                    printf("*Succeeded\n");
+                    continue;
+                }
+                else
+                {
+                    printf("* Failed\n");
+                    uint16_t nack_nr  = (da->packethi << 8) + da->packetlo;
+                    j = nack_nr;
+                }
+            }
+        }
     }
+    return 0;
 }
 
 int main(int argc, char **argv)
